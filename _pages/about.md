@@ -15,6 +15,6 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi, I am Bingda Tang (汤秉达), an undergraduate student majoring in computer science and technology. 
+Hi, I am Bingda Tang (湯秉達), an undergraduate student majoring in computer science and technology. 
 
 Currently, my research interests primarily encompass generative models, multimodal models and explainable AI.
