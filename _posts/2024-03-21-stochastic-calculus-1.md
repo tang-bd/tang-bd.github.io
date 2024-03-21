@@ -26,7 +26,7 @@ The variation of a funtion of real variable $$g$$ over the interval $$[a,b]$$ is
 V_g([a,b]) = \sup \sum_{i=1}^{n} \lvert g(t_i^n)-g(t_{i-1}^n) \rvert = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n} \lvert g(t_i^n)-g(t_{i-1}^n) \rvert
 \end{equation}
 
-where $$\delta_n = \max_{1 \le i \le n}(t_i - t_{i-1})$$. The supremum is taken over partitions $$a = t_0^n < t_1^n < \cdots < t_n^n = b$$.
+where $$\delta_n = \max_{1 \le i \le n}(t_i^n - t_{i-1}^n)$$. The supremum is taken over partitions $$a = t_0^n < t_1^n < \cdots < t_n^n = b$$.
 
 如果$$V_g([a,b])$$是有限的，则我们称$$g$$为a function of finite variation on $$[a,b]$$. 如果$$g$$是$$t \ge 0$$的函数，则可将$$g$$的variation function定义为关于$$t$$的函数$$V_g(t) = V_g([0,t])$$. 
 
@@ -61,6 +61,6 @@ The Stieltjes integral of $$f$$ with respect to a monotone function $$g$$ over a
 \int_a^b fdg = \int_a^b f(t)dg(t) = lim_{\delta_n \rightarrow 0} \sum_{i=1}^n f(\xi_i^n)(g(t_i^n) - g(_{i - 1}^n))
 \end{equation}
 
-where $$a = t_0^n < t_1^n < \cdots < t_n^n = b$$ and $$t_{i - 1}^n \le \xi_i^n \le t_i^n$$.
+where $$a = t_0^n < t_1^n < \cdots < t_n^n = b$$, $$\delta_n = \max_{1 \le i \le n}(t_i^n - t_{i-1}^n)$$ and $$t_{i - 1}^n \le \xi_i^n \le t_i^n$$.
 
 # 概率论拾遗
