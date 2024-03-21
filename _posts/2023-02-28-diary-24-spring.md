@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 日记·2024年春
-date: 2023-02-28
+date: 2024-02-28
 description: 莫听穿林打叶声，何妨吟啸且徐行
 tags: 2024
 categories: 日记
