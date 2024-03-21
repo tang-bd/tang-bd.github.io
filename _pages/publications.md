@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: 
+description: 私の学術ゴミ
 nav: true
 nav_order: 2
 ---
