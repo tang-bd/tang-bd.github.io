@@ -15,6 +15,7 @@ toc:
 本系列笔记的主要参考资料为
 - *Introduction to Stochastic Calculus with Applications, Third Edition* by Fima C. Klebaner
 - *An Introduction to Stochastic Differential Equations* by Lawrence C. Evans
+- *An Informal Introduction to Stochastic Calculus with Applications* by Ovidiu Calin
 
 本笔记将介绍一些微积分/概率论中的知识. 随机分析中经常涉及这些知识，但面向工科专业开设的微积分/概率论课程一般很少讲解.
 
