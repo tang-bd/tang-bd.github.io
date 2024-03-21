@@ -9,3 +9,5 @@ description:
 toc:
   sidebar: left
 ---
+
+Please refer to the PDF version for more information.
