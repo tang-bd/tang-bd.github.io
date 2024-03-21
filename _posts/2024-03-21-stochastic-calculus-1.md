@@ -58,9 +58,9 @@ Moreover, polarization identity holds for covariation $$[f,g](t) = \frac{1}{2}([
 The Stieltjes integral of $$f$$ with respect to a monotone function $$g$$ over an interval $$[a,b]$$ is defined as
 
 \begin{equation}
-\int_a^b fdg = \int_a^b f(t)dg(t) = lim_{\delta \rightarrow 0} \sum_{i=1}^n f(\ita_i^n)(g(t_i^n) - g(_{i - 1}^n))
+\int_a^b fdg = \int_a^b f(t)dg(t) = lim_{\delta \rightarrow 0} \sum_{i=1}^n f(\xi_i^n)(g(t_i^n) - g(_{i - 1}^n))
 \end{equation}
 
-where $$a = t_0^n < t_1^n < \cdots < t_n^n = b$$ and $$t_{i - 1}^n \le \ita_i^n \le t_i^n$$.
+where $$a = t_0^n < t_1^n < \cdots < t_n^n = b$$ and $$t_{i - 1}^n \le \xi_i^n \le t_i^n$$.
 
 # 概率论拾遗
