@@ -16,7 +16,7 @@ toc:
 - *Introduction to Stochastic Calculus with Applications, Third Edition* by Fima C Klebaner
 - *An Introduction to Stochastic Differential Equations* by Lawrence C. Evans
 
-本笔记将介绍一些微积分/概率论中的概念. 随机分析中经常涉及这些概念，但在面向工科专业开设的微积分/概率论课程一般很少讲解.
+本笔记将介绍一些微积分/概率论中的概念. 随机分析中经常涉及这些概念，但面向工科专业开设的微积分/概率论课程一般很少讲解.
 
 # 微积分拾遗
 # Variation
