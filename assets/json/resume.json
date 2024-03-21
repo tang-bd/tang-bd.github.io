@@ -13,9 +13,66 @@
       "location": "Beijing, China",
       "url": "https://www.tsinghua.edu.cn/",
       "area": "Computer Science and Technology",
-      "studyType": "B.S.",
+      "studyType": "Bachelor's Degree",
       "startDate": "2021",
       "endDate": "2026"
+    },
+    {
+      "institution": "Zhixin High School",
+      "location": "Guangzhou, China",
+      "url": "http://www.zhixinhs.cn/",
+      "studyType": "High School Diploma",
+      "startDate": "2018",
+      "endDate": "2021"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Chinese",
+      "fluency": "Native speaker",
+      "icon": ""
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent",
+      "icon": ""
+    },
+    {
+      "language": "Japanese",
+      "fluency": "Beginner",
+      "icon": ""
+    }
+  ],
+  "interests": [
+    {
+      "name": "Computer Science and Technology",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "Generative Models",
+        "Multimodal Models",
+        "Explainable AI"
+      ]
+    },
+    {
+      "name": "Music",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "Classical Music",
+        "OSTs of Animes, Movies and Games",
+        "J-POP",
+        "Piano Playing",
+        "F Horn Playing and Wind Ensemble"
+      ]
+    },
+    {
+      "name": "Games",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "Genshin Impact",
+        "Persona 5R",
+        "The Witcher 3",
+        "The Elder Scrolls 5"
+      ]
     }
   ]
 }
