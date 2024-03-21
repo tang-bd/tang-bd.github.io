@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 日记 · 2023年秋
+title: 日记 · 2023年冬
 date: 2024-01-22
 description: 何妄何执
 tags: 2023
