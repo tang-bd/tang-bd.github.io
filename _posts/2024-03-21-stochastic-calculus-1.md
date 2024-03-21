@@ -19,7 +19,7 @@ toc:
 本笔记将介绍一些微积分/概率论中的概念. 随机分析中经常涉及这些概念，但面向工科专业开设的微积分/概率论课程一般很少讲解.
 
 # 微积分拾遗
-# Variation
+## Variation
 The variation of a funtion of real variable $$g$$ over the interval $$[a,b]$$ is defined as
 
 \begin{equation}
@@ -34,7 +34,7 @@ where $$\delta_n = \max_{1 \le i \ge n}(t_i - t_{i-1})$$. The supremum is taken 
 
 直观地，$$V_g([a,b])$$可看作$$g$$的取值在$$[a,b]$$上的变化的总和. 那么我们可以预料，如果$$g(t)$$可导，有连续的导数$$g'(t)$$，$$g(t) = \int_0^t g'(s)ds$$且$$g(t) = \int_0^t \lvert g'(s) \rvert ds < \infty$$，那么$$V_g(t) \int_0^t \lvert g'(s) \rvert ds$$. 此时有$$g$$ is of finite variation.
 
-# Quadratic Variation
+## Quadratic Variation
 类似地，我们可以定义quadratic variation
 
 \begin{equation}
