@@ -52,7 +52,7 @@ where $$\delta_n = \max_{1 \le i \ge n}(t_i - t_{i-1})$$. The supremum is taken 
 
 如果$$f$$连续且$$g$$ is of finite variation，那么它们的covariation为0.
 
-Furthermore, Polarization Identity holds for covariation $$[f,g](t) = \frac{1}{2}([f + g,f + g](t) - [f,f](t) - [g,g](t))$$, so covariation is symmetric and bilinear.
+Furthermore, polarization identity holds for covariation $$[f,g](t) = \frac{1}{2}([f + g,f + g](t) - [f,f](t) - [g,g](t))$$, so covariation is symmetric and bilinear.
 
 ## Stieltjes Integral
 The Stieltjes integral of $$f$$ with respect to a monotone function $$g$$ over an interval $$[a,b]$$ is defined as
