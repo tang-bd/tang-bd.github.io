@@ -8,7 +8,7 @@ profile:
   align: right
   image: photo.jpg
   image_circular: false # crops the image to make it circular
-  more_info: photo taken in Chongqing 重慶, 2023.09 >
+  more_info: >
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
