@@ -37,7 +37,7 @@ where $$\delta_n = \max_{1 \le i \ge n}(t_i - t_{i-1})$$. The supremum is taken 
 类似地，我们可以定义quadratic variation
 
 \begin{equation}
-[g]([a,b]) = \sup \sum_{i=1}^{n}(g(t_i^n)-g(t_{i-1}^n))^2 = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n}(g(t_i^n)-g(t_{i-1}^n))^2
+\[g\]([a,b]) = \sup \sum_{i=1}^{n}(g(t_i^n)-g(t_{i-1}^n))^2 = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n}(g(t_i^n)-g(t_{i-1}^n))^2
 \end{equation}
 
 实际上，可以对任意的函数$$\Phi$$定义$$\Phi$$-variation. 若取$$\Phi(u) = u^p$$，则$$ 1 \le p < q < \inf$$时finite $$p$$-variation implies finite $$q$$-variation.
@@ -47,7 +47,7 @@ where $$\delta_n = \max_{1 \le i \ge n}(t_i - t_{i-1})$$. The supremum is taken 
 我们还可以定义quadratic covariation (or simply covariation)
 
 \begin{equation}
-[f,g]([a,b]) = \sup \sum_{i=1}^{n}(f(t_i^n)-f(t_{i-1}^n))(g(t_i^n)-g(t_{i-1}^n)) = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n}(f(t_i^n)-f(t_{i-1}^n))(g(t_i^n)-g(t_{i-1}^n))
+\[f,g\]([a,b]) = \sup \sum_{i=1}^{n}(f(t_i^n)-f(t_{i-1}^n))(g(t_i^n)-g(t_{i-1}^n)) = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n}(f(t_i^n)-f(t_{i-1}^n))(g(t_i^n)-g(t_{i-1}^n))
 \end{equation}
 
 If $$f$$ is continuous and $$g$$ is of finite variation, then their covariation is 0.
