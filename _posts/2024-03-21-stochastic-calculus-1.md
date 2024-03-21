@@ -10,14 +10,44 @@ toc:
 ---
 
 # 前言
-宋飏博士在其著名论文*Score-Based Generative Modeling through Stochastic Differential Equations*中凭借基于SDE的框架统一了score-based generative modeling与diffusion probablistic modeling两大生成式模型. 理解此论文需要较好的随机分析基础，上手难度较大，而笔者并非数学/金融相关专业，根本学不会一点 (笑). 笔者将尽力尝试在本系列笔记中整理随机分析的要点. 由于笔者学习随机分析的目的只是为了更深入地理解diffusion models，内容将比较简略.
+宋飏博士在其著名论文*Score-Based Generative Modeling through Stochastic Differential Equations*中凭借基于SDE的框架统一了score-based generative modeling与diffusion probablistic modeling两大生成式模型. 理解此论文需要较好的随机分析基础，上手难度较大，而笔者并非数学/金融相关专业，根本学不会一点 (笑). 笔者将尽力尝试在本系列笔记中整理随机分析的要点. 由于笔者学习随机分析的目的只是为了更深入地理解diffusion models，内容将比较简略，理解或许也有偏差之处. 为了写作方便，行文将中英混杂.
 
 本系列笔记的主要参考资料为
 - *Introduction to Stochastic Calculus with Applications, Third Edition* by Fima C Klebaner
 - *An Introduction to Stochastic Differential Equations* by Lawrence C. Evans
 
-# 微积分拾遗
+本笔记将介绍一些数学分析/概率论中的概念. 随机分析中经常涉及这些概念，但面向工科专业开设的数学分析/概率论课程一般很少讲解.
 
-# 概率论拾遗
+# Variation
+The variation of a funtion of real variable $$g$$ over the interval $$[a,b]$$ is defined as
 
-# 随机过程
+\begin{equation}
+V_g([a,b]) = \sup \sum_{i=1}^{n}|g(t_i^n)-g(t_{i-1}^n)| = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n}|g(t_i^n)-g(t_{i-1}^n)|
+\end{equation}
+
+where $$\delta_n = \max_{1 \le i \ge n}(t_i - t_{i-1})$$. The supremum is taken over partitions $$a = t_0^n < t_1^n < \cdots < t_n^n = b$$.
+
+如果$$V_g([a,b])$$是有限的，则我们称$$g$$为a function of finite variation on $$[a,b]$$. 如果$$g$$是$$t \ge 0$$的函数，则可将$$g$$的variation function定义为关于$$t$$的函数$$V_g(t) = V_g([0,t])$$. 显然，$$V_g(t)$$是单调递增的. 如果对于所有的$$t$$我们都有$$V_g(t) < \inf$$，那么我们称$$g$$ is of finite variation. 如果$$\sup_t V_g(t) < \inf$$即对所有的$$t$$有$$V_g(t) < C$$，其中$$C$$为常量, 那么我们称$$g$$ is of bounded variation.
+
+直观地，$$V_g([a,b])$$可看作$$g$$的取值在$$[a,b]$$上的变化的总和. Then as we can expect, if $$g(t)$$ is differentiable with continuous derivative $$g'(t)$$, $$g(t) = \int_0^t g'(s)ds$$ and $$g(t) = \int_0^t |g'(s)|ds < \inf$$, then $$V_g(t) \int_0^t |g'(s)|ds$$. 此时有$$g$$ is of finite variation.
+
+# Quadratic Variation
+类似地，我们可以定义quadratic variation
+
+\begin{equation}
+[g]([a,b]) = \sup \sum_{i=1}^{n}(g(t_i^n)-g(t_{i-1}^n))^2 = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n}(g(t_i^n)-g(t_{i-1}^n))^2
+\end{equation}
+
+实际上，可以对任意的函数$$\Phi$$定义$$\Phi$$-variation. 若取$$\Phi(u) = u^p$$，则$$ 1 \le p < q < \inf$$时finite $$p$$-variation implies finite $$q$$-variation.
+
+如果$$g$$连续且of finite variation，那么它的quadratic variation为0.
+
+我们也可以定义quadratic covariation (or simply covariation)
+
+\begin{equation}
+[f,g]([a,b]) = \sup \sum_{i=1}^{n}(f(t_i^n)-f(t_{i-1}^n))(g(t_i^n)-g(t_{i-1}^n)) = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n}(f(t_i^n)-f(t_{i-1}^n))(g(t_i^n)-g(t_{i-1}^n))
+\end{equation}
+
+If $$f$$ is continuous and $$g$$ is of finite variation, then their covariation is 0.
+
+Polarization Identity holds for covariation $$[f,g](t) = \frac{1}{2}([f + g,f + g](t) - [f,f](t) - [g,g](t))$$, so covariation is symmetric and bilinear.
