@@ -30,9 +30,9 @@ where $$\delta_n = \max_{1 \le i \ge n}(t_i - t_{i-1})$$. The supremum is taken 
 
 如果$$V_g([a,b])$$是有限的，则我们称$$g$$为a function of finite variation on $$[a,b]$$. 如果$$g$$是$$t \ge 0$$的函数，则可将$$g$$的variation function定义为关于$$t$$的函数$$V_g(t) = V_g([0,t])$$. 
 
-显然，$$V_g(t)$$是单调递增的. 如果对于所有的$$t$$我们都有$$V_g(t) < \infty$$，那么我们称$$g$$ is of finite variation. 如果$$\sup_t V_g(t) < \infty$$即对所有的$$t$$有$$V_g(t) < C$$，其中$$C$$为常量, 那么我们称$$g$$ is of bounded variation.
+显然，$$V_g(t)$$是单调递增的. 如果对于所有的$$t$$我们都有$$V_g(t) < \infty$$，那么我们称$$g$$ is of finite variation. 如果$$\sup_t V_g(t) < \infty$$即对所有的$$t$$满足$$V_g(t) < C$$，其中$$C$$为常量, 那么我们称$$g$$ is of bounded variation.
 
-直观地，$$V_g([a,b])$$可看作$$g$$的取值在$$[a,b]$$上的变化的总和. 那么我们可以预料，如果$$g(t)$$可导，有连续的导数$$g'(t)$$，$$g(t) = \int_0^t g'(s)ds$$且$$g(t) = \int_0^t \lvert g'(s) \rvert ds < \infty$$，那么$$V_g(t) \int_0^t \lvert g'(s) \rvert ds$$. 此时有$$g$$ is of finite variation.
+直观地，$$V_g([a,b])$$可看作$$g$$的取值在$$[a,b]$$上的变化的总和. 那么我们可以预料，如果$$g(t)$$可导，有连续的导数$$g'(t)$$，$$g(t) = \int_0^t g'(s)ds$$且满足$$g(t) = \int_0^t \lvert g'(s) \rvert ds < \infty$$，那么$$V_g(t) \int_0^t \lvert g'(s) \rvert ds$$. 此时有$$g$$ is of finite variation.
 
 ## Quadratic Variation
 类似地，我们可以定义quadratic variation
@@ -53,5 +53,14 @@ where $$\delta_n = \max_{1 \le i \ge n}(t_i - t_{i-1})$$. The supremum is taken 
 如果$$f$$连续且$$g$$ is of finite variation，那么它们的covariation为0.
 
 Polarization Identity holds for covariation $$[f,g](t) = \frac{1}{2}([f + g,f + g](t) - [f,f](t) - [g,g](t))$$, so covariation is symmetric and bilinear.
+
+## Stieltjes Integral
+The Stieltjes integral of $$f$$ with respect to a monotone function $$g$$ over an interval $$[a,b]$$ is defined as
+
+\begin{equation}
+\int_a^b fdg = \int_a^b f(t)dg(t) = lim_{\delta \rightarrow 0} \sum_{i=1}^n f(\ita_i^n)(g(t_i^n) - g(_{i - 1}^n))
+\end{equation}
+
+where $$a = t_0^n < t_1^n < \cdots < t_n^n = b$$ and $$t_{i - 1}^n \le \ita_i^n \le t_i^n$$.
 
 # 概率论拾遗
