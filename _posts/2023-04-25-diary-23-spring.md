@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 日记·2023年春
+title: 日记 · 2023年春
 date: 2023-04-25
 description: 日月不居，时节如流
 tags: 2023

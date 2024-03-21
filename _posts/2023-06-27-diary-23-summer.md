@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 日记·2023年夏
+title: 日记 · 2023年夏
 date: 2023-06-27
 description: 仰天大笑出门去，我辈岂是蓬蒿人
 tags: 2023

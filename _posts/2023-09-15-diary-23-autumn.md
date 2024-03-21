@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 日记·2023年秋
+title: 日记 · 2023年秋
 date: 2023-09-15
 description: 既自以心为形役，奚惆怅而独悲
 tags: 2023
