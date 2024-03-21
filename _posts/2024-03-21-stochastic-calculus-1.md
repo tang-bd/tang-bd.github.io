@@ -63,4 +63,8 @@ The Stieltjes integral of $$f$$ with respect to a monotone function $$g$$ over a
 
 where $$a = t_0^n < t_1^n < \cdots < t_n^n = b$$, $$\delta_n = \max_{1 \le i \le n}(t_i^n - t_{i-1}^n)$$ and $$t_{i - 1}^n \le \xi_i^n \le t_i^n$$.
 
+## Lipschitz and Hölder Conditions
+
+## 一阶线性微分方程的解
+
 # 概率论拾遗
