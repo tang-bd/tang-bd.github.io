@@ -41,9 +41,8 @@ where $$\delta_n = \max_{1 \le i \ge n}(t_i - t_{i-1})$$. The supremum is taken 
 \[g\]([a,b]) = \sup \sum_{i=1}^{n}(g(t_i^n)-g(t_{i-1}^n))^2 = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n}(g(t_i^n)-g(t_{i-1}^n))^2
 \end{equation}
 
-实际上，可以对任意的函数$$\Phi$$定义$$\Phi$$-variation. 若取$$\Phi(u) = u^p$$，则$$ 1 \le p < q < \infty$$时finite $$p$$-variation implies finite $$q$$-variation.
-
-如果$$g$$连续且of finite variation，那么它的quadratic variation为0. 直观地来看，当$$\delta_n \rightarrow 0$$时，求和中的项可视为无穷小量. 如果对无穷小量求和有限，则对其作平方得到的高阶无穷小量求和应当为0.
+实际上，可以对任意的函数$$\Phi$$定义$$\Phi$$-variation. 若取$$\Phi(u) = u^p$$，则$$ 1 \le p < q < \infty$$时finite $$p$$-variation implies finite $$q$$-variation. 
+如果$$g$$连续且of finite variation，那么它的quadratic variation为0. 直观地来看，当$$g$$连续且$$\delta_n \rightarrow 0$$时，求和中的项可视为无穷小量. 如果对无穷小量求和有限，则对其作平方得到的高阶无穷小量求和应当为0.
 
 我们还可以定义quadratic covariation (or simply covariation)
 
