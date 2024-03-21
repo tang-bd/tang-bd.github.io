@@ -10,7 +10,7 @@ toc:
 ---
 
 # 前言
-宋飏博士在其著名论文*Score-Based Generative Modeling through Stochastic Differential Equations*中凭借基于SDE的框架统一了score-based generative modeling与diffusion probablistic modeling两大生成式模型. 理解此论文需要较好的随机分析基础，上手难度较大，而笔者并非数学/金融相关专业，根本学不会一点 (笑). 笔者将尽力尝试在本系列笔记中整理随机分析的要点. 由于笔者学习随机分析的目的只是为了更深入地理解diffusion models，内容将比较简略，理解或许也有偏差之处. 为了写作方便，行文将中英混杂.
+宋飏博士在其著名论文*Score-Based Generative Modeling through Stochastic Differential Equations*中凭借基于SDE的框架统一了score-based generative modeling与diffusion probablistic modeling两大生成式模型范式. 理解此论文需要较好的随机分析基础，上手难度较大，而笔者并非数学/金融相关专业，根本学不会一点 (笑). 笔者将尽力尝试在本系列笔记中整理随机分析的要点. 由于笔者学习随机分析的目的只是为了更深入地理解diffusion models，内容将比较简略，理解或许也有偏差之处. 为了写作方便，行文将中英混杂.
 
 本系列笔记的主要参考资料为
 - *Introduction to Stochastic Calculus with Applications, Third Edition* by Fima C. Klebaner
@@ -43,7 +43,7 @@ where $$\delta_n = \max_{1 \le i \le n}(t_i^n - t_{i-1}^n)$$. The supremum is ta
 \end{equation}
 
 实际上，可以对任意的函数$$\Phi$$定义$$\Phi$$-variation. 若取$$\Phi(u) = u^p$$，则$$ 1 \le p < q < \infty$$时finite $$p$$-variation蕴含finite $$q$$-variation. 
-如果$$g$$连续且of finite variation，那么它的quadratic variation为$$0$$. 直观地来看，当$$g$$连续且$$\delta_n \rightarrow 0$$时，求和中的项可视为无穷小量. 如果对无穷小量求和有限，则对其作平方得到的高阶无穷小量求和应当为$$0$$.
+如果$$g$$连续且of finite variation，那么它的quadratic variation为$$0$$. 直观地来看，当$$g$$连续且$$\delta_n \rightarrow 0$$时，variation定义式求和中的项可视为无穷小量. 如果对无穷小量求和有限，则对其作平方得到的高阶无穷小量求和应当为$$0$$.
 
 我们还可以定义quadratic covariation (or simply covariation)
 
