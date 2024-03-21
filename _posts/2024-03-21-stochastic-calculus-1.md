@@ -32,7 +32,7 @@ where $$\delta_n = \max_{1 \le i \ge n}(t_i - t_{i-1})$$. The supremum is taken 
 
 显然，$$V_g(t)$$是单调递增的. 如果对于所有的$$t$$我们都有$$V_g(t) < \infty$$，那么我们称$$g$$ is of finite variation. 如果$$\sup_t V_g(t) < \infty$$即对所有的$$t$$有$$V_g(t) < C$$，其中$$C$$为常量, 那么我们称$$g$$ is of bounded variation.
 
-直观地，$$V_g([a,b])$$可看作$$g$$的取值在$$[a,b]$$上的变化的总和. Then as we can expect, if $$g(t)$$ is differentiable with continuous derivative $$g'(t)$$, $$g(t) = \int_0^t g'(s)ds$$ and $$g(t) = \int_0^t \lvert g'(s) \rvert ds < \infty$$, then $$V_g(t) \int_0^t \lvert g'(s) \rvert ds$$. 此时有$$g$$ is of finite variation.
+直观地，$$V_g([a,b])$$可看作$$g$$的取值在$$[a,b]$$上的变化的总和. 那么我们可以预料，如果$$g(t)$$可导，有连续的导数$$g'(t)$$，$$g(t) = \int_0^t g'(s)ds$$且$$g(t) = \int_0^t \lvert g'(s) \rvert ds < \infty$$，那么$$V_g(t) \int_0^t \lvert g'(s) \rvert ds$$. 此时有$$g$$ is of finite variation.
 
 # Quadratic Variation
 类似地，我们可以定义quadratic variation
