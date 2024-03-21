@@ -16,8 +16,9 @@ toc:
 - *Introduction to Stochastic Calculus with Applications, Third Edition* by Fima C Klebaner
 - *An Introduction to Stochastic Differential Equations* by Lawrence C. Evans
 
-本笔记将介绍一些数学分析/概率论中的概念. 随机分析中经常涉及这些概念，但在面向工科专业开设的数学分析/概率论课程一般很少讲解.
+本笔记将介绍一些微积分/概率论中的概念. 随机分析中经常涉及这些概念，但在面向工科专业开设的微积分/概率论课程一般很少讲解.
 
+# 微积分拾遗
 # Variation
 The variation of a funtion of real variable $$g$$ over the interval $$[a,b]$$ is defined as
 
@@ -53,3 +54,5 @@ where $$\delta_n = \max_{1 \le i \ge n}(t_i - t_{i-1})$$. The supremum is taken 
 If $$f$$ is continuous and $$g$$ is of finite variation, then their covariation is 0.
 
 Polarization Identity holds for covariation $$[f,g](t) = \frac{1}{2}([f + g,f + g](t) - [f,f](t) - [g,g](t))$$, so covariation is symmetric and bilinear.
+
+# 概率论拾遗
