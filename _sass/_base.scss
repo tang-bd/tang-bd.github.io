@@ -5,7 +5,7 @@
 // Typography
 
 @font-face {
-  font-family: 'Noto Serif';
+  font-family: 'Noto Seri SC';
   src: url("../assets/fonts/NotoSerifSC-Regular.otf") format("opentype");
 }
 
@@ -22,7 +22,7 @@ li,
 span,
 strong {
   color: var(--global-text-color);
-  font-family: Georgia, 'Times New Roman', 'Noto Serif', Times, serif
+  font-family: Georgia, 'Times New Roman', 'Noto Serif SC', Times, serif
 }
 
 hr {
