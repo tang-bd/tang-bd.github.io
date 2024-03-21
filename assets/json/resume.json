@@ -10,7 +10,6 @@
   "education": [
     {
       "institution": "Tsinghua University",
-      "location": "Beijing, China",
       "url": "https://www.tsinghua.edu.cn/",
       "area": "Computer Science and Technology",
       "studyType": "Bachelor's Degree",
@@ -19,7 +18,6 @@
     },
     {
       "institution": "Zhixin High School",
-      "location": "Guangzhou, China",
       "url": "http://www.zhixinhs.cn/",
       "studyType": "High School Diploma",
       "startDate": "2018",
