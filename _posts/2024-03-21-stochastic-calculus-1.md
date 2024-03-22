@@ -102,7 +102,7 @@ Y = \begain{cases*}
 a_1 & on $A_1$ \\
 a_2 & on $A_2$ \\
 \vdots & \\
-a_m & on $A_m$ \\
+a_m & on $A_m$
 \end{cases*}
 $$
 
@@ -113,7 +113,7 @@ E(X \vert Y) = \begain{cases*}
 \frac{1}{P(A_1)} \int_{A_1}XdP & on $A_1$ \\
 \frac{1}{P(A_2)} \int_{A_2}XdP & on $A_2$ \\
 \vdots & \\
-\frac{1}{P(A_m)} \int_{A_m}XdP & on $A_m$ \\
+\frac{1}{P(A_m)} \int_{A_m}XdP & on $A_m$
 \end{cases*}
 $$
 
