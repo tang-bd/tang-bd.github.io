@@ -98,23 +98,23 @@ x(t) = e^{-G(t)}\int_0^t(e^{G(s)}k(s))ds + x(0)e^{G(0) - G(t)}
 考虑在概率空间$$(\Omega, \mathcal{F}, P)$$上定义的简单随机变量$$Y = \sum_{i = 1}^m a_i I_{A_i}$$, 则有
 
 $$
-Y = \begain{cases*}
-a_1 & on $A_1$ \\
-a_2 & on $A_2$ \\
+Y = \begin{cases}
+a_1 & \text{on} A_1 \\
+a_2 & \text{on} A_2 \\
 \vdots & \\
-a_m & on $A_m$
-\end{cases*}
+a_m & \text{on} A_m \\
+\end{cases}
 $$
 
 已知$$Y$$时, 我们对另一个$$\Omega$$上的随机变量$$X$$能作出的最好的估计是什么呢？若$$Y(\omega)$$已知, 则我们能知道$$A_1, A_2, \cdots, A_m$$中哪个事件包含$$\omega$$. 那么, 我们对$$X$$能作出的最好的估计即是$$X$$在每个对应时间上的期望.
 
 $$
-E(X \vert Y) = \begain{cases*}
-\frac{1}{P(A_1)} \int_{A_1}XdP & on $A_1$ \\
-\frac{1}{P(A_2)} \int_{A_2}XdP & on $A_2$ \\
+E(X \vert Y) = \begin{cases}
+\frac{1}{P(A_1)} \int_{A_1}XdP & \text{on} A_1 \\
+\frac{1}{P(A_2)} \int_{A_2}XdP & \text{on} A_2 \\
 \vdots & \\
-\frac{1}{P(A_m)} \int_{A_m}XdP & on $A_m$
-\end{cases*}
+\frac{1}{P(A_m)} \int_{A_m}XdP & \text{on} A_m \\
+\end{cases}
 $$
 
 由此可知$$E(X \vert Y)$$是$$\mathcal{F}$$-measurable的, 且$$\int_A XdP = \int_A E(X \vert Y)dP$$ for all $$A \in \mathcal{F}$$. 注意到, $$E(X \vert Y)$$实际上与$$Y$$的取值无关. 因此, 我们如下定义条件期望. Let $$(\Omega, \mathcal{U}, P)$$ be a probability space and suppose $$\mathcal{V} \subseteq \mathcal{U}$$ is a $$\sigma$$-algebra. If $$X : \Omega \mapsto \mathbb{R}^n$$ is an integrable random variable, we define $$E(X \vert \mathcal{V})$$ to be any random variable on $$\Omega$$ such that $$E(X \vert \mathcal{V})$$ is $$\mathcal{V}$$-measurable and $$\int_A XdP = \int_A E(X \vert \mathcal{V})dP$$ for all $$A \in \mathcal{V}$$.
