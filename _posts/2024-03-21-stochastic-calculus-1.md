@@ -99,10 +99,10 @@ x(t) = e^{-G(t)}\int_0^t(e^{G(s)}k(s))ds + x(0)e^{G(0) - G(t)}
 
 $$
 Y = \begin{cases}
-a_1 & \text{on} A_1 \\
-a_2 & \text{on} A_2 \\
+a_1 & \text{on } A_1 \\
+a_2 & \text{on } A_2 \\
 \vdots & \\
-a_m & \text{on} A_m \\
+a_m & \text{on } A_m \\
 \end{cases}
 $$
 
@@ -110,10 +110,10 @@ $$
 
 $$
 E(X \vert Y) = \begin{cases}
-\frac{1}{P(A_1)} \int_{A_1}XdP & \text{on} A_1 \\
-\frac{1}{P(A_2)} \int_{A_2}XdP & \text{on} A_2 \\
-\vdots & \\
-\frac{1}{P(A_m)} \int_{A_m}XdP & \text{on} A_m \\
+\frac{1}{P(A_1)} \int_{A_1}XdP & \text{on } A_1 \\
+\frac{1}{P(A_2)} \int_{A_2}XdP & \text{on } A_2 \\
+\quad \vdots & \\
+\frac{1}{P(A_m)} \int_{A_m}XdP & \text{on } A_m \\
 \end{cases}
 $$
 
