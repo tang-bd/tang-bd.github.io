@@ -12,7 +12,7 @@ toc:
 # 前言
 宋飏在其著名论文*Score-Based Generative Modeling through Stochastic Differential Equations*中凭借基于SDE的框架统一了score-based generative modeling与diffusion probablistic modeling两大生成式模型范式. 理解此论文需要较好的随机分析基础, 上手难度较大, 而笔者并非数学/金融相关专业, 根本学不会一点 (笑). 笔者将尽力尝试在本系列笔记中整理随机分析的要点. 由于笔者学习随机分析的目的只是为了更深入地理解diffusion models, 内容将十分简略, 理解或许也会有不少偏差之处. 为写作方便, 行文将中英混杂.
 
-本系列笔记的主要参考资料为
+本系列笔记在很大程度上参考了以下资料
 1. *Introduction to Stochastic Calculus with Applications, Third Edition* by Fima C. Klebaner
 2. *An Introduction to Stochastic Differential Equations* by Lawrence C. Evans
 3. *An Informal Introduction to Stochastic Calculus with Applications* by Ovidiu Calin
