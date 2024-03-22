@@ -75,7 +75,7 @@ $$f$$ satisfies a Hölder condition (Hölder continuous) of order $$0 < \alpha \
 
 A Lipschitz condition is a Hölder condition with $$\alpha = 1$$.
 
-显然，$$ 0 < \alpha < \beta \le \infty$$时，一个在$$\[a,b\]$$上$$\beta$$阶Hölder连续的函数也是$$\alpha$$阶Hölder连续的，且Hölder连续的函数也是一致连续的.
+显然，$$ 0 < \alpha < \beta \le \infty$$时，一个在$$[a,b]$$上$$\beta$$阶Hölder连续的函数也是$$\alpha$$阶Hölder连续的，且Hölder连续的函数也是一致连续的.
 
 直观上，如果一个函数在某区间上满足Hölder连续，那么这意味着函数在该区间上的变化速率受到$$\lvert x - y \rvert^{\alpha}$$的控制，函数图像中不会过于有陡峭的变化. 如果满足Lipschitz连续，则进一步有函数的变化速率是有界的，即函数图像上任意两点之间的斜率是有界的.
 
@@ -91,7 +91,7 @@ A Lipschitz condition is a Hölder condition with $$\alpha = 1$$.
 可采用integrating factor法解此类方程. 具体而言，选取$$G'(t) = g(t)$$，在方程两边同时乘以$$e^{G(t)}$$则有
 
 \begin{equation}
-d(e^{G(t)}x(t))/dt = e^{G(t)}k(t)
+\frac{d(e^{G(t)}x(t))}{dt} = e^{G(t)}k(t)
 \end{equation}
 
 积分并整理即可解得
