@@ -119,7 +119,7 @@ $$
 
 由此可知$$E(X \vert Y)$$是$$\mathcal{F}$$-measurable的, 且$$\int_A XdP = \int_A E(X \vert Y)dP$$ for all $$A \in \mathcal{F}$$. 注意到, $$E(X \vert Y)$$实际上与$$Y$$的取值无关. 因此, 我们如下定义条件期望. Let $$(\Omega, \mathcal{U}, P)$$ be a probability space and suppose $$\mathcal{V} \subseteq \mathcal{U}$$ is a $$\sigma$$-algebra. If $$X : \Omega \mapsto \mathbb{R}^n$$ is an integrable random variable, we define $$E(X \vert \mathcal{V})$$ to be any random variable on $$\Omega$$ such that $$E(X \vert \mathcal{V})$$ is $$\mathcal{V}$$-measurable and $$\int_A XdP = \int_A E(X \vert \mathcal{V})dP$$ for all $$A \in \mathcal{V}$$.
 
-直观上, 也可以将条件期望理解为线性空间$$L^2(\Omega, \mathcal{U})$$ which consists of all real-valued, $$\mathcal{U}$$-measurable random variables $$Y$$ such that $$\Vert Y \Vert = (\int_{\Omega}Y^2dP)^{\frac{1}{2}} < \infty$$中随机变量$$X$$向子空间$$L^2(\Omega, \mathcal{V})$$的投影.
+直观上, 我们也可以将条件期望$$E(X \vert \mathcal{V})$$理解为线性空间$$L^2(\Omega, \mathcal{U})$$ which consists of all real-valued, $$\mathcal{U}$$-measurable random variables $$Y$$ such that $$\Vert Y \Vert = (\int_{\Omega}Y^2dP)^{\frac{1}{2}} < \infty$$中随机变量$$X$$向子空间$$L^2(\Omega, \mathcal{V})$$的投影.
 
 条件期望有以下重要性质
 1. If $$X$$ is $$\mathcal{V}$$-measurable, then $$E(X \vert \mathcal{V}) = X \quad a.s.$$
