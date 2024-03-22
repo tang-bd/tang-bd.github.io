@@ -66,11 +66,11 @@ $$f$$ satisfies a Hölder condition (Hölder continuous) of order $$0 < \alpha \
 
 A Lipschitz condition is a Hölder condition with $$\alpha = 1$$. 可以证明, 当Hölder condition中$$\alpha > 1$$时满足条件的函数必为常数.
 
-显然, $$ 0 < \alpha < \beta \le \infty$$时, 一个在bounded set $$[a,b]$$上$$\beta$$阶Hölder连续的函数也是$$\alpha$$阶Hölder连续的, 且Hölder连续的函数也是一致连续的.
+显然, $$ 0 < \alpha < \beta \le \infty$$时, 一个在bounded set $$[a,b]$$上$$\beta$$阶Hölder连续的函数也是$$\alpha$$阶Hölder连续的, 且凡Hölder连续的函数也是一致连续的.
 
-直观上, 如果一个函数在某区间上满足Hölder连续, 那么这意味着函数在该区间上的变化速率受到$$\lvert x - y \rvert^{\alpha}$$的控制, 函数图像中不会过于有陡峭的变化. 如果满足Lipschitz连续, 则进一步有函数的变化速率是有界的, 即函数图像上任意两点之间的斜率是有界的, 此时函数也是几乎处处可导的.
+直观上, 如果一个函数在某区间上满足Hölder连续, 那么这意味着函数在该区间上的变化速率受到$$\lvert x - y \rvert^{\alpha}$$的控制, 函数图像中不会有过于陡峭的变化. 如果满足Lipschitz连续, 则函数的变化速率是有界的, 即函数图像上任意两点之间的斜率是有界的,. 此时函数也是几乎处处可导的.
 
-例如在$$[0,3]$$上定义$$g(x) = \sqrt(x)$$, 则对$$0 < \alpha \le \frac{1}{2}$$, $$g$$满足Hölder条件, 而对$$\frac{1}{2} < \alpha \le 1$$, $$g$$不满足Hölder条件.
+例如在$$[0,3]$$上定义$$g(x) = \sqrt{x}$$, 则对$$0 < \alpha \le \frac{1}{2}$$, $$g$$满足Hölder条件, 而对$$\frac{1}{2} < \alpha \le 1$$, $$g$$不满足Hölder条件.
 
 ## 一阶线性微分方程的解
 一阶线性方程定义为关于未知函数及其导数线性, 其形式为
@@ -110,16 +110,16 @@ $$
 
 $$
 E(X \vert Y) = \begain{cases}
-\frac{1}{P(A_1)} \int_{A_1}XdP & & \text{on} A_1 \\
-\frac{1}{P(A_2)} \int_{A_2}XdP & & \text{on} A_2 \\
- & \vdots & \\
-\frac{1}{P(A_m)} \int_{A_m}XdP & & \text{on} A_m \\
+\frac{1}{P(A_1)} \int_{A_1}XdP & \text{on} A_1 \\
+\frac{1}{P(A_2)} \int_{A_2}XdP & \text{on} A_2 \\
+\vdots & \\
+\frac{1}{P(A_m)} \int_{A_m}XdP & \text{on} A_m \\
 \end{cases}
 $$
 
-由此可知$$E(X \vert Y)$$是$$\mathcal{F}$$-measurable的, 且$$\int_A XdP = \int_A E(X \vert Y)dP$$ for all $$A \in \mathcal{F}$$. 注意到, $$E(X \vert Y)$$实际上与$$Y$$的取值无关. 因此, 我们如下定义条件期望. Let $$(\Omega, \mathcal{U}, P)$$ be a probability space and suppose $$\mathcal{V} \subseteq \mathcal{U}$$ is a $$\sigme$$-algebra. If $$X : \Omega \mapsto \mathbb{R}^n$$ is an integrable random variable, we define $$E(X \vert \mathcal{V})$$ to be any random variable on $$\Omega$$ such that $$E(X \vert \mathcal{V})$$ is $$\mathcal{V}$$-measurable and $$\int_A XdP = \int_A E(X \vert \mathcal{V})dP for all $$A \in \mathcal{V}$$.
+由此可知$$E(X \vert Y)$$是$$\mathcal{F}$$-measurable的, 且$$\int_A XdP = \int_A E(X \vert Y)dP$$ for all $$A \in \mathcal{F}$$. 注意到, $$E(X \vert Y)$$实际上与$$Y$$的取值无关. 因此, 我们如下定义条件期望. Let $$(\Omega, \mathcal{U}, P)$$ be a probability space and suppose $$\mathcal{V} \subseteq \mathcal{U}$$ is a $$\sigma$$-algebra. If $$X : \Omega \mapsto \mathbb{R}^n$$ is an integrable random variable, we define $$E(X \vert \mathcal{V})$$ to be any random variable on $$\Omega$$ such that $$E(X \vert \mathcal{V})$$ is $$\mathcal{V}$$-measurable and $$\int_A XdP = \int_A E(X \vert \mathcal{V})dP$$ for all $$A \in \mathcal{V}$$.
 
-直观上, 也可以将条件期望理解为linear space $$L^2(\Omega, \mathcal{U})$$ which consists of all real-valued, $$\mathcal{U}$$-measurable random variables $$Y$$ such that $$\Vert Y \Vert = (\int_{\Omega}Y^2dP)^{\frac{1}{2}} < \infty$$中随机变量$$X$$向子空间$$L^2(\Omega, \mathcal{V})$$的投影.
+直观上, 也可以将条件期望理解为线性空间$$L^2(\Omega, \mathcal{U})$$ which consists of all real-valued, $$\mathcal{U}$$-measurable random variables $$Y$$ such that $$\Vert Y \Vert = (\int_{\Omega}Y^2dP)^{\frac{1}{2}} < \infty$$中随机变量$$X$$向子空间$$L^2(\Omega, \mathcal{V})$$的投影.
 
 条件期望有以下重要性质
 1. If $$X$$ is $$\mathcal{V}$$-measurable, then $$E(X \vert \mathcal{V}) = X \quad a.s.$$
@@ -129,7 +129,7 @@ $$
 
 ## 随机过程
 
-A stochastic process on the probability space $$(\Omega, \mathcal{F}, P)$$ is a family of random variables $$X_t$$ parameterized by $$t \in \boldsymbol{T}$$, where $$\boldsymbol{T} \subset \mathbb{R}$$. 如果$$\textbf{T}$$是区间则称$$X(t)$$为连续时间随机过程. 如果$$\textbf{T}$$中的元素是可数的则称$$X_t$$为离散时间随机过程.
+A stochastic process on the probability space $$(\Omega, \mathcal{F}, P)$$ is a family of random variables $$X_t$$ parameterized by $$t \in \textbf{T}$$, where $$\textbf{T} \subset \mathbb{R}$$. 如果$$\textbf{T}$$是区间则称$$X(t)$$为连续时间随机过程. 如果$$\textbf{T}$$中的元素是可数的则称$$X_t$$为离散时间随机过程.
 
 The evolution in time of a given state of the world $$\omega \in \Omega$$ given by the function $$t \mapsto X(t, \omega)$$ is called a path or realization of $$X(t)$$.
 
@@ -141,11 +141,11 @@ $$
 \mathbb{F} = {\mathcal{F}_0, \mathcal{F}_1, \cdots, \mathcal{F}_t, \cdots, \mathcal{F}_T} \quad \mathcal{F}_t \subset \mathcal{F}_{t+1} \subset \mathcal{F}
 $$
 
-$$\mathbb{F}$$ is used to model a flow of information. $$\sigma$$-field $$\mathcal{F}_t$$包含所有截至时间$$t$$已知的信息, 即已经发生的事件及没有发生的事件. 随着时间的流逝, 观测者知道越来越多的信息, 即$$\mathcal{F}_t$$对样本空间$$\Omega$$作越来越精细的分割.
+$$\mathbb{F}$$ is used to model a flow of information. $$\sigma$$-field $$\mathcal{F}_t$$包含所有截至时间$$t$$已知的信息, 即已经发生的事件及没有发生的事件. 随着时间的流逝, 观测者知道越来越多的信息, $$\mathcal{F}_t$$对样本空间$$\Omega$$作越来越精细的分割.
 
 $$\mathcal{F}_t = \sigma({X_s, 0 \le s \le t})$$称为随机过程$$X_t$$的natural filtration.
 
-A stochastic process is called adapted to filtration $$\mathbb{F}$$ if for all $$t$$, $$X_t$$ is a random variable on $$\mathcal{F}_t$$, that is, if $$X_t$$ is $$\mathcal{F}_t$$-measurable.
+A stochastic process is called adapted to filtration $$\mathbb{F}$$ if for all $$t$$, $$X(t)$$ is a random variable on $$\mathcal{F}_t$$, that is, if $$X(t)$$ is $$\mathcal{F}_t$$-measurable.
 
 ## Martingale
 
