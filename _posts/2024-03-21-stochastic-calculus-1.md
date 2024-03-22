@@ -33,7 +33,7 @@ where $$\delta_n = \max_{1 \le i \le n}(t_i^n - t_{i-1}^n)$$. The supremum is ta
 
 显然，$$V_g(t)$$是单调递增的. 如果对于所有的$$t$$我们都有$$V_g(t) < \infty$$，那么我们称$$g$$ is of finite variation. 如果$$\sup_t V_g(t) < \infty$$即对所有的$$t$$满足$$V_g(t) < C$$，其中$$C$$为常量, 那么我们称$$g$$ is of bounded variation.
 
-直观地，$$V_g([a,b])$$可看作$$g$$的取值在$$[a,b]$$上的变化的总和. 那么我们可以预料，如果$$g(t)$$可导，有连续的导数$$g'(t)$$，$$g(t) = \int_0^t g'(s)ds$$且满足$$g(t) = \int_0^t \lvert g'(s) \rvert ds < \infty$$，那么$$V_g(t) = \int_0^t \lvert g'(s) \rvert ds$$. 此时有$$g$$ is of finite variation.
+直观上，$$V_g([a,b])$$可看作$$g$$的取值在$$[a,b]$$上的变化的总和. 那么我们可以预料，如果$$g(t)$$可导，有连续的导数$$g'(t)$$，$$g(t) = \int_0^t g'(s)ds$$且满足$$g(t) = \int_0^t \lvert g'(s) \rvert ds < \infty$$，那么$$V_g(t) = \int_0^t \lvert g'(s) \rvert ds$$. 此时有$$g$$ is of finite variation. 相反地，在$$[a,b]$$上有finite variation的函数在$$[a,b]$$上几乎处处可导.
 
 ## Quadratic Variation
 类似地，我们可以定义quadratic variation
@@ -43,7 +43,7 @@ where $$\delta_n = \max_{1 \le i \le n}(t_i^n - t_{i-1}^n)$$. The supremum is ta
 \end{equation}
 
 实际上，可以对任意的函数$$\Phi$$定义$$\Phi$$-variation. 若取$$\Phi(u) = u^p$$，则$$ 1 \le p < q < \infty$$时finite $$p$$-variation蕴含finite $$q$$-variation. 
-如果$$g$$连续且of finite variation，那么它的quadratic variation为$$0$$. 直观地来看，当$$g$$连续且$$\delta_n \rightarrow 0$$时，variation定义式求和中的项可视为无穷小量. 如果对无穷小量求和有限，则对其作平方得到的高阶无穷小量求和应当为$$0$$.
+如果$$g$$连续且of finite variation，那么它的quadratic variation为$$0$$. 直观上，当$$g$$连续且$$\delta_n \rightarrow 0$$时，variation定义式求和中的项可视为无穷小量. 如果对无穷小量求和有限，则对其作平方得到的高阶无穷小量求和应当为$$0$$.
 
 我们还可以定义quadratic covariation (or simply covariation)
 
@@ -65,7 +65,39 @@ The Stieltjes integral of $$f$$ with respect to a monotone function $$g$$ over a
 where $$a = t_0^n < t_1^n < \cdots < t_n^n = b$$, $$\delta_n = \max_{1 \le i \le n}(t_i^n - t_{i-1}^n)$$ and $$t_{i - 1}^n \le \xi_i^n \le t_i^n$$.
 
 ## Lipschitz and Hölder Conditions
+Lipschitz and Hölder Conditions描述了连续函数的子类. 它们作为系数的条件出现在ODE与SDE的解的存在性与唯一性的结果中.
+
+$$f$$ satisfies a Hölder condition (Hölder continuous) of order $$0 < \alpha \le 1$$ on $$[a,b]$$ if there is a constant $$K > 0$$ so that for all $$x, y \in [a,b]$$
+
+\begin{equation}
+\lvert f(x) - f(y) \rvert \le K \lvert x - y \rvert^{\alpha}
+\end{equation}
+
+A Lipschitz condition is a Hölder condition with $$\alpha = 1$$.
+
+显然，$$ 0 < \alpha < \beta \le \infty$$时，一个在$$\[a,b\]$$上$$\beta$$阶Hölder连续的函数也是$$\alpha$$阶Hölder连续的，且Hölder连续的函数也是一致连续的.
+
+直观上，如果一个函数在某区间上满足Hölder连续，那么这意味着函数在该区间上的变化速率受到$$\lvert x - y \rvert^{\alpha}$$的控制，函数图像中不会过于有陡峭的变化. 如果满足Lipschitz连续，则进一步有函数的变化速率是有界的，即函数图像上任意两点之间的斜率是有界的.
+
 
 ## 一阶线性微分方程的解
+
+一阶线性方程定义为关于未知函数及其导数线性，其形式为
+
+\begin{equation}
+\frac{dx(t)}{dt} + g(t)x(t) = k(t)
+\end{equation}
+
+可采用integrating factor法解此类方程. 具体而言，选取$$G'(t) = g(t)$$，在方程两边同时乘以$$e^{G(t)}$$则有
+
+\begin{equation}
+d(e^{G(t)}x(t))/dt = e^{G(t)}k(t)
+\end{equation}
+
+积分并整理即可解得
+
+\begin{equation}
+x(t) = e^{-G(t)}\int_0^t(e^{G(s)}k(s))ds + x(0)e^{G(0) - G(t)}
+\end{equation}
 
 # 概率论拾遗
