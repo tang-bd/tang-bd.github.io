@@ -104,7 +104,7 @@ x(t) = e^{-G(t)}\int_0^t(e^{G(s)}k(s))ds + x(0)e^{G(0) - G(t)}
 
 ## 随机过程
 
-A stochastic process on the probability space $$(\Omega, \mathcal{F}, P)$$ is a family of random variables $$X_t$$ parameterized by $$t \in \textbb{T}$$, where $$\textbb{T} \subset \mathbb{R}$$. 如果$$\textbf{T}$$是区间则称$$X_t$$为连续时间随机过程. 如果$$\textbf{T}$$中的元素是可数的则称$$X_t$$为离散时间随机过程.
+A stochastic process on the probability space $$(\Omega, \mathcal{F}, P)$$ is a family of random variables $$X_t$$ parameterized by $$t \in \boldsymbol{T}$$, where $$\boldsymbol{T} \subset \mathbb{R}$$. 如果$$\textbf{T}$$是区间则称$$X_t$$为连续时间随机过程. 如果$$\textbf{T}$$中的元素是可数的则称$$X_t$$为离散时间随机过程.
 
 The evolution in time of a given state of the world $$\omega \in \Omega$$ given by the function $$t \longmapsto X_t(\omega)$$ is called a path or realization of $$X_t$$.
 
@@ -113,9 +113,9 @@ The evolution in time of a given state of the world $$\omega \in \Omega$$ given 
 A filtration $$\mathbb{F}$$ is the collection of $$\sigma$$-fields
 
 $$
-\mathbb{F} = {\mathcal{F}_0, \mathcal{F}_1, \cdots, \mathcal{F}_t, \cdots, \mathcal{F}_T} \mathcal{F}_t \subset \mathcal{F}_{t+1} \subset \mathcal{F}
+\mathbb{F} = {\mathcal{F}_0, \mathcal{F}_1, \cdots, \mathcal{F}_t, \cdots, \mathcal{F}_T} \quad \mathcal{F}_t \subset \mathcal{F}_{t+1} \subset \mathcal{F}
 $$
 
-$$\mathbb{F}$$ is used to model a flow of information. $$\sigma$$-field $$\mathcal{F}_t$$包含所有截至时间$$t$$已知的信息，即已经发生的事件及未发生的事件. 至随着时间的流逝，观测者知道越来越多的信息，即$$\mathcal{F}_t$$对样本空间$$\Omega$$作越来越精细的分割.
+$$\mathbb{F}$$ is used to model a flow of information. $$\sigma$$-field $$\mathcal{F}_t$$包含所有截至时间$$t$$已知的信息，即已经发生的事件及未发生的事件. 随着时间的流逝，观测者知道越来越多的信息，即$$\mathcal{F}_t$$对样本空间$$\Omega$$作越来越精细的分割.
 
 A stochastic process is called adapted to filtration $$\mathbb{F}$$ if for all $$t$$, $$X_t$$ is a random variable on $$\mathcal{F}_t$$, that is, if $$X_t$$ is $$\mathcal{F}_t$$-measurable.
