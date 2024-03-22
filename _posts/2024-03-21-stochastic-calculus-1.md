@@ -99,10 +99,10 @@ x(t) = e^{-G(t)}\int_0^t(e^{G(s)}k(s))ds + x(0)e^{G(0) - G(t)}
 
 $$
 Y = \begain{cases}
-a_1 & & \text{on} A_1 \\
-a_2 & & \text{on} A_2 \\
- & \vdots & \\
-a_m & & \text{on} A_m \\
+a_1 & \text{on} A_1 \\
+a_2 & \text{on} A_2 \\
+\vdots & \\
+a_m & \text{on} A_m \\
 \end{cases}
 $$
 
