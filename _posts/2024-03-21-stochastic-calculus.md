@@ -37,7 +37,7 @@ where $$\delta_n = \max_{1 \le i \le n}(t_i^n - t_{i-1}^n)$$. The supremum is ta
 类似地, 我们可以定义quadratic variation
 
 $$
-\[g\]([a,b]) = \sup \sum_{i=1}^{n}(g(t_i^n)-g(t_{i-1}^n))^2 = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n}(g(t_i^n)-g(t_{i-1}^n))^2
+[g]([a,b]) = \sup \sum_{i=1}^{n}(g(t_i^n)-g(t_{i-1}^n))^2 = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n}(g(t_i^n)-g(t_{i-1}^n))^2
 $$
 
 实际上, 可以对任意的函数$$\Phi$$定义$$\Phi$$-variation. 若取$$\Phi(u) = u^p$$, 则$$ 1 \le p < q < \infty$$时finite $$p$$-variation蕴含finite $$q$$-variation. 
@@ -46,7 +46,7 @@ $$
 我们还可以定义quadratic covariation (or simply covariation)
 
 $$
-\[f,g\]([a,b]) = \sup \sum_{i=1}^{n}(f(t_i^n)-f(t_{i-1}^n))(g(t_i^n)-g(t_{i-1}^n)) = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n}(f(t_i^n)-f(t_{i-1}^n))(g(t_i^n)-g(t_{i-1}^n))
+[f,g]([a,b]) = \sup \sum_{i=1}^{n}(f(t_i^n)-f(t_{i-1}^n))(g(t_i^n)-g(t_{i-1}^n)) = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n}(f(t_i^n)-f(t_{i-1}^n))(g(t_i^n)-g(t_{i-1}^n))
 $$
 
 如果$$f$$连续且$$g$$ is of finite variation, 那么它们的covariation为$$0$$.
@@ -159,18 +159,21 @@ then $$X(t)$$ is called a martingale.
 ## 定义
 Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下条件的随机过程.
 
-1. $$B(0) = 0 \quad a.s.$$
-2. $$B(t) - B(s)$$ is $$N(0,t-s)$$ for all $$t \ge s \ge 0$$.
-3. For all times $$0 < t_1 < t_2 < \cdots < t_n$$, the random variables $$B(t_1), B(t_2)-B(t_1), \cdots, B(t_n) - B(t_{n-1})$$ are independent increments.
-4. $$B(t)$$ is continuous in $$t$$.
+1. $$B(t) - B(s)$$ is $$N(0,t-s)$$ for all $$t \ge s \ge 0$$.
+2. For all times $$0 < t_1 < t_2 < \cdots < t_n$$, $$B(t_1), B(t_2)-B(t_1), \cdots, B(t_n) - B(t_{n-1})$$ are independent increments.
+3. $$B(t)$$ is continuous in $$t$$.
 
-直观上, Brownian motion可看作无穷多微扰$$dB = N(0, dt)$$的和.
+直观上, Brownian motion可看作微扰$$dB = N(0, dt)$$的和.
 
 ## 基本性质
 
 1. 由$$t \ge s \ge 0$$时$E(B(t) - B(s)) = 0, Var(B(t) - B(s)) = t$可知, $$E((B(t) - B(s))^2) = t - s$$.
-2. $$E(B(s)B(t)) = \min(s,t)$$. 证明: $$t > s > 0$$时$$E(B(s)B(t)) = E((B(s) - B(0))(B(t) - B(s)) + B(s)^2) = E(B(s) - B(0))E(B(t) - B(s)) + E(B(s)^2) = s.
-3. Brownian motion是一个Martingale.
+2. $$E(B(s)B(t)) = \min(s,t)$$. 证明: $$t > s > 0$$时$$E(B(s)B(t)) = E((B(s) - B(0))(B(t) - B(s)) + B(s)^2) = E(B(s) - B(0))E(B(t) - B(s)) + E(B(s)^2) = s$$.
+3. 显然, Brownian motion是一个martingale.
 4. 
 
 ## 路径性质
+
+# 随机积分
+
+# 随机微分方程
