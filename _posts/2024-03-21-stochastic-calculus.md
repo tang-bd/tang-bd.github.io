@@ -121,7 +121,7 @@ $$
 
 条件期望有以下重要性质
 1. If $$X$$ is $$\mathcal{V}$$-measurable, then $$E(X \vert \mathcal{V}) = X \quad a.s.$$
-2. If $$X$$ is $$\mathcal{V}$$-measurable and $$XY$$ is integrable, then $$E(XY \vert \mathcal{V}) = $XE(Y \vert \mathcal{V}) \quad a.s.$$
+2. If $$X$$ is $$\mathcal{V}$$-measurable and $$XY$$ is integrable, then $$E(XY \vert \mathcal{V}) = XE(Y \vert \mathcal{V}) \quad a.s.$$
 3. If $$X$$ is independent of $$\mathcal{V}$$, then $$E(X \vert \mathcal{V}) = E(X) \quad a.s.$$
 4. If $$\mathcal{W} \subseteq \mathcal{V}$$, we have $$E(X \vert \mathcal{W}) = E(E(X \vert \mathcal{V}) \vert \mathcal{W}) = E(E(X \vert \mathcal{W}) \vert \mathcal{V}) \quad a.s.$$
 
@@ -130,6 +130,14 @@ $$
 A stochastic process on the probability space $$(\Omega, \mathcal{F}, P)$$ is a family of random variables $$X_t$$ parameterized by $$t \in \textbf{T}$$, where $$\textbf{T} \subset \mathbb{R}$$. 如果$$\textbf{T}$$是区间则称$$X(t)$$为连续时间随机过程. 如果$$\textbf{T}$$中的元素是可数的则称$$X_t$$为离散时间随机过程.
 
 The evolution in time of a given state of the world $$\omega \in \Omega$$ given by the function $$t \mapsto X(t, \omega)$$ is called a path or realization of $$X(t)$$.
+
+如果随机过程$$X(t)$$在某一时间的分布与其过去独立, 而只取决于当前的状态, 即满足
+
+$$
+P(X(t + s) \le y \vert \mathcal{F_t}) = P(X(t + s) \le y \vert X(t)) \quad a.s. \quad s > 0
+$$
+
+则称其为Markov process.
 
 ## Filtration
 
@@ -167,12 +175,22 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 
 ## 基本性质
 
-1. 由$$t \ge s \ge 0$$时$E(B(t) - B(s)) = 0, Var(B(t) - B(s)) = t$可知, $$E((B(t) - B(s))^2) = t - s$$.
-2. $$E(B(s)B(t)) = \min(s,t)$$. 证明: $$t > s > 0$$时$$E(B(s)B(t)) = E((B(s) - B(0))(B(t) - B(s)) + B(s)^2) = E(B(s) - B(0))E(B(t) - B(s)) + E(B(s)^2) = s$$.
+1. 由$$t \ge s \ge 0$$时$$E(B(t) - B(s)) = 0, Var(B(t) - B(s)) = t$$可知, $$E((B(t) - B(s))^2) = t - s$$.
+2. $$Cov(B(s),B(t)) = E(B(s)B(t)) = \min(s,t)$$.
+
+证明: $$t > s > 0$$时$$Cov(B(s),B(t)) = E(B(s)B(t)) = E((B(s) - B(0))(B(t) - B(s)) + B^2(s)) = E(B(s) - B(0))E(B(t) - B(s)) + E(B^2(s)) = s$$.
 3. 显然, Brownian motion是一个martingale.
-4. 
+4. $$B(t)^2 - t$$也是一个martingale.
+
+证明: $$E(B^2(t + s) - (t + s) \vert \mathcal{F_t}) = B^2(t) + 2E(B(t)(B(t + s) - B(t)) \vert \mathcal{F_t}) + E((B(t + s) - B(t))^2 \vert \mathcal{F_t}) - (t + s)= B^2(t) - t$$
+
+如果随机过程$$X(t)$$是一个满足$$X^2(t) - t$$为martingale的连续martingale, 则$$X(t)$$为Brownian motion.
+
+5. Brownian motion具有Markov property.
 
 ## 路径性质
+
+## 构造
 
 # 随机积分
 
