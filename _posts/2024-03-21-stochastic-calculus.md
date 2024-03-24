@@ -191,7 +191,7 @@ then $$X(t)$$ is called a **martingale**.
   - 证明: $$t \ge s \ge 0$$时有$$Cov(B(s),B(t)) = E(B(s) - B(0))E(B(t) - B(s)) + E(B^2(s)) = s$$.
 3. 显然, Brownian motion是一个martingale.
 4. $$B(t)^2 - t$$也是一个martingale.
-  - 证明: 对任意的$$t, s \ge 0$$, 有$$\begin{align*}& E(B^2(t + s) - (t + s) \vert \mathcal{F_t}) & = B^2(t) + 2E(B(t)(B(t + s) - B(t)) \vert \mathcal{F_t}) + E((B(t + s) - B(t))^2 \vert \mathcal{F_t}) - (t + s) \\ & = B^2(t) - t \end{align*}$$
+  - 证明: 对任意的$$t, s \ge 0$$, 有$$\begin{align*}E(B^2(t + s) - (t + s) \vert \mathcal{F_t}) & = B^2(t) + 2E(B(t)(B(t + s) - B(t)) \vert \mathcal{F_t}) + E((B(t + s) - B(t))^2 \vert \mathcal{F_t}) - (t + s) \\ & = B^2(t) - t \end{align*}$$
   - 如果随机过程$$X(t)$$是一个满足$$X^2(t) - t$$为martingale的连续martingale, 则$$X(t)$$是Brownian motion.
 5. Brownian motion具有Markov property.
 
