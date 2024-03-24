@@ -175,12 +175,12 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 
 ## 基本性质
 
-1. 由$$t \ge s \ge 0$$时$$E(B(t) - B(s)) = 0, Var(B(t) - B(s)) = t$$可知, $$E((B(t) - B(s))^2) = t - s$$.
+1. 由$$t \ge s \ge 0$$时$$E(B(t) - B(s)) = 0, 且Var(B(t) - B(s)) = t$$可知, $$E((B(t) - B(s))^2) = t - s$$.
 2. $$Cov(B(s),B(t)) = E(B(s)B(t)) = \min(s,t)$$.
   - 证明: $$t \ge s \ge 0$$时有$$Cov(B(s),B(t)) = E(B(s) - B(0))E(B(t) - B(s)) + E(B^2(s)) = s$$.
 3. 显然, Brownian motion是一个martingale.
 4. $$B(t)^2 - t$$也是一个martingale.
-  - 证明: 对于任意的$$t, s \ge 0$$, 有$$E(B^2(t + s) - (t + s) \vert \mathcal{F_t}) = B^2(t) + 2E(B(t)(B(t + s) - B(t)) \vert \mathcal{F_t}) + E((B(t + s) - B(t))^2 \vert \mathcal{F_t}) - (t + s)= B^2(t) - t$$
+  - 证明: 对任意的$$t, s \ge 0$$, 有$$\begin{align}& E(B^2(t + s) - (t + s) \vert \mathcal{F_t}) \\ = & B^2(t) + 2E(B(t)(B(t + s) - B(t)) \vert \mathcal{F_t}) + E((B(t + s) - B(t))^2 \vert \mathcal{F_t}) - (t + s) \\ = & B^2(t) - t \end{align}$$
   - 如果随机过程$$X(t)$$是一个满足$$X^2(t) - t$$为martingale的连续martingale, 则$$X(t)$$为Brownian motion.
 5. Brownian motion具有Markov property.
 
