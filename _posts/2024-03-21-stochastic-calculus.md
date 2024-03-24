@@ -15,6 +15,7 @@ toc:
 本笔记主要基于以下文献
 1. *Introduction to Stochastic Calculus with Applications, Third Edition* by Fima C. Klebaner
 2. *An Introduction to Stochastic Differential Equations* by Lawrence C. Evans
+3. *An Informal Introduction to Stochastic Calculus with Applications* by Ovidiu Calin
 
 # 微积分拾遗
 ## Variation
@@ -28,7 +29,7 @@ where $$\delta_n = \max_{1 \le i \le n}(t_i^n - t_{i-1}^n)$$. The supremum is ta
 
 如果$$V_g([a,b])$$是有限的, 则我们称$$g$$为a function of finite variation on $$[a,b]$$. 如果$$g$$是$$t \ge 0$$的函数, 则可将$$g$$的variation function定义为关于$$t$$的函数$$V_g(t) = V_g([0,t])$$. 
 
-显然, $$V_g(t)$$是单调递增的. 如果对于所有的$$t$$我们都有$$V_g(t) < \infty$$, 那么我们称$$g$$ is of finite variation. 如果$$\sup_t V_g(t) < \infty$$即对所有的$$t$$满足$$V_g(t) < C$$, 其中$$C$$为常量, 那么我们称$$g$$ is of bounded variation.
+显然, $$V_g(t)$$是单调递增的. 如果对于所有的$$t$$我们都有$$V_g(t) < \infty$$, 那么我们称$$g$$ is of **finite** variation. 如果$$\sup_t V_g(t) < \infty$$即对所有的$$t$$满足$$V_g(t) < C$$, 其中$$C$$为常量, 那么我们称$$g$$ is of **bounded** variation.
 
 直观上, $$V_g([a,b])$$可看作$$g$$的取值在$$[a,b]$$上的变化的总和. 那么我们可以预料, 如果$$g(t)$$可导, 有连续的导数$$g'(t)$$, $$g(t) = \int_0^t g'(s)ds$$且满足$$g(t) = \int_0^t \lvert g'(s) \rvert ds < \infty$$, 那么$$V_g(t) = \int_0^t \lvert g'(s) \rvert ds$$. 此时有$$g$$ is of finite variation. 相反地, 在$$[a,b]$$上有finite variation的函数在$$[a,b]$$上几乎处处可导.
 
@@ -78,7 +79,7 @@ A Lipschitz condition is a Hölder condition with $$\alpha = 1$$. 可以证明, 
 例如在$$[0,3]$$上定义$$g(x) = \sqrt{x}$$, 则对$$0 < \alpha \le \frac{1}{2}$$, $$g$$满足Hölder条件. 而对$$\frac{1}{2} < \alpha \le 1$$, $$g$$不满足Hölder条件.
 
 ## 一阶线性微分方程的解
-一阶线性方程定义为关于未知函数及其导数线性, 其形式为
+**一阶线性方程**关于未知函数及其导数线性, 其形式为
 
 $$
 \frac{dx(t)}{dt} + g(t)x(t) = k(t)
@@ -122,7 +123,7 @@ E(X \vert Y) = \begin{cases}
 \end{cases}
 $$
 
-由此可知$$E(X \vert Y)$$是$$\mathcal{F}$$-measurable的, 且$$\int_A XdP = \int_A E(X \vert Y)dP$$ for all $$A \in \mathcal{F}$$. 注意到, $$E(X \vert Y)$$实际上与$$Y$$的取值无关. 因此, 我们如下定义条件期望. Let $$(\Omega, \mathcal{U}, P)$$ be a probability space and suppose $$\mathcal{V} \subseteq \mathcal{U}$$ is a $$\sigma$$-algebra. If $$X : \Omega \mapsto \mathbb{R}^n$$ is an integrable random variable, we define $$E(X \vert \mathcal{V})$$ to be any random variable on $$\Omega$$ such that $$E(X \vert \mathcal{V})$$ is $$\mathcal{V}$$-measurable and $$\int_A XdP = \int_A E(X \vert \mathcal{V})dP$$ for all $$A \in \mathcal{V}$$.
+由此可知$$E(X \vert Y)$$是$$\mathcal{F}$$-measurable的, 且$$\int_A XdP = \int_A E(X \vert Y)dP$$ for all $$A \in \mathcal{F}$$. 注意到, $$E(X \vert Y)$$实际上与$$Y$$的取值无关. 因此, 我们如下定义**条件期望**. Let $$(\Omega, \mathcal{U}, P)$$ be a probability space and suppose $$\mathcal{V} \subseteq \mathcal{U}$$ is a $$\sigma$$-algebra. If $$X : \Omega \mapsto \mathbb{R}^n$$ is an integrable random variable, we define $$E(X \vert \mathcal{V})$$ to be any random variable on $$\Omega$$ such that $$E(X \vert \mathcal{V})$$ is $$\mathcal{V}$$-measurable and $$\int_A XdP = \int_A E(X \vert \mathcal{V})dP$$ for all $$A \in \mathcal{V}$$.
 
 直观上, 我们也可以将条件期望$$E(X \vert \mathcal{V})$$理解为线性空间$$L^2(\Omega, \mathcal{U})$$ which consists of all real-valued, $$\mathcal{U}$$-measurable random variables $$Y$$ such that $$\Vert Y \Vert = (\int_{\Omega}Y^2dP)^{\frac{1}{2}} < \infty$$中随机变量$$X$$向子空间$$L^2(\Omega, \mathcal{V})$$的投影.
 
@@ -134,9 +135,9 @@ $$
 
 ## 随机过程
 
-A stochastic process on the probability space $$(\Omega, \mathcal{F}, P)$$ is a family of random variables $$X_t$$ parameterized by $$t \in \textbf{T}$$, where $$\textbf{T} \subset \mathbb{R}$$. 如果$$\textbf{T}$$是区间则称$$X(t)$$为连续时间随机过程. 如果$$\textbf{T}$$中的元素是可数的则称$$X_t$$为离散时间随机过程.
+A **stochastic process** on the probability space $$(\Omega, \mathcal{F}, P)$$ is a family of random variables $$X_t$$ parameterized by $$t \in \textbf{T}$$, where $$\textbf{T} \subset \mathbb{R}$$. 如果$$\textbf{T}$$是区间则称$$X(t)$$为连续时间随机过程. 如果$$\textbf{T}$$中元素数量可数则称$$X_t$$为离散时间随机过程.
 
-The evolution in time of a given state of the world $$\omega \in \Omega$$ given by the function $$t \mapsto X(t, \omega)$$ is called a path or realization of $$X(t)$$.
+The evolution in time of a given state of the world $$\omega \in \Omega$$ given by the function $$t \mapsto X(t, \omega)$$ is called a **path** or **realization** of $$X(t)$$.
 
 如果随机过程$$X(t)$$在某一时间的分布与其过去独立, 而只取决于当前的状态, 即满足
 
@@ -144,11 +145,11 @@ $$
 P(X(t + s) \le y \vert \mathcal{F_t}) = P(X(t + s) \le y \vert X(t)) \quad a.s. \quad s \ge 0
 $$
 
-则称其为Markov process.
+则称其为**Markov process**.
 
 ## Filtration
 
-A filtration $$\mathbb{F}$$ is the collection of $$\sigma$$-fields
+A **filtration** $$\mathbb{F}$$ is the collection of $$\sigma$$-fields
 
 $$
 \mathbb{F} = {\mathcal{F}_0, \mathcal{F}_1, \cdots, \mathcal{F}_t, \cdots, \mathcal{F}_T} \quad \mathcal{F}_t \subset \mathcal{F}_{t+1} \subset \mathcal{F}
@@ -156,9 +157,9 @@ $$
 
 $$\mathbb{F}$$ is used to model a flow of information. $$\sigma$$-field $$\mathcal{F}_t$$包含所有截至时间$$t$$已知的信息, 即已经发生的事件及没有发生的事件. 随着时间的流逝, 观测者知道越来越多的信息, $$\mathcal{F}_t$$对样本空间$$\Omega$$作越来越精细的分割.
 
-$$\mathcal{F}_t = \sigma({X_s, 0 \le s \le t})$$称为随机过程$$X_t$$的natural filtration.
+$$\mathcal{F}_t = \sigma({X_s, 0 \le s \le t})$$称为随机过程$$X_t$$的**natural filtration**.
 
-A stochastic process is called adapted to filtration $$\mathbb{F}$$ if for all $$t$$, $$X(t)$$ is a random variable on $$\mathcal{F}_t$$, that is, if $$X(t)$$ is $$\mathcal{F}_t$$-measurable.
+A stochastic process is called **adapted** to filtration $$\mathbb{F}$$ if for all $$t$$, $$X(t)$$ is a random variable on $$\mathcal{F}_t$$, that is, if $$X(t)$$ is $$\mathcal{F}_t$$-measurable.
 
 ## Martingale
 
@@ -168,18 +169,18 @@ $$
 X(s) = E(X(t) \vert \mathcal{U}(s)) \quad a.s. \quad t \ge s \ge 0
 $$
 
-then $$X(t)$$ is called a martingale.
+then $$X(t)$$ is called a **martingale**.
 
 # Brownian Motion
 
 ## 定义
-Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下条件的随机过程.
+**Brownian motion** (alse known as **Wiener process**)$$B(t), t \ge 0$$是满足以下条件的随机过程.
 
 1. $$B(t) - B(s)$$ is $$N(0,t-s)$$ for all $$t \ge s \ge 0$$.
 2. For all times $$0 < t_1 < t_2 < \cdots < t_n$$, $$B(t_1), B(t_2)-B(t_1), \cdots, B(t_n) - B(t_{n-1})$$ are independent increments.
 3. $$B(t)$$ is continuous in $$t$$.
 
-可简单地将定义推广到高维的情形, 即向量的每一维是互相独立的一维Brownian motion.
+可简单地将定义推广到高维的情形. 向量的每一维是互相独立的一维Brownian motion.
 
 直观上, Brownian motion可看作微扰$$dB = N(0, dt)$$的和.
 
@@ -191,7 +192,7 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 3. 显然, Brownian motion是一个martingale.
 4. $$B(t)^2 - t$$也是一个martingale.
   - 证明: 对任意的$$t, s \ge 0$$, 有$$\begin{align*}& E(B^2(t + s) - (t + s) \vert \mathcal{F_t}) & = B^2(t) + 2E(B(t)(B(t + s) - B(t)) \vert \mathcal{F_t}) + E((B(t + s) - B(t))^2 \vert \mathcal{F_t}) - (t + s) \\ & = B^2(t) - t \end{align*}$$
-  - 如果随机过程$$X(t)$$是一个满足$$X^2(t) - t$$为martingale的连续martingale, 则$$X(t)$$为Brownian motion.
+  - 如果随机过程$$X(t)$$是一个满足$$X^2(t) - t$$为martingale的连续martingale, 则$$X(t)$$是Brownian motion.
 5. Brownian motion具有Markov property.
 
 ## 路径性质
@@ -204,6 +205,20 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 
 直观上, 以上性质意味着$$dW \approx (dt)^{\frac{1}{2}}$$.
 
-# 随机积分
+# Brownian Motion Calculus
+
+## Itô Integral
+
+为了进一步研究随机微分方程等问题, 我们希望对随机过程$$G(t)$$定义随机积分$$\int_0^T G(t)dB(t)$$.
+
+物理上, Riemann integral $$\int_a^b F(x)dx$$表示力$$F$$在位置$$x = a$$与$$x = b$$间做的功, $$F(x)dx$$表示$$F$$在无穷小的位移中做的功. 相似地, $$F(t)dB(t)$$表示$$F$$在无穷小的Brownian jump中做的功, 而将其累积得到$$\int_0^T F(t)dB(t)$$即代表$$T$$时刻$$F$$在由Brownian motion建模的运动轨迹中所做的功.
+
+金融上, 将$$F(t)$$看作我们持有的股票数量, 将$$dB$$看作价格的变化, 则$$\int_0^T F(t)dB(t)$$即代表$$T$$时刻我们持有股票的收益.
+
+## Itô Integral Process
+
+## Itô's Formula
 
 # 随机微分方程
+
+# Diffusion Process
