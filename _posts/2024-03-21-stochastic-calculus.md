@@ -64,7 +64,7 @@ $$
 \lvert f(x) - f(y) \rvert \le K \lvert x - y \rvert^{\alpha}
 $$
 
-$$f$$ satisfies a Hölder condition (Hölder continuous) of order $$0 < \alpha \le 1$$ on $$[a,b]$$ **at the point x** if there is a constant $$K > 0$$ so that for all $$y \in [a,b]$$
+$$f$$ satisfies a Hölder condition (Hölder continuous) of order $$0 < \alpha \le 1$$ on $$[a,b]$$ **at the point $$x$$** if there is a constant $$K > 0$$ so that for all $$y \in [a,b]$$
 
 $$
 \lvert f(x) - f(y) \rvert \le K \lvert x - y \rvert^{\alpha}
@@ -211,9 +211,7 @@ then $$X(t)$$ is called a **martingale**.
 
 为了进一步研究随机微分方程等问题, 我们希望对随机过程$$G(t)$$定义随机积分$$\int_0^T G(t)dB(t)$$.
 
-物理上, Riemann integral $$\int_a^b F(x)dx$$表示力$$F$$在位置$$x = a$$与$$x = b$$间做的功, $$F(x)dx$$表示$$F$$在无穷小的位移中做的功. 相似地, $$F(t)dB(t)$$表示$$F$$在无穷小的Brownian jump中做的功, 而将其累积得到$$\int_0^T F(t)dB(t)$$即代表$$T$$时刻$$F$$在由Brownian motion建模的运动轨迹中所做的功.
-
-金融上, 将$$F(t)$$看作我们持有的股票数量, 将$$dB$$看作价格的变化, 则$$\int_0^T F(t)dB(t)$$即代表$$T$$时刻我们持有股票的收益.
+在此给出两个理解随机积分的intuition. 物理上, Riemann integral $$\int_a^b F(x)dx$$表示力$$F$$在位置$$x = a$$与$$x = b$$间做的功, $$F(x)dx$$表示$$F$$在无穷小的位移中做的功. 相似地, $$F(t)dB(t)$$表示$$F$$在无穷小的Brownian jump中做的功, 而将其累积得到$$\int_0^T F(t)dB(t)$$即代表$$T$$时刻$$F$$在由Brownian motion建模的运动轨迹中所做的功. 金融上, 将$$F(t)$$看作我们持有的股票数量, 将$$dB$$看作价格的变化, 则$$\int_0^T F(t)dB(t)$$即代表$$T$$时刻我们持有股票的收益.
 
 ## Itô Integral Process
 
