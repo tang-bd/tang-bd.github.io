@@ -15,11 +15,10 @@ toc:
 本笔记主要基于以下文献
 1. *Introduction to Stochastic Calculus with Applications, Third Edition* by Fima C. Klebaner
 2. *An Introduction to Stochastic Differential Equations* by Lawrence C. Evans
-3. *An Informal Introduction to Stochastic Calculus with Applications* by Ovidiu Calin
 
 # 微积分拾遗
 ## Variation
-The variation of a funtion of real variable $$g$$ over the interval $$[a,b]$$ is defined as
+The **variation** of a funtion of real variable $$g$$ over the interval $$[a,b]$$ is defined as
 
 $$
 V_g([a,b]) = \sup \sum_{i=1}^{n} \lvert g(t_i^n)-g(t_{i-1}^n) \rvert = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n} \lvert g(t_i^n)-g(t_{i-1}^n) \rvert
@@ -34,7 +33,7 @@ where $$\delta_n = \max_{1 \le i \le n}(t_i^n - t_{i-1}^n)$$. The supremum is ta
 直观上, $$V_g([a,b])$$可看作$$g$$的取值在$$[a,b]$$上的变化的总和. 那么我们可以预料, 如果$$g(t)$$可导, 有连续的导数$$g'(t)$$, $$g(t) = \int_0^t g'(s)ds$$且满足$$g(t) = \int_0^t \lvert g'(s) \rvert ds < \infty$$, 那么$$V_g(t) = \int_0^t \lvert g'(s) \rvert ds$$. 此时有$$g$$ is of finite variation. 相反地, 在$$[a,b]$$上有finite variation的函数在$$[a,b]$$上几乎处处可导.
 
 ## Quadratic Variation
-类似地, 我们可以定义quadratic variation
+类似地, 我们可以定义**quadratic variation**
 
 $$
 [g]([a,b]) = \sup \sum_{i=1}^{n}(g(t_i^n)-g(t_{i-1}^n))^2 = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n}(g(t_i^n)-g(t_{i-1}^n))^2
@@ -43,20 +42,28 @@ $$
 实际上, 可以对任意的函数$$\Phi$$定义$$\Phi$$-variation. 若取$$\Phi(u) = u^p$$, 则$$ 1 \le p < q < \infty$$时finite $$p$$-variation蕴含finite $$q$$-variation. 
 如果$$g$$连续且of finite variation, 那么它的quadratic variation为$$0$$. 直观上, 当$$g$$连续且$$\delta_n \rightarrow 0$$时, variation定义式求和中的项可视为无穷小量. 如果对无穷小量求和有限, 则对其作平方得到的高阶无穷小量求和应当为$$0$$.
 
-我们还可以定义quadratic covariation (or simply covariation)
+我们还可以定义**quadratic covariation** (or simply **covariation**)
 
 $$
 [f,g]([a,b]) = \sup \sum_{i=1}^{n}(f(t_i^n)-f(t_{i-1}^n))(g(t_i^n)-g(t_{i-1}^n)) = \lim_{\delta_n \rightarrow 0} \sum_{i=1}^{n}(f(t_i^n)-f(t_{i-1}^n))(g(t_i^n)-g(t_{i-1}^n))
 $$
+
+注意有$$[g]([a,b]) = [g,g]([a,b])$$.
 
 如果$$f$$连续且$$g$$ is of finite variation, 那么它们的covariation为$$0$$.
 
 Moreover, polarization identity holds for covariation $$[f,g](t) = \frac{1}{2}([f + g,f + g](t) - [f,f](t) - [g,g](t))$$, so covariation is symmetric and bilinear.
 
 ## Lipschitz and Hölder Conditions
-Lipschitz and Hölder Conditions描述了连续函数的子类. 它们作为系数的条件出现在ODE与SDE的解的存在性与唯一性的结果中.
+**Lipschitz** and **Hölder Conditions**描述了连续函数的子类. 它们作为系数的条件出现在ODE与SDE的解的存在性与唯一性的结果中.
 
-$$f$$ satisfies a Hölder condition (Hölder continuous) of order $$0 < \alpha \le 1$$ on $$[a,b]$$ if there is a constant $$K > 0$$ so that for all $$x, y \in [a,b]$$
+$$f$$ satisfies a Hölder condition (Hölder continuous) of order $$0 < \alpha \le 1$$ on $$[a,b]$$ **uniformly** if there is a constant $$K > 0$$ so that for all $$x, y \in [a,b]$$
+
+$$
+\lvert f(x) - f(y) \rvert \le K \lvert x - y \rvert^{\alpha}
+$$
+
+$$f$$ satisfies a Hölder condition (Hölder continuous) of order $$0 < \alpha \le 1$$ on $$[a,b]$$ **at the point x** if there is a constant $$K > 0$$ so that for all $$y \in [a,b]$$
 
 $$
 \lvert f(x) - f(y) \rvert \le K \lvert x - y \rvert^{\alpha}
@@ -134,7 +141,7 @@ The evolution in time of a given state of the world $$\omega \in \Omega$$ given 
 如果随机过程$$X(t)$$在某一时间的分布与其过去独立, 而只取决于当前的状态, 即满足
 
 $$
-P(X(t + s) \le y \vert \mathcal{F_t}) = P(X(t + s) \le y \vert X(t)) \quad a.s. \quad s > 0
+P(X(t + s) \le y \vert \mathcal{F_t}) = P(X(t + s) \le y \vert X(t)) \quad a.s. \quad s \ge 0
 $$
 
 则称其为Markov process.
@@ -164,12 +171,15 @@ $$
 then $$X(t)$$ is called a martingale.
 
 # Brownian Motion
+
 ## 定义
 Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下条件的随机过程.
 
 1. $$B(t) - B(s)$$ is $$N(0,t-s)$$ for all $$t \ge s \ge 0$$.
 2. For all times $$0 < t_1 < t_2 < \cdots < t_n$$, $$B(t_1), B(t_2)-B(t_1), \cdots, B(t_n) - B(t_{n-1})$$ are independent increments.
 3. $$B(t)$$ is continuous in $$t$$.
+
+可简单地将定义推广到高维的情形, 即向量的每一维是互相独立的一维Brownian motion.
 
 直观上, Brownian motion可看作微扰$$dB = N(0, dt)$$的和.
 
@@ -180,13 +190,19 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
   - 证明: $$t \ge s \ge 0$$时有$$Cov(B(s),B(t)) = E(B(s) - B(0))E(B(t) - B(s)) + E(B^2(s)) = s$$.
 3. 显然, Brownian motion是一个martingale.
 4. $$B(t)^2 - t$$也是一个martingale.
-  - 证明: 对任意的$$t, s \ge 0$$, 有$$\begin{align}& E(B^2(t + s) - (t + s) \vert \mathcal{F_t}) \\ = & B^2(t) + 2E(B(t)(B(t + s) - B(t)) \vert \mathcal{F_t}) + E((B(t + s) - B(t))^2 \vert \mathcal{F_t}) - (t + s) \\ = & B^2(t) - t \end{align}$$
+  - 证明: 对任意的$$t, s \ge 0$$, 有$$\begin{align*}& E(B^2(t + s) - (t + s) \vert \mathcal{F_t}) & = B^2(t) + 2E(B(t)(B(t + s) - B(t)) \vert \mathcal{F_t}) + E((B(t + s) - B(t))^2 \vert \mathcal{F_t}) - (t + s) \\ & = B^2(t) - t \end{align*}$$
   - 如果随机过程$$X(t)$$是一个满足$$X^2(t) - t$$为martingale的连续martingale, 则$$X(t)$$为Brownian motion.
 5. Brownian motion具有Markov property.
 
 ## 路径性质
 
-## 构造
+1. 在任意小的区间上都不单调.
+2. 处处不可导. 
+3. 在任意小的区间上有infinite variation.
+4. Has quadratic variation $$[B,B](t) = [B,B]([0,t]) = t$$.
+5. Is uniformly Hölder continuous for each order $$0 < \alpha < \frac{1}{2}$$, but is nowhere Hölder continuous with any order $$\alpha > \frac{1}{2}$$.
+
+直观上, 以上性质意味着$$dW \approx (dt)^{\frac{1}{2}}$$.
 
 # 随机积分
 
