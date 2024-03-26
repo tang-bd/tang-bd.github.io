@@ -200,8 +200,8 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 
 ## 路径性质
 
-1. Has quadratic variation $$[B,B](t) = [B,B]([0,t]) = t$$ (mean-square convergence).
-  - 证明思路: 先对定义式中的极限取期望, 再证明该极限almost surely收敛到该期望.
+1. Has quadratic variation $$[B,B](t) = [B,B]([0,t]) = t$$.
+  - 证明思路: 先对定义式中的极限取期望, 再证明该极限almost surely收敛到该期望(同时也均方收敛).
 2. Is uniformly Hölder continuous for each order $$0 < \alpha < \frac{1}{2}$$, but is nowhere Hölder continuous with any order $$\alpha > \frac{1}{2}$$.
 3. 处处不可导.
   - $$\frac{\Delta B(t)}{\Delta t} \rightarrow \infty$$ as $$\Delta t \rightarrow 0$$. 
@@ -224,7 +224,7 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 1. $$E(\int_a^b F^2(t)dt) < \infty$$.
 2. 对于任意$$\omega \in \Omega$$, $$t \mapsto F(t, \omega)$$在$$[a,b]$$上连续.
 3. $$F(t)$$是$$[a,b]$$上的nonanticipating process.
-则存在其Itô integral, 定义为$$S_n = \sum_{i=0}^{n-1} F(t_i^n)(B(t_{i+1}^n) - B(t_i^n))$$的mean-square limit $$\text{ms}-\lim_{\delta_n \rightarrow 0} S_n = \int_a^b F(t)dB(t)$$, 即$$\lim_{\delta_n \rightarrow 0} E((S_n - \int_a^b F(t)dB(t))^2) = 0$$.
+则存在其Itô integral, 定义为$$S_n = \sum_{i=0}^{n-1} F(t_i^n)(B(t_{i+1}^n) - B(t_i^n))$$的mean-square limit $$\text{ms-lim}_{\delta_n \rightarrow 0} S_n = \int_a^b F(t)dB(t)$$, 即$$\lim_{\delta_n \rightarrow 0} E((S_n - \int_a^b F(t)dB(t))^2) = 0$$.
 
 在Riemann integral中, Riemann sum的极限与中间点的选取无关. 然而可以证明, 对于随机积分, Riemann sum的极限与中间点的选取有关. 由于Itô integral考虑的是nonanticipating process, 故一致地选取区间的左端点作为中间点, 以使$$F(t_i)$$与$$B(t_{i+1}) - B(t_i)$$独立. 若选取中点, 则为Stratonovich integral. 
 
@@ -238,7 +238,11 @@ S_n & = \sum_{i=0}^{n-1} B(t_i^n)(B(t_{i+1}^n) - B(t_i^n)) \\
 \end{align*}
 $$
 
-由Brownian motion的quadratic variation知第二个求和均方收敛到$$b - a$$, 故$$\int_a^b B(t)dB(t) = \text{ms}-\lim_{\delta_n \rightarrow 0} S_n = \frac{1}{2}(B^2(b) - B^2(a)) - \frac{1}{2}(b - a)$$.
+由Brownian motion的quadratic variation知第二个求和均方收敛到$$b - a$$, 故
+
+$$
+\int_a^b B(t)dB(t) = \text{ms-lim}_{\delta_n \rightarrow 0} S_n = \frac{1}{2}(B^2(b) - B^2(a)) - \frac{1}{2}(b - a)
+$$
 
 ## Itô Integral Process
 

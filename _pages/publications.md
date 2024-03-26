@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: 
+description: "Do research that you enjoy. Do research that you'll be proud of."
 nav: true
 nav_order: 2
 ---
