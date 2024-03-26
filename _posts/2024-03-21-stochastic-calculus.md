@@ -12,7 +12,7 @@ toc:
 # 前言
 宋飏在其著名论文*Score-Based Generative Modeling through Stochastic Differential Equations*中凭借基于SDE的框架统一了score-based generative modeling与diffusion probablistic modeling两大生成式模型范式. 理解此论文需要较好的随机分析基础, 上手难度较大, 而笔者并非数学/金融相关专业, 根本学不会一点 (笑). 笔者将尽力尝试在本笔记中整理随机分析的要点. 由于笔者学习随机分析的目的只是为了更深入地理解diffusion models, 内容将十分简略, 理解或许也会有不少偏差之处. 为写作方便, 行文将中英混杂.
 
-本笔记主要基于以下文献
+本笔记主要基由以下文献拼凑而成
 1. *Introduction to Stochastic Calculus with Applications, Third Edition* by Fima C. Klebaner
 2. *An Introduction to Stochastic Differential Equations* by Lawrence C. Evans
 3. *An Informal Introduction to Stochastic Calculus with Applications* by Ovidiu Calin
@@ -216,17 +216,17 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 
 为了进一步研究随机微分方程等问题, 我们希望对随机过程$$G(t)$$定义随机积分$$\int_0^T G(t)dB(t)$$.
 
-在此给出两个理解随机积分的intuition. 物理上, Riemann integral $$\int_a^b F(x)dx$$表示力$$F$$在位置$$x = a$$与$$x = b$$间做的功, $$F(x)dx$$表示$$F$$在无穷小的位移中做的功. 相似地, $$F(t)dB(t)$$表示$$F$$在无穷小的Brownian jump中做的功, 而将其累积得到$$\int_0^T F(t)dB(t)$$即代表$$T$$时刻$$F$$在由Brownian motion建模的运动轨迹中所做的功. 金融上, 将$$F(t)$$看作我们持有的股票数量, 将$$dB$$看作价格的变化, 则$$\int_0^T F(t)dB(t)$$即代表$$T$$时刻我们持有股票的收益.
+在此给出两个理解随机积分的intuition. 物理上, Riemann integral $$\int_a^b F(x)dx$$表示力$$F$$在位置$$x = a$$与$$x = b$$间所做的功, $$F(x)dx$$表示$$F$$在无穷小的位移中做的功. 相似地, $$F(t)dB(t)$$表示$$F$$在无穷小的Brownian jump中所做的功, 而将其累积得到的$$\int_0^T F(t)dB(t)$$即代表$$T$$时刻$$F$$在由Brownian motion建模的运动轨迹中所做的功. 金融上, 将$$F(t)$$看作我们持有的股票数量, 将$$dB$$看作价格的变化, 则$$\int_0^T F(t)dB(t)$$即代表$$T$$时刻我们持有股票的收益.
 
 对于Brownian motion $$B(t)$$, 若$$F(t)$$与任意未来的increment $$B(s) - B(t)$$, 其中$$s > t$$独立, 则称$$F(t)$$为nonanticipating process.
 
 考虑$$0 \le a < b$$, 设$$F(t) = f(B(t), t)$$满足条件
-1. $$E(\int_a^b F^2(t)dt) < \infty$$
+1. $$E(\int_a^b F^2(t)dt) < \infty$$.
 2. 对于任意$$\omega \in \Omega$$, $$t \mapsto F(t, \omega)$$在$$[a,b]$$上连续.
 3. $$F(t)$$是$$[a,b]$$上的nonanticipating process.
-则存在其Itô integral, 定义为$$S_n = \sum_{i=0}^{n-1} F(t_i^n)(B(t_{i+1}^n) - B(t_i^n))$$的mean-square limit $$\text{ms-}\lim_{\delta_n \rightarrow 0} S_n = \int_a^b F(t)dB(t)$$, 即$$\lim_{\delta_n \rightarrow 0} E((S_n - \int_a^b F(t)dB(t))^2) = 0$$.
+则存在其Itô integral, 定义为$$S_n = \sum_{i=0}^{n-1} F(t_i^n)(B(t_{i+1}^n) - B(t_i^n))$$的mean-square limit $$\text{ms}-\lim_{\delta_n \rightarrow 0} S_n = \int_a^b F(t)dB(t)$$, 即$$\lim_{\delta_n \rightarrow 0} E((S_n - \int_a^b F(t)dB(t))^2) = 0$$.
 
-在Riemann integral中, Riemann sum的极限与中间点的选取无关. 然而可以证明, 对于随机积分, Riemann sum的极限与中间点的选取有关. 由于Itô integral考虑的是nonanticipating process, 故一致地选取区间的左端点, 使$$F(t_i)$$与$$B(t_{i+1}) - B(t_i)$$独立. 若选取中点, 则为Stratonovich integral. 
+在Riemann integral中, Riemann sum的极限与中间点的选取无关. 然而可以证明, 对于随机积分, Riemann sum的极限与中间点的选取有关. 由于Itô integral考虑的是nonanticipating process, 故一致地选取区间的左端点作为中间点, 以使$$F(t_i)$$与$$B(t_{i+1}) - B(t_i)$$独立. 若选取中点, 则为Stratonovich integral. 
 
 让我们先来看看一些基本的结果. 当$$F(t) = C$$为常数时, 不难证明$$\int_a^b CdB(t) = C(B(b) - B(a))$$. 当$$F(t) = B(t)$$时
 
@@ -238,7 +238,7 @@ S_n & = \sum_{i=0}^{n-1} B(t_i^n)(B(t_{i+1}^n) - B(t_i^n)) \\
 \end{align*}
 $$
 
-由Brownian motion的quadratic variation知第二个求和均方收敛到$$b - a$$, 故$$\int_a^b B(t)dB(t) = \text{ms-}\lim_{\delta_n \rightarrow 0} S_n = \frac{1}{2}(B^2(b) - B^2(a)) - \frac{1}{2}(b - a).
+由Brownian motion的quadratic variation知第二个求和均方收敛到$$b - a$$, 故$$\int_a^b B(t)dB(t) = \text{ms}-\lim_{\delta_n \rightarrow 0} S_n = \frac{1}{2}(B^2(b) - B^2(a)) - \frac{1}{2}(b - a)$$.
 
 ## Itô Integral Process
 
