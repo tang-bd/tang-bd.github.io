@@ -189,6 +189,7 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 ## 基本性质
 
 1. 由$$t \ge s \ge 0$$时$$E(B(t) - B(s)) = 0, 且Var(B(t) - B(s)) = t$$可知, $$E((B(t) - B(s))^2) = t - s$$.
+  - 这意味着$$E(dB(t)^2) = dt$$.
 2. $$Cov(B(s),B(t)) = E(B(s)B(t)) = \min(s,t)$$.
   - 证明: $$t \ge s \ge 0$$时有$$Cov(B(s),B(t)) = E(B(s) - B(0))E(B(t) - B(s)) + E(B^2(s)) = s$$.
 3. 显然, Brownian motion是一个martingale.
@@ -199,7 +200,7 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 
 ## 路径性质
 
-1. Has quadratic variation $$[B,B](t) = [B,B]([0,t]) = t$$.
+1. Has quadratic variation $$[B,B](t) = [B,B]([0,t]) = t$$ (mean-square convergence).
   - 证明思路: 先对定义式中的极限取期望, 再证明该极限almost surely收敛到该期望.
 2. Is uniformly Hölder continuous for each order $$0 < \alpha < \frac{1}{2}$$, but is nowhere Hölder continuous with any order $$\alpha > \frac{1}{2}$$.
 3. 处处不可导.
@@ -209,8 +210,6 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 5. 在任意小的区间上都不单调.
   - 如果在某一区间上单调, 则在该区间上有finite variation, 矛盾.
 
-直观上, 以上性质意味着$$dW \approx (dt)^{\frac{1}{2}}$$.
-
 # Brownian Motion Calculus
 
 ## Itô Integral
@@ -218,6 +217,28 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 为了进一步研究随机微分方程等问题, 我们希望对随机过程$$G(t)$$定义随机积分$$\int_0^T G(t)dB(t)$$.
 
 在此给出两个理解随机积分的intuition. 物理上, Riemann integral $$\int_a^b F(x)dx$$表示力$$F$$在位置$$x = a$$与$$x = b$$间做的功, $$F(x)dx$$表示$$F$$在无穷小的位移中做的功. 相似地, $$F(t)dB(t)$$表示$$F$$在无穷小的Brownian jump中做的功, 而将其累积得到$$\int_0^T F(t)dB(t)$$即代表$$T$$时刻$$F$$在由Brownian motion建模的运动轨迹中所做的功. 金融上, 将$$F(t)$$看作我们持有的股票数量, 将$$dB$$看作价格的变化, 则$$\int_0^T F(t)dB(t)$$即代表$$T$$时刻我们持有股票的收益.
+
+对于Brownian motion $$B(t)$$, 若$$F(t)$$与任意未来的increment $$B(s) - B(t)$$, 其中$$s > t$$独立, 则称$$F(t)$$为nonanticipating process.
+
+考虑$$0 \le a < b$$, 设$$F(t) = f(B(t), t)$$满足条件
+1. $$E(\int_a^b F^2(t)dt) < \infty$$
+2. 对于任意$$\omega \in \Omega$$, $$t \mapsto F(t, \omega)$$在$$[a,b]$$上连续.
+3. $$F(t)$$是$$[a,b]$$上的nonanticipating process.
+则存在其Itô integral, 定义为$$S_n = \sum_{i=0}^{n-1} F(t_i^n)(B(t_{i+1}^n) - B(t_i^n))$$的mean-square limit $$\text{ms-}\lim_{\delta_n \rightarrow 0} S_n = \int_a^b F(t)dB(t)$$, 即$$\lim_{\delta_n \rightarrow 0} E((S_n - \int_a^b F(t)dB(t))^2) = 0$$.
+
+在Riemann integral中, Riemann sum的极限与中间点的选取无关. 然而可以证明, 对于随机积分, Riemann sum的极限与中间点的选取有关. 由于Itô integral考虑的是nonanticipating process, 故一致地选取区间的左端点, 使$$F(t_i)$$与$$B(t_{i+1}) - B(t_i)$$独立. 若选取中点, 则为Stratonovich integral. 
+
+让我们先来看看一些基本的结果. 当$$F(t) = C$$为常数时, 不难证明$$\int_a^b CdB(t) = C(B(b) - B(a))$$. 当$$F(t) = B(t)$$时
+
+$$
+\begin{align*}
+S_n & = \sum_{i=0}^{n-1} B(t_i^n)(B(t_{i+1}^n) - B(t_i^n)) \\
+& = \frac{1}{2} \sum_{i=0}^{n-1} (B^2(t_{n+1}^n) - B^2(t_i^n)) - \frac{1}{2} \sum_{i=0}^{n-1} (B(t_{i+1}^n) - B(t_i^n))^2 \\
+& = \frac{1}{2}(B^2(b) - B^2(a)) - \frac{1}{2} \sum_{i=0}^{n-1} (B(t_{i+1}^n) - B(t_i^n))^2
+\end{align*}
+$$
+
+由Brownian motion的quadratic variation知第二个求和均方收敛到$$b - a$$, 故$$\int_a^b B(t)dB(t) = \text{ms-}\lim_{\delta_n \rightarrow 0} S_n = \frac{1}{2}(B^2(b) - B^2(a)) - \frac{1}{2}(b - a).
 
 ## Itô Integral Process
 
