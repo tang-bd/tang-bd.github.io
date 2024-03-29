@@ -191,7 +191,6 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 ## 基本性质
 
 1. 由$$t \ge s \ge 0$$时$$E(B(t) - B(s)) = 0, 且Var(B(t) - B(s)) = t$$可知, $$E((B(t) - B(s))^2) = t - s$$.
-  - 这意味着$$E(dB(t)^2) = dt$$.
 2. $$Cov(B(s),B(t)) = E(B(s)B(t)) = \min(s,t)$$.
   - 证明: $$t \ge s \ge 0$$时有$$Cov(B(s),B(t)) = E(B(s) - B(0))E(B(t) - B(s)) + E(B^2(s)) = s$$.
 3. 显然, Brownian motion是一个martingale.
@@ -199,11 +198,13 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
   - 证明: 对任意的$$t, s \ge 0$$, 有$$\begin{align*}E(B^2(t + s) - (t + s) \vert \mathcal{F_t}) & = B^2(t) + 2E(B(t)(B(t + s) - B(t)) \vert \mathcal{F_t}) + E((B(t + s) - B(t))^2 \vert \mathcal{F_t}) - (t + s) \\ & = B^2(t) - t \end{align*}$$
   - 如果随机过程$$X(t)$$是一个满足$$X^2(t) - t$$为martingale的连续martingale, 则$$X(t)$$是Brownian motion.
 5. Brownian motion具有Markov property.
+6. 若Brownian motion $$B_1(t)$$ 与 $$B_2(t)$$独立, 则其covariation为$$0$$.
 
 ## 路径性质
 
 1. Has quadratic variation $$[B,B](t) = [B,B]([0,t]) = t$$.
   - 证明思路: 先对定义式中的极限取期望, 再证明该极限almost surely收敛到该期望(同时也均方收敛).
+  - 这意味着$$dB(t)^2 = dt$$.
 2. Is uniformly Hölder continuous for each order $$0 < \alpha < \frac{1}{2}$$, but is nowhere Hölder continuous with any order $$\alpha > \frac{1}{2}$$.
 3. 处处不可导.
   - $$\frac{\Delta B(t)}{\Delta t} \rightarrow \infty$$ as $$\Delta t \rightarrow 0$$. 
@@ -268,11 +269,12 @@ Itô integral具有以下性质
 2. $$d(X(t) + Y(t)) = dX(t) + dY(t)$$.
 3. $$d(X(t) - Y(t)) = dX(t) - dY(t)$$.
 4. $$d(X(t)Y(t)) = X(t)dY(t) + Y(t)dX(t) + dX(t)dY(t)$$.
+  - 当$$dX(t) = F_1(t)dt + G_1(t)dB(t)$$, $$Y(t) = F_2(t)dt + G_2(t)dt$$时, $$d(X(t)Y(t)) = X(t)dY(t) + Y(t)dX(t) + G_1(t)G_2(t)dt$$.
 5. $$d(\frac{X(t)}{Y(t)}) = \frac{Y(t)dX(t) - X(t)dY(t) - dX(t)dY(t)}{Y^2(t)} + \frac{X(t)}{Y^3(t)}(dY(t))^2$$.
 
 ## Itô's Formula
 
-若随机过程$$X(t)$$满足$$dX(t) = G(t)dt + H(t)dB(t)$$, 设$$F(t) = f(X(t))$$, 其中$$f \in C^2$$, 则
+若随机过程$$X(t)$$满足$$dX(t) = G(t)dt + H(t)dB(t)$$, 设$$F(t) = f(X(t))$$, 其中$$f(t) \in C^2$$, 则
 
 $$
 dF(t) = (G(t)f'(X(t)) + \frac{H^2(t)}{2}f''(X(t)))dt + H(t)f'(X(t))dB(t)
@@ -287,13 +289,47 @@ $$
 & = H^2(t)dt
 \end{align*}
 $$
+
 代入展开式
+
 $$
 \begin{align*}
 dF(t) & = f'(X(t))dX(t) + \frac{1}{2}f''(X(t))(dX(t))^2 \\
 & = (G(t)f'(X(t)) + \frac{H^2(t)}{2}f''(X(t)))dt + H(t)f'(X(t))dB(t)
 \end{align*}
 $$
+
+由于$$dB^2(t) = dt$$并非高阶无穷小, 因此得到了与确定的情形不同的结论.
+
+由此可得到推论$$F(t) = f(B(t))$$时, $$dF(t) = \frac{1}{2}f''(B(t))dt + f'(B(t))dB(t)$$. 特别地,
+
+1. $$f(x) = x^{\alpha}$$时$$d(B^{\alpha}(t)) = \frac{1}{2}\alpha (\alpha - 1)B^{\alpha - 2}(t)dt + \alpha B^{\alpha - 1}(t)dB(t)$$.
+2. $$f(x) = e^{kx}$$时$$d(e^{kB(t)}) = ke^{kB(t)}dB(t) + \frac{1}{2}k^2 e^{kB(t)}dt$$.
+3. $$f(x) = sin(x)$$时$$d(sin(B(t))) = cos(B(t))dt - \frac{1}{2} sin(B(t))dt$$.
+
+更一般地, 若随机过程$$X(t)$$满足$$dX(t) = G(B(t), t)dt + H(B(t), t)dB(t)$$, 且$$f(x, t) \in C^2$$ is time dependent, 则
+
+$$
+dF(t) = (\partial_t f(X(t), t) + G(B(t), t)\partial_x f(X(t), t) + \frac{H(B(t), t)}{2} \partial^2_x f(B(t), t))dt + H(B(t), t) \partial_x f(X(t), t)dB(t)
+$$
+
+拓展到更多变量时, 若$$\boldsymbol{X}(t) = (X^i(t)) \in \mathbb{R}^n$$, 设$$F(t) = f(x_1, \cdots, x_n, t)$$, 其中$$f(x_1, \cdots, x_n, t) \in C^2$$, 则
+
+$$
+dF(t) = \partial_t f(X_1(t), \cdots, X_n(t), t) + \sum_{i = 1}^n \partial_{x_i} f(X_1(t), \cdots, X_n(t), t) + \frac{1}{2}\sum_{i = 1}^n \sum_{j = 1}^n \partial_{x_i} \partial_{x_j} f(X_1(t), \cdots, X_n(t), t) d[X_i, X_j](t)
+$$
+
+## Itô Diffusion
+
+A process $$\boldsymbol{X}(t) = (X^i(t)) \in \mathbb{R}^n$$ satisfying the relation
+
+$$
+d\boldsymbol{X}(t) = \boldsymbol{b}(\boldsymbol{X}(t), t)dt + \sigma(\boldsymbol{X}(t), t)d\boldsymbol{B}(t)
+$$
+
+is called an Itô diffusion. 其中$$\boldsymbol{B}(t)$$为$$d$$维的Browinian motion, $$\sigma(\boldsymbol{X}(t), t)$$为$$n \times d$$的矩阵. It models the position of a mall particle that moves under the influence of a drift force $$b(X(t), t)$$, and is subject to random deviations.
+
+由Brownian motion的性质可知, $$d[X_i, X_j](t) = dX_i(t)dX_j(t) = a_{ij}(t)dt$$, for $$i,j = 1,\cdots,n$$. 其中$$a(t) = (a_{ij}(t)) = \sigma(X(t), t) \sigma(X(t), t)^T$$称为diffusion matrix.
 
 # 随机微分方程
 
