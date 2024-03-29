@@ -141,6 +141,8 @@ A stochastic process on the probability space $$(\Omega, \mathcal{F}, P)$$ is a 
 
 The evolution in time of a given state of the world $$\omega \in \Omega$$ given by the function $$t \mapsto X(t, \omega)$$ is called a path or realization of $$X(t)$$.
 
+如果$$P(X(t) = Y(t)) = 1$$ for all $$t, 0 \le t \le T$$, 则称这两个随机过程为互相的versions.
+
 如果随机过程$$X(t)$$在某一时间的分布与其过去独立, 而只取决于当前的状态, 即满足
 
 $$
@@ -244,7 +246,17 @@ $$
 \int_a^b B(t)dB(t) = \text{ms-lim}_{\delta_n \rightarrow 0} S_n = \frac{1}{2}(B^2(b) - B^2(a)) - \frac{1}{2}(b - a)
 $$
 
-## Itô Integral Process
+Itô integral具有以下性质
+
+1. $$ \int_a^b \alpha G(t) + \beta H(t) dB(t) = \alpha \int_a^b G(t)dB(t) + \beta \int_a^b H(t)dB(t)$$.
+2. $$ E(\int_a^b G(t)dB(t)) = 0 $$.
+  - 证明思路: 由于$$F(t_i)$$与$$B(t_{i+1}) - B(t_i)$$独立, $$E(S_n) = \sum_{i=0}^{n-1} E(G(t_i^n)(B(t_{i+1}^n) - B(t_i^n))) = \sum_{i=0}^{n-1} E(G(t_i^n))E(B(t_{i+1}^n) - B(t_i^n)) = 0$$. 则可进一步证明Itô integral的期望为0.
+3. $$ E((\int_a^b G(t)dB(t))^2) = E(\int_a^b G(t)^2 dt) $$.
+  - 证明思路: $$\begin{align*} E(S_n^2) & = E((\sum_{i=0}^{n-1} G(t_i^n)B(t_{i+1}^n) - B(t_i^n))^2) \\ & = \sum_{i=0}^{n-1} E(F^2(t_i^n))E((B(t_{i+1}^n) - B(t_i^n))^2) + 2\sum_{i \ne j} E(G(t_i))E(B(t_{i+1}^n) - B(t_i^n))E(G(t_j))E(B(t_{j+1}^n) - B(t_j^n)) \\ & = \sum_{i=0}^{n-1} E(F^2(t_i^n))(t_{i+1} - t_i) \\ & = E(\sum_{i=0}^{n-1} F^2(t_i^n)(t_{i+1} - t_i))\end{*align}$$ 则可进一步证明该等式.
+4. $$ E(\int_a^b G(t)dB(t) \int_a^b H(t)dB(t)) \\ & = E(\int_a^b G(t)H(t)dt)$$.
+  - 证明思路: 记$$I_1 = \int_a^b G(t)dB(t)$$, $$I_2 = \int_a^b H(t)dB(t)$$, 则由$$I_1 I_2 = (I_1 + I_2)^2/2 - I_1^2/2 - I_2^2/2$$及上一性质可证明该等式.
+
+如果$$X$$是一个continuous adapted process则其Itô integral存在.
 
 ## Itô's Formula
 
