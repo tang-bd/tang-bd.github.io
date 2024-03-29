@@ -214,11 +214,15 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 
 # 随机积分
 
+## Motivation
+
 为了进一步研究随机微分方程等问题, 我们希望对随机过程$$G(t)$$定义随机积分$$\int_0^T G(t)dB(t)$$.
 
 在此给出两个理解随机积分的intuition. 物理上, Riemann integral $$\int_a^b F(x)dx$$表示力$$F$$在位置$$x = a$$与$$x = b$$间所做的功, $$F(x)dx$$表示$$F$$在无穷小的位移中做的功. 相似地, $$F(t)dB(t)$$表示$$F$$在无穷小的Brownian jump中所做的功, 而将其累积得到的$$\int_0^T F(t)dB(t)$$即代表$$T$$时刻$$F$$在由Brownian motion建模的运动轨迹中所做的功. 金融上, 将$$F(t)$$看作我们持有的股票数量, 将$$dB$$看作价格的变化, 则$$\int_0^T F(t)dB(t)$$即代表$$T$$时刻我们持有股票的收益.
 
 对于Brownian motion $$B(t)$$, 若$$F(t)$$与任意未来的increment $$B(s) - B(t)$$, 其中$$s > t$$独立, 则称$$F(t)$$为nonanticipating process.
+
+## Itô integral
 
 考虑$$0 \le a < b$$, 设$$F(t) = f(B(t), t)$$满足条件
 1. $$E(\int_a^b F^2(t)dt) < \infty$$.
@@ -252,7 +256,7 @@ Itô integral具有以下性质
 2. $$ E(\int_a^b G(t)dB(t)) = 0 $$.
   - 证明思路: 由于$$F(t_i)$$与$$B(t_{i+1}) - B(t_i)$$独立, $$E(S_n) = \sum_{i=0}^{n-1} E(G(t_i^n)(B(t_{i+1}^n) - B(t_i^n))) = \sum_{i=0}^{n-1} E(G(t_i^n))E(B(t_{i+1}^n) - B(t_i^n)) = 0$$. 则可进一步证明Itô integral的期望为0.
 3. $$ E((\int_a^b G(t)dB(t))^2) = E(\int_a^b G(t)^2 dt) $$.
-  - 证明思路: $$\begin{align*} E(S_n^2) & = E((\sum_{i=0}^{n-1} G(t_i^n)B(t_{i+1}^n) - B(t_i^n))^2) \\ & = \sum_{i=0}^{n-1} E(F^2(t_i^n))E((B(t_{i+1}^n) - B(t_i^n))^2) + 2\sum_{i \ne j} E(G(t_i))E(B(t_{i+1}^n) - B(t_i^n))E(G(t_j))E(B(t_{j+1}^n) - B(t_j^n)) \\ & = \sum_{i=0}^{n-1} E(F^2(t_i^n))(t_{i+1} - t_i) \\ & = E(\sum_{i=0}^{n-1} F^2(t_i^n)(t_{i+1} - t_i))\end{*align}$$ 则可进一步证明该等式.
+  - 证明思路: $$\begin{align*} E(S_n^2) & = E((\sum_{i=0}^{n-1} G(t_i^n)B(t_{i+1}^n) - B(t_i^n))^2) \\ & = \sum_{i=0}^{n-1} E(F^2(t_i^n))E((B(t_{i+1}^n) - B(t_i^n))^2) + 2\sum_{i \ne j} E(G(t_i))E(B(t_{i+1}^n) - B(t_i^n))E(G(t_j))E(B(t_{j+1}^n) - B(t_j^n)) \\ & = \sum_{i=0}^{n-1} E(F^2(t_i^n))(t_{i+1} - t_i) \\ & = E(\sum_{i=0}^{n-1} F^2(t_i^n)(t_{i+1} - t_i))\end{align*}$$ 则可进一步证明该等式.
 4. $$ E(\int_a^b G(t)dB(t) \int_a^b H(t)dB(t)) \\ & = E(\int_a^b G(t)H(t)dt)$$.
   - 证明思路: 记$$I_1 = \int_a^b G(t)dB(t)$$, $$I_2 = \int_a^b H(t)dB(t)$$, 则由$$I_1 I_2 = (I_1 + I_2)^2/2 - I_1^2/2 - I_2^2/2$$及上一性质可证明该等式.
 
