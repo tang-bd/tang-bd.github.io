@@ -314,14 +314,6 @@ $$
 dF(t) = (\partial_t f(X(t), t) + G(B(t), t)\partial_x f(X(t), t) + \frac{H(B(t), t)}{2} \partial^2_x f(B(t), t))dt + H(B(t), t) \partial_x f(X(t), t)dB(t)
 $$
 
-拓展到更多变量时, 若$$\boldsymbol{X}(t) = (X^i(t)) \in \mathbb{R}^n$$, 设$$F(t) = f(x_1, \cdots, x_n, t)$$, 其中$$f(x_1, \cdots, x_n, t) \in C^2$$, 则
-
-$$
-dF(t) = \partial_t f(X_1(t), \cdots, X_n(t), t) + \sum_{i = 1}^n \partial_{x_i} f(X_1(t), \cdots, X_n(t), t) + \frac{1}{2}\sum_{i = 1}^n \sum_{j = 1}^n \partial_{x_i} \partial_{x_j} f(X_1(t), \cdots, X_n(t), t) d[X_i, X_j](t)
-$$
-
-其中$$d[X_i, X_i](t) = H_i^2(t)$$, $$d[X_i, X_j](t) = H_i(t)H_j(t)$$.
-
 ## Itô Diffusion
 
 A process $$\boldsymbol{X}(t) = (X^i(t)) \in \mathbb{R}^n$$ satisfying the relation
@@ -332,7 +324,13 @@ $$
 
 is called an Itô diffusion. 其中$$\boldsymbol{B}(t)$$为$$d$$维的Browinian motion, $$\sigma(\boldsymbol{X}(t), t)$$为$$n \times d$$的矩阵. It models the position of a small particle that moves under the influence of a drift force $$b(X(t), t)$$, and is subject to random deviations.
 
-由Brownian motion的性质, $$d[X_i, X_j](t) = dX_i(t)dX_j(t) = a_{ij}(t)dt$$, for $$i,j = 1,\cdots,n$$. $$a(t) = (a_{ij}(t)) = \sigma(X(t), t) \sigma(X(t), t)^T$$称为diffusion matrix.
+设$$F(t) = f(x_1, \cdots, x_n, t)$$, 其中$$f(x_1, \cdots, x_n, t) \in C^2$$, 则
+
+$$
+dF(t) = \partial_t f(X_1(t), \cdots, X_n(t), t) + \sum_{i = 1}^n \partial_{x_i} f(X_1(t), \cdots, X_n(t), t) + \frac{1}{2}\sum_{i = 1}^n \sum_{j = 1}^n \partial_{x_i} \partial_{x_j} f(X_1(t), \cdots, X_n(t), t) d[X_i, X_j](t)
+$$
+
+其中$$d[X_i, X_j](t) = dX_i(t)dX_j(t) = \sigma_i(t)\sigma_j(t) = a_{ij}(t)dt$$, for $$i,j = 1,\cdots,n$$. $$a(t) = (a_{ij}(t)) = \sigma(X(t), t) \sigma(X(t), t)^T$$称为diffusion matrix.
 
 # 随机微分方程
 
