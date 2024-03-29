@@ -222,7 +222,7 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 
 对于Brownian motion $$B(t)$$, 若$$F(t)$$与任意未来的increment $$B(s) - B(t)$$, 其中$$s > t$$独立, 则称$$F(t)$$为nonanticipating process.
 
-## Itô integral
+## Itô Integral
 
 考虑$$0 \le a < b$$, 设$$F(t) = f(B(t), t)$$满足条件
 1. $$E(\int_a^b F^2(t)dt) < \infty$$.
