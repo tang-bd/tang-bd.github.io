@@ -229,7 +229,8 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 1. $$E(\int_a^b F^2(t)dt) < \infty$$.
 2. 对于任意$$\omega \in \Omega$$, $$t \mapsto F(t, \omega)$$在$$[a,b]$$上连续.
 3. $$F(t)$$是$$[a,b]$$上的nonanticipating process.
-则存在其Itô integral, 定义为$$S_n = \sum_{i=0}^{n-1} F(t_i^n)(B(t_{i+1}^n) - B(t_i^n))$$的mean-square limit $$\text{ms-lim}_{\delta_n \rightarrow 0} S_n = \int_a^b F(t)dB(t)$$, 即$$\lim_{\delta_n \rightarrow 0} E((S_n - \int_a^b F(t)dB(t))^2) = 0$$.
+
+则存在其Itô integral, 定义为$$S_n = \sum_{i=0}^{n-1} F(t_i^n)(B(t_{i+1}^n) - B(t_i^n))$$的均方极限 $$\text{ms-lim}_{\delta_n \rightarrow 0} S_n = \int_a^b F(t)dB(t)$$, 即$$\lim_{\delta_n \rightarrow 0} E((S_n - \int_a^b F(t)dB(t))^2) = 0$$.
 
 在Riemann integral中, Riemann sum的极限与中间点的选取无关. 然而可以证明, 对于随机积分, Riemann sum的极限与中间点的选取有关. 由于Itô integral考虑的是nonanticipating process, 故一致地选取区间的左端点作为中间点, 以使$$F(t_i)$$与$$B(t_{i+1}) - B(t_i)$$独立. 若选取中点, 则为Stratonovich integral. 
 
@@ -253,11 +254,11 @@ $$
 
 Itô integral具有以下性质
 
-1. $$ \int_a^b \alpha G(t) + \beta H(t) dB(t) = \alpha \int_a^b G(t)dB(t) + \beta \int_a^b H(t)dB(t)$$.
+1. $$ \int_a^b (\alpha G(t) + \beta H(t)) dB(t) = \alpha \int_a^b G(t)dB(t) + \beta \int_a^b H(t)dB(t)$$.
 2. $$ E(\int_a^b G(t)dB(t)) = 0 $$.
   - 证明思路: 由于$$F(t_i)$$与$$B(t_{i+1}) - B(t_i)$$独立, <br>$$\begin{align*}E(S_n) & = \sum_{i=0}^{n-1} E(G(t_i^n)(B(t_{i+1}^n) - B(t_i^n))) \\ & = \sum_{i=0}^{n-1} E(G(t_i^n))E(B(t_{i+1}^n) - B(t_i^n)) \\ & = 0 \end{align*}$$<br>则可进一步证明Itô integral的期望为$$0$$.
 3. $$ E((\int_a^b G(t)dB(t))^2) = E(\int_a^b G(t)^2 dt) $$.
-  - 证明思路: <br>$$\begin{align*} E(S_n^2) & = E((\sum_{i=0}^{n-1} G(t_i^n)B(t_{i+1}^n) - B(t_i^n))^2) \\ & = \sum_{i=0}^{n-1} E(F^2(t_i^n))E((B(t_{i+1}^n) - B(t_i^n))^2) + 2\sum_{i \ne j} E(G(t_i))E(B(t_{i+1}^n) - B(t_i^n))E(G(t_j))E(B(t_{j+1}^n) - B(t_j^n)) \\ & = \sum_{i=0}^{n-1} E(F^2(t_i^n))(t_{i+1} - t_i) \\ & = E(\sum_{i=0}^{n-1} F^2(t_i^n)(t_{i+1} - t_i))\end{align*}$$<br>则可进一步证明该等式.
+  - 证明思路: <br>$$\begin{align*} E(S_n^2) & = E((\sum_{i=0}^{n-1} G(t_i^n)B(t_{i+1}^n) - B(t_i^n))^2) \\ & = \sum_{i=0}^{n-1} E(G^2(t_i^n))E((B(t_{i+1}^n) - B(t_i^n))^2) + 2\sum_{i \ne j} E(G(t_i))E(B(t_{i+1}^n) - B(t_i^n))E(G(t_j))E(B(t_{j+1}^n) - B(t_j^n)) \\ & = \sum_{i=0}^{n-1} E(G^2(t_i^n))(t_{i+1} - t_i) \\ & = E(\sum_{i=0}^{n-1} G^2(t_i^n)(t_{i+1} - t_i))\end{align*}$$<br>则可进一步证明该等式.
 4. $$ E(\int_a^b G(t)dB(t) \int_a^b H(t)dB(t)) = E(\int_a^b G(t)H(t)dt)$$.
   - 证明思路: 记$$I_1 = \int_a^b G(t)dB(t)$$, $$I_2 = \int_a^b H(t)dB(t)$$, 则由$$I_1 I_2 = (I_1 + I_2)^2/2 - I_1^2/2 - I_2^2/2$$及上一性质可证明该等式.
 
@@ -290,7 +291,7 @@ $$
 \end{align*}
 $$
 
-代入展开式
+代入Taylor expansion得到
 
 $$
 \begin{align*}
@@ -319,6 +320,8 @@ $$
 dF(t) = \partial_t f(X_1(t), \cdots, X_n(t), t) + \sum_{i = 1}^n \partial_{x_i} f(X_1(t), \cdots, X_n(t), t) + \frac{1}{2}\sum_{i = 1}^n \sum_{j = 1}^n \partial_{x_i} \partial_{x_j} f(X_1(t), \cdots, X_n(t), t) d[X_i, X_j](t)
 $$
 
+其中$$d[X_i, X_i](t) = H_i^2(t)$$, $$d[X_i, X_j](t) = H_i(t)H_j(t)$$.
+
 ## Itô Diffusion
 
 A process $$\boldsymbol{X}(t) = (X^i(t)) \in \mathbb{R}^n$$ satisfying the relation
@@ -327,9 +330,9 @@ $$
 d\boldsymbol{X}(t) = \boldsymbol{b}(\boldsymbol{X}(t), t)dt + \sigma(\boldsymbol{X}(t), t)d\boldsymbol{B}(t)
 $$
 
-is called an Itô diffusion. 其中$$\boldsymbol{B}(t)$$为$$d$$维的Browinian motion, $$\sigma(\boldsymbol{X}(t), t)$$为$$n \times d$$的矩阵. It models the position of a mall particle that moves under the influence of a drift force $$b(X(t), t)$$, and is subject to random deviations.
+is called an Itô diffusion. 其中$$\boldsymbol{B}(t)$$为$$d$$维的Browinian motion, $$\sigma(\boldsymbol{X}(t), t)$$为$$n \times d$$的矩阵. It models the position of a small particle that moves under the influence of a drift force $$b(X(t), t)$$, and is subject to random deviations.
 
-由Brownian motion的性质可知, $$d[X_i, X_j](t) = dX_i(t)dX_j(t) = a_{ij}(t)dt$$, for $$i,j = 1,\cdots,n$$. 其中$$a(t) = (a_{ij}(t)) = \sigma(X(t), t) \sigma(X(t), t)^T$$称为diffusion matrix.
+由Brownian motion的性质, $$d[X_i, X_j](t) = dX_i(t)dX_j(t) = a_{ij}(t)dt$$, for $$i,j = 1,\cdots,n$$. $$a(t) = (a_{ij}(t)) = \sigma(X(t), t) \sigma(X(t), t)^T$$称为diffusion matrix.
 
 # 随机微分方程
 
