@@ -212,9 +212,7 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 5. 在任意小的区间上都不单调.
   - 如果在某一区间上单调, 则在该区间上有finite variation, 矛盾.
 
-# Brownian Motion Calculus
-
-## Itô Integral
+# 随机积分
 
 为了进一步研究随机微分方程等问题, 我们希望对随机过程$$G(t)$$定义随机积分$$\int_0^T G(t)dB(t)$$.
 
@@ -246,6 +244,8 @@ $$
 \int_a^b B(t)dB(t) = \text{ms-lim}_{\delta_n \rightarrow 0} S_n = \frac{1}{2}(B^2(b) - B^2(a)) - \frac{1}{2}(b - a)
 $$
 
+如果$$X$$是一个continuous adapted process则其Itô integral存在.
+
 Itô integral具有以下性质
 
 1. $$ \int_a^b \alpha G(t) + \beta H(t) dB(t) = \alpha \int_a^b G(t)dB(t) + \beta \int_a^b H(t)dB(t)$$.
@@ -256,7 +256,15 @@ Itô integral具有以下性质
 4. $$ E(\int_a^b G(t)dB(t) \int_a^b H(t)dB(t)) \\ & = E(\int_a^b G(t)H(t)dt)$$.
   - 证明思路: 记$$I_1 = \int_a^b G(t)dB(t)$$, $$I_2 = \int_a^b H(t)dB(t)$$, 则由$$I_1 I_2 = (I_1 + I_2)^2/2 - I_1^2/2 - I_2^2/2$$及上一性质可证明该等式.
 
-如果$$X$$是一个continuous adapted process则其Itô integral存在.
+# 随机微分
+
+## 基本规则
+
+1. $$d(cX(t)) = cdX(t)$$.
+2. $$d(X(t) + Y(t)) = dX(t) + dY(t)$$.
+3. $$d(X(t) - Y(t)) = dX(t) - dY(t)$$.
+4. $$d(X(t)Y(t)) = X(t)dY(t) + Y(t)dX(t) + dX(t)dY(t)$$.
+5. $$d(\frac{X(t)}{Y(t)}) = \frac{Y(t)dX(t) - X(t)dY(t) - dX(t)dY(t)}{Y^2(t)} + \frac{X(t)}{Y^3(t)}(dY(t))^2$$.
 
 ## Itô's Formula
 
