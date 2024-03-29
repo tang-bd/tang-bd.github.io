@@ -254,9 +254,9 @@ Itô integral具有以下性质
 
 1. $$ \int_a^b \alpha G(t) + \beta H(t) dB(t) = \alpha \int_a^b G(t)dB(t) + \beta \int_a^b H(t)dB(t)$$.
 2. $$ E(\int_a^b G(t)dB(t)) = 0 $$.
-  - 证明思路: 由于$$F(t_i)$$与$$B(t_{i+1}) - B(t_i)$$独立, <br>$$\begin{align*}E(S_n) & = \sum_{i=0}^{n-1} E(G(t_i^n)(B(t_{i+1}^n) - B(t_i^n))) \\ & = \sum_{i=0}^{n-1} E(G(t_i^n))E(B(t_{i+1}^n) - B(t_i^n)) \\ & = 0 \end{align*}$$</br>则可进一步证明Itô integral的期望为$$0$$.
+  - 证明思路: 由于$$F(t_i)$$与$$B(t_{i+1}) - B(t_i)$$独立, <br>$$\begin{align*}E(S_n) & = \sum_{i=0}^{n-1} E(G(t_i^n)(B(t_{i+1}^n) - B(t_i^n))) \\ & = \sum_{i=0}^{n-1} E(G(t_i^n))E(B(t_{i+1}^n) - B(t_i^n)) \\ & = 0 \end{align*}$$<br>则可进一步证明Itô integral的期望为$$0$$.
 3. $$ E((\int_a^b G(t)dB(t))^2) = E(\int_a^b G(t)^2 dt) $$.
-  - 证明思路: <br>$$\begin{align*} E(S_n^2) & = E((\sum_{i=0}^{n-1} G(t_i^n)B(t_{i+1}^n) - B(t_i^n))^2) \\ & = \sum_{i=0}^{n-1} E(F^2(t_i^n))E((B(t_{i+1}^n) - B(t_i^n))^2) + 2\sum_{i \ne j} E(G(t_i))E(B(t_{i+1}^n) - B(t_i^n))E(G(t_j))E(B(t_{j+1}^n) - B(t_j^n)) \\ & = \sum_{i=0}^{n-1} E(F^2(t_i^n))(t_{i+1} - t_i) \\ & = E(\sum_{i=0}^{n-1} F^2(t_i^n)(t_{i+1} - t_i))\end{align*}$$</br>则可进一步证明该等式.
+  - 证明思路: <br>$$\begin{align*} E(S_n^2) & = E((\sum_{i=0}^{n-1} G(t_i^n)B(t_{i+1}^n) - B(t_i^n))^2) \\ & = \sum_{i=0}^{n-1} E(F^2(t_i^n))E((B(t_{i+1}^n) - B(t_i^n))^2) + 2\sum_{i \ne j} E(G(t_i))E(B(t_{i+1}^n) - B(t_i^n))E(G(t_j))E(B(t_{j+1}^n) - B(t_j^n)) \\ & = \sum_{i=0}^{n-1} E(F^2(t_i^n))(t_{i+1} - t_i) \\ & = E(\sum_{i=0}^{n-1} F^2(t_i^n)(t_{i+1} - t_i))\end{align*}$$<br>则可进一步证明该等式.
 4. $$ E(\int_a^b G(t)dB(t) \int_a^b H(t)dB(t)) = E(\int_a^b G(t)H(t)dt)$$.
   - 证明思路: 记$$I_1 = \int_a^b G(t)dB(t)$$, $$I_2 = \int_a^b H(t)dB(t)$$, 则由$$I_1 I_2 = (I_1 + I_2)^2/2 - I_1^2/2 - I_2^2/2$$及上一性质可证明该等式.
 
@@ -278,6 +278,7 @@ dF(t) = (G(t)f'(X(t)) + \frac{H^2(t)}{2}f''(X(t)))dt + H(t)f'(X(t))dB(t)
 $$
 
 证明思路:
+
 $$
 \begin{align*}
 (dX(t))^2 & = (G(t)dt + H(t)dB(t))^2 \\
