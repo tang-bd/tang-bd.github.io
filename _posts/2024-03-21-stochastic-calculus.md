@@ -273,6 +273,7 @@ Itô integral具有以下性质
 ## Itô's Formula
 
 若随机过程$$X(t)$$满足$$dX(t) = G(t)dt + H(t)dB(t)$$, 设$$F(t) = f(X(t))$$, 其中$$f \in C^2$$, 则
+
 $$
 dF(t) = (G(t)f'(X(t)) + \frac{H^2(t)}{2}f''(X(t)))dt + H(t)f'(X(t))dB(t)
 $$
