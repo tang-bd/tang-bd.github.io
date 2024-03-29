@@ -272,6 +272,27 @@ Itô integral具有以下性质
 
 ## Itô's Formula
 
+若随机过程$$X(t)$$满足$$dX(t) = G(t)dt + H(t)dB(t)$$, 设$$F(t) = f(X(t))$$, 其中$$f \in C^2$$, 则
+$$
+dF(t) = (G(t)f'(X(t)) + \frac{H^2(t)}{2}f''(X(t)))dt + H(t)f'(X(t))dB(t)
+$$
+
+证明思路:
+$$
+\begin{align*}
+(dX(t))^2 & = (G(t)dt + H(t)dB(t))^2 \\
+& = G^2(t)dt^2 + 2G(t)H(t)dB(t)dt + H^2(t)dB^2(t) \\
+& = H^2(t)dt
+\end{align*}
+$$
+代入展开式
+$$
+\begin{align*}
+dF(t) & = f'(X(t))dX(t) + \frac{1}{2}f''(X(t))(dX(t))^2 \\
+& = (G(t)f'(X(t)) + \frac{H^2(t)}{2}f''(X(t)))dt + H(t)f'(X(t))dB(t)
+\end{align*}
+$$
+
 # 随机微分方程
 
 # Diffusion Process
