@@ -357,9 +357,9 @@ $$
 \end{*align}
 $$
 
-则当$$h \rightarrow 0$$时, 对$$s \ne t$$, 有$$\phi_h(s) \rightarrow 0$$. 然而$$\phi_h(s) \ge 0$$且$$\int \phi_h(s)ds = 1$$, 故可以认为$$\phi_h(s) \rightarrow \delta_0(s - t)$$. 此外, 我们期待$$\phi_h(s) \rightarrow E(\xi(t)\xi(s))$$, 故可以不严谨地认为上述heuristic formula成立.
+则$$h \rightarrow 0$$时, 对$$s \ne t$$, 有$$\phi_h(s) \rightarrow 0$$. 然而$$\phi_h(s) \ge 0$$且$$\int \phi_h(s)ds = 1$$, 故可认为$$\phi_h(s) \rightarrow \delta_0(s - t)$$. 此外, 我们期待$$\phi_h(s) \rightarrow E(\xi(t)\xi(s))$$, 故可以不严谨地认为上述heuristic formula成立.
 
-如果$$X(t)$$是一个对所有$$t \ge 0$$满足$$E(X^2(t)) < \infty$$的随机过程, 则定义$$r(t, s) = E(X(t)X(s))$$为$$X(t)$$的autocorrelation function, 其中$$t, s \ge 0$$. If $$r(t, s) = f(t-s)$$ for some function $$c: \mathbb{R} \mapsto \mathbb{R}$$ and if $$E(X(t)) = E(X(s))$$ for all $$t, s \ge 0$$, $$X(t)$$ is called stationary in the wide sense. A white noise process is, at least at the formal level, wide sense stationary. 我们定义autocorrelation funtion的Fourier transform为$$X(t)$$的spectral density. 则对于white noise, 其spectral density在各个频率上都相等. 就像所有颜色的光平均混合得到白光一样.
+如果$$X(t)$$是一个对所有$$t \ge 0$$满足$$E(X^2(t)) < \infty$$的随机过程, 则定义$$r(t, s) = E(X(t)X(s))$$为$$X(t)$$的autocorrelation function, 其中$$t, s \ge 0$$. If $$r(t, s) = f(t-s)$$ for some function $$c: \mathbb{R} \mapsto \mathbb{R}$$ and if $$E(X(t)) = E(X(s))$$ for all $$t, s \ge 0$$, then $$X(t)$$ is called stationary in the wide sense. A white noise process is, at least at the formal level, wide sense stationary. 定义autocorrelation funtion的Fourier transform为$$X(t)$$的spectral density, 则对于white noise, 其spectral density在各个频率上都相等. 就像所有颜色的光平均混合得到白光一样.
 
 ## 定义
 
