@@ -362,4 +362,14 @@ $$
 
 ## 定义
 
+An equation of the form
+
+$$
+dX(t) = \mu(X(t), t)dt + \sigma(X(t), t)dB(t)
+$$
+
+where functions $$\mu(x, t)$$ and $$\sigma(x, t)$$ are given and $$X(t)$$ is the unknown process, is called a stochastic differential equation driven by Brownian motion. The functions $$\mu(x, t)$$ and $$\sigma(x, t)$$ are called respectively the drift and the diffusion coefficient.
+
+物理上, 可将$$X(t)$$看作时间$$t$$时微粒在一个方向上从初始位置开始的位移, 将$$\mu(x, t)$$看作液体时间$$t$$时在位置$$x$$的速度, 将$$\sigma(x, t)$$看作温度$$t$$时在位置$$x$$的影响.
+
 # Diffusion Process
