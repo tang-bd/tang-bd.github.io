@@ -334,4 +334,32 @@ $$
 
 # 随机微分方程
 
+## From ODE to SDE
+
+如果$$x(t)$$是一个在$$t \ge 0$$上定义的可导函数, $$\mu(x, t)$$是$$x$$和$$t$$的函数, 且对任意的$$0 \le t \le T$$满足以下条件
+
+$$
+\frac{dx(t)}{dt} = x'(t) = \mu(x(t), t) \quad \text{and} \quad x(0) = x_0
+$$
+
+则$$x(t)$$是以$$x_0$$为初值条件的ODE的解. 通常我们额外要求$$x'(t)$$是连续的.
+
+SDEs arise, when the coefficients of ODEs are perturbed by white noise. 我们定义white noise为Brownian motion的导数. 则有$$\int_0^T \sigma(X(t), t)\xi(t)dt = \int_0^T \sigma(X(t), t)dB(t)$$. 
+
+## White Noise
+
+我们先小小地离题一下, 以更详细地介绍white noise. 我们已经知道Brownian motion是处处不可导的, 因此严格意义上white noise并不存在. 不过我们有heuristic formula $$E(\xi(t)\xi(s)) = \delta_0(s - t)$$. 设$$h > 0$$, 固定$$t > 0$$, 设
+
+$$
+\begin{align*} \phi_h(s) & = E((\frac{B(t + h) - B(t)}{h})(\frac{B(s + h) - B(s)}{h})) \\
+& = \frac{1}{h^2}(E(B(t + h)B(s + h)) - E(B(t + h)B(s)) - E(B(t)B(s + h)) + E(B(t)B(s))) \\
+& = \frac{1}{h^2}(\min((t + h), (s + h)) - \min((t + h), (s)) - \min((h), (s + h)) + \min((t), (s)))
+$$
+
+则当$$h \rightarrow 0$$时, 对$$s \ne t$$, 有$$\phi_h(s) \rightarrow 0$$. 然而$$\phi_h(s) \ge 0$$且$$\int \phi_h(s)ds = 1$$, 故可以认为$$\phi_h(s) \rightarrow \delta_0(s - t)$$. 此外, 我们期待$$\phi_h(s) \rightarrow E(\xi(t)\xi(s))$$, 故可以不严谨地认为上述heuristic formula成立.
+
+如果$$X(t)$$是一个对所有$$t \ge 0$$满足$$E(X^2(t)) < \infty$$的随机过程, 则定义$$r(t, s) = E(X(t)X(s))$$为$$X(t)$$的autocorrelation function, 其中$$t, s \ge 0$$. If $$r(t, s) = f(t-s)$$ for some function $$c: \mathbb{R} \mapsto \mathbb{R}$$ and if $$E(X(t)) = E(X(s))$$ for all $$t, s \ge 0$$, $$X(t)$$ is called stationary in the wide sense. A white noise process is, at least at the formal level, wide sense stationary. 我们定义autocorrelation funtion的Fourier transform为$$X(t)$$的spectral density. 则对于white noise, 其spectral density在各个频率上都相等. 就像所有颜色的光平均混合得到白光一样.
+
+## 定义
+
 # Diffusion Process
