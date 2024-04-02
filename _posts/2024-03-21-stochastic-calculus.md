@@ -354,6 +354,7 @@ $$
 \begin{align*} \phi_h(s) & = E((\frac{B(t + h) - B(t)}{h})(\frac{B(s + h) - B(s)}{h})) \\
 & = \frac{1}{h^2}(E(B(t + h)B(s + h)) - E(B(t + h)B(s)) - E(B(t)B(s + h)) + E(B(t)B(s))) \\
 & = \frac{1}{h^2}(\min((t + h), (s + h)) - \min((t + h), (s)) - \min((h), (s + h)) + \min((t), (s)))
+\end{*align}
 $$
 
 则当$$h \rightarrow 0$$时, 对$$s \ne t$$, 有$$\phi_h(s) \rightarrow 0$$. 然而$$\phi_h(s) \ge 0$$且$$\int \phi_h(s)ds = 1$$, 故可以认为$$\phi_h(s) \rightarrow \delta_0(s - t)$$. 此外, 我们期待$$\phi_h(s) \rightarrow E(\xi(t)\xi(s))$$, 故可以不严谨地认为上述heuristic formula成立.
