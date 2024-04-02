@@ -351,7 +351,7 @@ $$
 $$
 \begin{align*} \phi_h(s) & = E((\frac{B(t + h) - B(t)}{h})(\frac{B(s + h) - B(s)}{h})) \\
 & = \frac{1}{h^2}(E(B(t + h)B(s + h)) - E(B(t + h)B(s)) - E(B(t)B(s + h)) + E(B(t)B(s))) \\
-& = \frac{1}{h^2}(\min((t + h), (s + h)) - \min((t + h), (s)) - \min((h), (s + h)) + \min((t), (s)))
+& = \frac{1}{h^2}(\min(t + h, s + h) - \min(t + h, s) - \min(h, s + h) + \min(t, s))
 \end{align*}
 $$
 
