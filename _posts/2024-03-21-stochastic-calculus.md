@@ -273,9 +273,25 @@ Itô integral具有以下性质
   - 当$$dX(t) = F_1(t)dt + G_1(t)dB(t)$$, $$Y(t) = F_2(t)dt + G_2(t)dt$$时, $$d(X(t)Y(t)) = X(t)dY(t) + Y(t)dX(t) + G_1(t)G_2(t)dt$$.
 5. $$d(\frac{X(t)}{Y(t)}) = \frac{Y(t)dX(t) - X(t)dY(t) - dX(t)dY(t)}{Y^2(t)} + \frac{X(t)}{Y^3(t)}(dY(t))^2$$.
 
+## Itô Processes
+
+An Itô process has the form
+
+$$
+X(t) = X(0) + \int_0^t G(s)ds + \int_0^t H(s)dB(s) \quad 0 \le t \le T
+$$
+
+where $$X(0)$$ is $$\mathcal{F}_0$$-measurable and processes $$G(t)$$ and $$H(t)$$ are $$\mathcal{F}_t$$-adapted, such that $$\int_0^T \lvert G(t) \rvert dt < \infty$$ and $$\int_0^T H^2(t) dt < \infty$$.
+
+It is said that the process $$X(t)$$ has the stochastic differential on $$[0, T]$$ $$dX(t) = G(t)dt + H(t)dB(t)$$.
+
+Note that $$G(t)$$ and $$H(t)$$ may depend on $$X(t)$$ or $$B(T)$$ as well, or even the whole past path of $$B(s), s \le t$$.
+
+Itô process的quadratic variation为$$[Y](t) = \int_0^t H^2(s)ds$$. 如果$$X(t)$$, $$Y(t)$$均为Itô process而$$X(t)$$ is of finite variation, 则$$[X, Y](t) = 0$$.
+
 ## Itô's Formula
 
-若随机过程$$X(t)$$满足$$dX(t) = G(t)dt + H(t)dB(t)$$, 设$$F(t) = f(X(t))$$, 其中$$f(x) \in C^2$$, 则
+若随机过程$$X(t)$$有stochastic differential $$dX(t) = G(t)dt + H(t)dB(t)$$, 设$$F(t) = f(X(t))$$, 其中$$f(x) \in C^2$$, 则
 
 $$
 dF(t) = (G(t)f'(X(t)) + \frac{H^2(t)}{2}f''(X(t)))dt + H(t)f'(X(t))dB(t)
@@ -370,5 +386,22 @@ $$
 where functions $$\mu(x, t)$$ and $$\sigma(x, t)$$ are given and $$X(t)$$ is the unknown process, is called a stochastic differential equation driven by Brownian motion. The functions $$\mu(x, t)$$ and $$\sigma(x, t)$$ are called respectively the drift and the diffusion coefficient.
 
 物理上, 可将$$X(t)$$看作时间$$t$$时微粒在一个方向上从初始位置开始的位移, 将$$\mu(x, t)$$看作液体时间$$t$$时在位置$$x$$的速度, 将$$\sigma(x, t)$$看作温度$$t$$时在位置$$x$$的影响.
+
+这种形式的方程又称为diffusion-type SDEs. 更一般的SDE的形式为$$dX(t) = \mu(t)dt + \sigma(t)dB(t)$$, where $$\mu(t)$$ and $$\sigma(t)$$ can depend on $$t$$ and the whole past of the processes $$X(t)$$ and $$B(t)$$ ($$X(s),B(s),s \le t$$), that is, $$\mu(t) = \mu((X(s), s \le t),t), \sigma(t) = \sigma((X(s), s \le t), t)$$. 对$$$$\mu(t)$$和$$\sigma(t)$$唯一的限制是它们必须是adapted processes, with respective integrals defined. 我们接下来的讨论主要聚焦于diffusion-type SDEs.
+
+A process $$X(t)$$ is called a strong solution of the SDE if for all $$t > 0$$ the integrals $$\int_0^t \mu(X(s), s)ds$$ and $$\int_0^t\sigma(X(s), s)dB(s)$$ exist, with the second being an Itô integral, and
+
+$$
+X(t) = X(0) + \int_0^t \mu(X(s), s)ds + \int_0^t\sigma(X(s), s)dB(s)
+$$
+
+A strong solution is some function(functional) $$F(t, (B(s), s \le t))$$ of the given Brownian motion.
+
+## Stochastic Exponential and Logarithm
+
+令$$X(T)$$有stochastic differential, 且$$U(t)$$满足$$dU(t) = U(t)dX(t)$$且$$U(0) = 1$$, 则$$U(t)$$称为$$X(t)$$的stochastic exponential, 记为$$\mathcal{E}(X)$$. 对于Itô processes, 则有$$U(t) = e^{X(t) - X(0) - \frac{1}{2}[X, X](t)}$$.
+
+令$$U(t)$$有stochastic differential且取值不为0, 则其stochastic logarithm满足$$dX(t) = \frac{dU(t)}{U(t)}$$且$$X(0) = 0$$. 可解得$$X(t) = \mathcal{L}(U)(t) = \ln(\frac{U(t)}{U(0)}) + \int_0^t \frac{d[U, U](s)}{2U^2(s)}$$
+
 
 # Diffusion Process
