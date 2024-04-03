@@ -466,7 +466,7 @@ $$
 进一步解得
 
 $$
-X(t) = U(t)(X(0) + \int_0^t \frac{\alpha(s) - \delta(s)\gamma(s)}{U(s)}ds + \frac_0^t \frac{\gamma(s)}{U(s)}dB(s))
+X(t) = U(t)(X(0) + \int_0^t \frac{\alpha(s) - \delta(s)\gamma(s)}{U(s)}ds + \int_0^t \frac{\gamma(s)}{U(s)}dB(s))
 $$
 
 ## Existence and Uniqueness of Strong Solutions
