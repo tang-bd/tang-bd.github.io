@@ -401,7 +401,9 @@ A strong solution is some function(functional) $$F(t, (B(s), s \le t))$$ of the 
 
 令$$X(T)$$有stochastic differential, 且$$U(t)$$满足$$dU(t) = U(t)dX(t)$$且$$U(0) = 1$$, 则$$U(t)$$称为$$X(t)$$的stochastic exponential, 记为$$\mathcal{E}(X)$$. 对于Itô processes, 则有$$U(t) = e^{X(t) - X(0) - \frac{1}{2}[X, X](t)}$$.
 
-令$$U(t)$$有stochastic differential且取值不为0, 则其stochastic logarithm满足$$dX(t) = \frac{dU(t)}{U(t)}$$且$$X(0) = 0$$. 可解得$$X(t) = \mathcal{L}(U)(t) = \ln(\frac{U(t)}{U(0)}) + \int_0^t \frac{d[U, U](s)}{2U^2(s)}$$
+令$$U(t)$$有stochastic differential且取值不为0, 则其stochastic logarithm满足$$dX(t) = \frac{dU(t)}{U(t)}$$且$$X(0) = 0$$. 可解得$$X(t) = \mathcal{L}(U)(t) = \ln(\frac{U(t)}{U(0)}) + \int_0^t \frac{d[U, U](s)}{2U^2(s)}$$.
+
+## 线性SDE的解
 
 
 # Diffusion Process
