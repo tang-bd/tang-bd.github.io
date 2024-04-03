@@ -387,7 +387,7 @@ where functions $$\mu(x, t)$$ and $$\sigma(x, t)$$ are given and $$X(t)$$ is the
 
 物理上, 可将$$X(t)$$看作时间$$t$$时微粒在一个方向上从初始位置开始的位移, 将$$\mu(x, t)$$看作液体时间$$t$$时在位置$$x$$的速度, 将$$\sigma(x, t)$$看作温度$$t$$时在位置$$x$$的影响.
 
-这种形式的方程又称为diffusion-type SDEs. 更一般的SDE的形式为$$dX(t) = \mu(t)dt + \sigma(t)dB(t)$$, where $$\mu(t)$$ and $$\sigma(t)$$ can depend on $$t$$ and the whole past of the processes $$X(t)$$ and $$B(t)$$ ($$X(s),B(s),s \le t$$), that is, $$\mu(t) = \mu((X(s), s \le t),t), \sigma(t) = \sigma((X(s), s \le t), t)$$. 对$$$$\mu(t)$$和$$\sigma(t)$$唯一的限制是它们必须是adapted processes, with respective integrals defined. 我们接下来的讨论主要聚焦于diffusion-type SDEs.
+这种形式的方程又称为diffusion-type SDEs. 更一般的SDE的形式为$$dX(t) = \mu(t)dt + \sigma(t)dB(t)$$, where $$\mu(t)$$ and $$\sigma(t)$$ can depend on $$t$$ and the whole past of the processes $$X(t)$$ and $$B(t)$$ ($$X(s),B(s),s \le t$$), that is, $$\mu(t) = \mu((X(s), s \le t),t), \sigma(t) = \sigma((X(s), s \le t), t)$$. 对$$\mu(t)$$和$$\sigma(t)$$唯一的限制是它们必须是adapted processes, with respective integrals defined. 我们接下来的讨论主要聚焦于diffusion-type SDEs.
 
 A process $$X(t)$$ is called a strong solution of the SDE if for all $$t > 0$$ the integrals $$\int_0^t \mu(X(s), s)ds$$ and $$\int_0^t\sigma(X(s), s)dB(s)$$ exist, with the second being an Itô integral, and
 
