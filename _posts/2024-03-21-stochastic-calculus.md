@@ -225,6 +225,8 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 
 ## Itô Integral
 
+### 定义
+
 考虑$$0 \le a < b$$, 设$$F(t) = f(B(t), t)$$满足条件
 1. $$E(\int_a^b F^2(t)dt) < \infty$$.
 2. 对于任意$$\omega \in \Omega$$, $$t \mapsto F(t, \omega)$$在$$[a,b]$$上连续.
@@ -251,6 +253,8 @@ $$
 $$
 
 如果$$X$$是一个continuous adapted process则其Itô integral存在.
+
+### 性质
 
 Itô integral具有以下性质
 
@@ -402,7 +406,7 @@ A strong solution is some function(functional) $$F(t, (B(s), s \le t))$$ of the 
 令$$X(T)$$有stochastic differential, 且$$U(t)$$满足$$dU(t) = U(t)dX(t)$$且$$U(0) = 1$$, 则$$U(t)$$称为$$X(t)$$的stochastic exponential, 记为$$\mathcal{E}(X)$$. 对于Itô processes, 则有
 
 $$
-U(t) = e^{X(t) - X(0) - \frac{1}{2}[X, X](t)}
+U(t) = \exp(X(t) - X(0) - \frac{1}{2}[X, X](t))
 $$
 
 令$$U(t)$$有stochastic differential且取值不为0, 则其stochastic logarithm满足$$dX(t) = \frac{dU(t)}{U(t)}$$且$$X(0) = 0$$. 可解得
@@ -413,5 +417,60 @@ $$
 
 ## 线性SDE的解
 
+Linear SDEs form a class of SDEs that can be solved explicitly. Consider a general linear SDE in one dimension
 
-# Diffusion Process
+$$
+dX(t) = (\alpha(t) + \beta(t)X(t))dt + (\gamma(t) + \delta(t)X(t))dB(t)
+$$
+
+where functions $$\alpha, \beta, \gamma, \delta$$ are given adapted processes and are continuous functions of $$t$$.
+
+### Stochastic Exponential SDEs
+
+当$$\alpha(t) = 0$$且$$\gamma(t) = 0$$时, 方程转化为
+
+$$
+dX(t) = \beta(t)X(t)dt + \delta(t)X(t)dB(t)
+$$
+
+具有$$dX(t) = X(t)dY(t)$$的形式, 其中$$dY(t) = \beta(t)dt + \delta(t)dB(t)$$, 则$$X(t)$$是$$Y(t)$$的stochastic differential. 故有
+
+$$
+\begin{align*}
+X(t) & = X(0)\exp(Y(t) - Y(0) - \frac{1}{2}[Y,Y](t)) \\
+& = U(0)\exp(\int_0^t \beta(s)ds + \int_0^t \delta(s)ds - \frac{1}{2}\int_0^t \delta^2(s)ds) \\
+& = U(0)\exp(\int_0^t (\beta(s) - \frac{1}{2}\delta^2(s))ds + \int_0^t \delta(s)ds)
+\end{align*}
+$$
+
+### General Linear SDEs
+
+为解一般形式的线性SDE, 考虑$$X(t) = U(t)V(t)$$形式的解, 其中
+
+$$
+dU(t) = \beta(t)U(t)dt + \delta(t)U(t)dB(t)
+$$
+
+且
+
+$$
+dV(t) = a(t)dt + b(t)dB(t)
+$$
+
+设$$U(0) = 1$$且$$V(0) = X(0)$$, 则由stochastic exponential SDE的情形可给出$$U(t)$$. 恰当地选取$$a(t)$$和$$b(t)$$可使$$X(t) = U(t)V(t)$$成立
+
+$$
+b(t)U(t) = \gamma(t) \quad \text{and} \quad a(t)U(t) = \alpha(t) - \delta(t)\gamma(t)
+$$
+
+进一步解得
+
+$$
+X(t) = U(t)(X(0) + \int_0^t \frac{\alpha(s) - \delta(s)\gamma(s)}{U(s)}ds + \frac_0^t \frac{\gamma(s)}{U(s)}dB(s))
+$$
+
+## Existence and Uniqueness of Strong Solutions
+
+## Markov Property of Solutions
+
+## 后向与前向方程
