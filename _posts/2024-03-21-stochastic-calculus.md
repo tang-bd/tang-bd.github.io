@@ -521,12 +521,12 @@ $$
 令$$X(t)$$满足$$dX(t) = \mu(X(t), t)dt + \sigma(X(t), t)dB(t)$$, 若满足以下条件
 
 1. Coefficients are locally Lipschitz in $$x$$ uniformly in $$t$$, that is, for every $$T$$ and $$N$$ there is a constant $$K$$ depending only on $$T$$ and $$N$$, such that for all $$\lvert x \rvert, \lvert y \rvert \le N$$ and all $$0 \le t \le T$$, $$\lvert \mu(x,t) - \mu(y, t) \rvert + \lvert \sigma(x, t) - \sigma(y, t) \rvert < K \lvert x - y \rvert$$.
-2. Coefficients satisfy the linear growth condition $$\lvert \mu(x, t) \rvert + \lvert \sigma(x, t) \rvert \le K(1 + \lvert x \rvert).
+2. Coefficients satisfy the linear growth condition $$\lvert \mu(x, t) \rvert + \lvert \sigma(x, t) \rvert \le K(1 + \lvert x \rvert)$$.
 3. $$X(0)$$ is independent of $$(B(t), 0 \le t \le T)$$, and $$E(X^2(0)) < \infty$$.
 
 那么该SDE存在一个唯一的strong solution $$X(t)$$. $$X(t)$$有连续的路径, 且$$E(\sup_{0 \le t \le T}X^2(t)) < C(1 + E(X^2(0)))$$. 其中常数$$C$$的取值仅依赖于$$K$$和$$T$$.
 
-若对$$\lvert x \rvert, \lvert y \rvert \le N$$和$$0 \le t \le T$$, $$\partial_x G(x, t)$$和$$\partial_x H(x, t)$$有界, 则所要求的Lipschitz条件成立, which in turn is true if the derivatives are continuous. 
+若对$$\lvert x \rvert, \lvert y \rvert \le N$$和$$0 \le t \le T$$, $$\partial_x G(x, t)$$和$$\partial_x H(x, t)$$有界, 则所要求的Lipschitz条件成立. 实际上只需要导数连续.
 
 ## Weak Solutions to SDEs
 
@@ -579,7 +579,7 @@ Then the PDE has a fundamental solution, which is unique and strictly positive.
 If in addition $$\mu(x, t)$$ and $$\sigma(x, t)$$ have two partial derivatives with respect to $$x$$, which are bounded and satisfy a Hölder condition with respect to $$x$$, then $$p(y, t, x, s) as a function in $$y$$ and $$t$$ satisfy the PDE
 
 $$
--\partial_t p + \frac{1}{2} \partial^2_y (\sigma^2(y, t)p(y, t, x, s)) - \partial_y(\mu(y, t)p(y, t, x, s)) = 0 
+-\partial_t p(y, t, x, s) + \frac{1}{2} \partial^2_y (\sigma^2(y, t)p(y, t, x, s)) - \partial_y(\mu(y, t)p(y, t, x, s)) = 0 
 $$
 
 This equation is in the forward variables $$(y, t)$$ and is therefore called the Kolmogorov's forward equation, also known as Fokker-Planck equation or diffusion equation.
@@ -590,4 +590,4 @@ $$
 \int_{\mathbb{R}} f(y, t)P(dt, t, x, s) - f(x, s) = \int_s^t \int_{\mathbb{R}} (\partial_u + L_u)f(y, u)P(dy, u, x, s)du \quad 0 \le s < t, x \in \mathbb{R}
 $$
 
-The transition function $$P(y, t, x, s)$$ defines uniquely a Markov process $$X(t)$$, that is, for all $$x, y$$ and $$0 \le s \le t$$, $$P(y, t, x, s) = P(X(t) \le y \vert X(s) = x)$$. The process $$X(t)$$ is called a diffusion, the differential operator $$L_s$$ is called its generator. The above property implies that $$X(t)$$ satisfies the SDE $$dX(t) = \mu(X(t), t)dt + \sigma(X(t), t)dB(t)$$.
+The transition function $$P(y, t, x, s)$$ defines uniquely a Markov process $$X(t)$$, that is, $$P(y, t, x, s) = P(X(t) \le y \vert X(s) = x)$$, for all $$x, y$$ and $$0 \le s \le t$$. The process $$X(t)$$ is called a diffusion, the differential operator $$L_s$$ is called its generator. The above property implies that $$X(t)$$ satisfies the SDE $$dX(t) = \mu(X(t), t)dt + \sigma(X(t), t)dB(t)$$.
