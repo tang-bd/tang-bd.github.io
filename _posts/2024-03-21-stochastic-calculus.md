@@ -55,7 +55,8 @@ $$
 
 Moreover, polarization identity holds for covariation $$[f,g](t) = \frac{1}{2}([f + g,f + g](t) - [f,f](t) - [g,g](t))$$, so covariation is symmetric and bilinear.
 
-## Lipschitz and Hölder Conditions
+## Lipschitz and '
+' Conditions
 Lipschitz and Hölder Conditions描述了连续函数的子类. 它们作为系数的条件出现在ODE与SDE的解的存在性与唯一性的结果中.
 
 $$f$$ satisfies a Hölder condition (Hölder continuous) of order $$0 < \alpha \le 1$$ on $$[a,b]$$ uniformly if there is a constant $$K > 0$$ so that for all $$x, y \in [a,b]$$
@@ -71,6 +72,8 @@ $$
 $$
 
 A Lipschitz condition is a Hölder condition with $$\alpha = 1$$. 可以证明, 当Hölder condition中$$\alpha > 1$$时满足条件的函数必为常数.
+
+If $$f$$ is continuously differentiable on a finite interval $$[a, b]$$, then it is Lipschitz.
 
 显然, $$ 0 < \alpha < \beta \le \infty$$时, 一个在bounded set $$[a,b]$$上$$\beta$$阶Hölder连续的函数也是$$\alpha$$阶Hölder连续的, 且凡Hölder连续的函数也是一致连续的.
 
@@ -151,6 +154,14 @@ $$
 
 则称其为Markov process.
 
+Markov processes are characterized by the transition probability function
+
+$$
+P(y, t, x, s) = P(X(t) \le y \vert X(s) = x)
+$$
+
+A process is called Gaussian if all its finite-dimensional distributions are multivariate normal.
+
 ## Filtration
 
 A filtration $$\mathbb{F}$$ is the collection of $$\sigma$$-fields
@@ -196,9 +207,15 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 3. 显然, Brownian motion是一个martingale.
 4. $$B(t)^2 - t$$也是一个martingale.
   - 证明: 对任意的$$t, s \ge 0$$, 有$$\begin{align*}E(B^2(t + s) - (t + s) \vert \mathcal{F_t}) & = B^2(t) + 2E(B(t)(B(t + s) - B(t)) \vert \mathcal{F_t}) + E((B(t + s) - B(t))^2 \vert \mathcal{F_t}) - (t + s) \\ & = B^2(t) - t \end{align*}$$
-  - 如果随机过程$$X(t)$$是一个满足$$X^2(t) - t$$为martingale的连续martingale, 则$$X(t)$$是Brownian motion.
 5. Brownian motion具有Markov property.
 6. 若Brownian motion $$B_1(t)$$ 与 $$B_2(t)$$独立, 则其covariation为$$0$$.
+7. A Brownian motion started at $$0$$ is a Gaussian process with $$0$$ mean function, and covariance function $$\min(t, s)$$. Conversely, a Gaussian process with $$0$$ mean function and covariance function $$\min(t, s)$$ is a Brownian function.
+
+Lévy’s characterization of Brownian motion证明了如果$$X(t)$$是满足$$X(0) = 0$$的martingale, 则以下等价
+
+1. $$X(t)$$ is standard Brownian motion on the underlying filtered probability space.
+2. $$X$$ is continuous and $$X^2(t) - t$$ is a martingale.
+3. $$X$$ has quadratic variation $$[X](t) = t$$.
 
 ## 路径性质
 
@@ -282,32 +299,32 @@ Itô integral具有以下性质
 An Itô process has the form
 
 $$
-X(t) = X(0) + \int_0^t G(s)ds + \int_0^t H(s)dB(s) \quad 0 \le t \le T
+X(t) = X(0) + \int_0^t \mu(s)ds + \int_0^t \sigma(s)dB(s) \quad 0 \le t \le T
 $$
 
-where $$X(0)$$ is $$\mathcal{F}_0$$-measurable and processes $$G(t)$$ and $$H(t)$$ are $$\mathcal{F}_t$$-adapted, such that $$\int_0^T \lvert G(t) \rvert dt < \infty$$ and $$\int_0^T H^2(t) dt < \infty$$.
+where $$X(0)$$ is $$\mathcal{F}_0$$-measurable and processes $$\mu(t)$$ and $$\sigma(t)$$ are $$\mathcal{F}_t$$-adapted, such that $$\int_0^T \lvert \mu(t) \rvert dt < \infty$$ and $$\int_0^T \sigma^2(t) dt < \infty$$.
 
-It is said that the process $$X(t)$$ has the stochastic differential on $$[0, T]$$, $$dX(t) = G(t)dt + H(t)dB(t)$$.
+It is said that the process $$X(t)$$ has the stochastic differential on $$[0, T]$$, $$dX(t) = \mu(t)dt + \sigma(t)dB(t)$$.
 
-Note that $$G(t)$$ and $$H(t)$$ may depend on $$X(t)$$ or $$B(T)$$ as well, or even the whole past path of $$B(s), s \le t$$.
+Note that $$\mu(t)$$ and $$\sigma(t)$$ may depend on $$X(t)$$ or $$B(T)$$ as well, or even the whole past path of $$B(s), s \le t$$.
 
 Itô process的quadratic variation为$$[Y](t) = \int_0^t H^2(s)ds$$. 如果$$X(t)$$, $$Y(t)$$均为Itô process而$$X(t)$$ is of finite variation, 则$$[X, Y](t) = 0$$.
 
 ## Itô's Formula
 
-若随机过程$$X(t)$$有stochastic differential $$dX(t) = G(t)dt + H(t)dB(t)$$, 设$$F(t) = f(X(t))$$, 其中$$f(x) \in C^2$$, 则
+若随机过程$$X(t)$$有stochastic differential $$dX(t) = \mu(t)dt + \sigma(t)dB(t)$$, 设$$F(t) = f(X(t))$$, 其中$$f(x) \in C^2$$, 则
 
 $$
-dF(t) = (G(t)f'(X(t)) + \frac{H^2(t)}{2}f''(X(t)))dt + H(t)f'(X(t))dB(t)
+dF(t) = (\mu(t)f'(X(t)) + \frac{\sigma^2(t)}{2}f''(X(t)))dt + \sigma(t)f'(X(t))dB(t)
 $$
 
 证明思路:
 
 $$
 \begin{align*}
-(dX(t))^2 & = (G(t)dt + H(t)dB(t))^2 \\
-& = G^2(t)dt^2 + 2G(t)H(t)dB(t)dt + H^2(t)dB^2(t) \\
-& = H^2(t)dt
+(dX(t))^2 & = (\mu(t)dt + \sigma(t)dB(t))^2 \\
+& = \mu^2(t)dt^2 + 2\mu(t)\sigma(t)dB(t)dt + \sigma^2(t)dB^2(t) \\
+& = \sigma^2(t)dt
 \end{align*}
 $$
 
@@ -316,7 +333,7 @@ $$
 $$
 \begin{align*}
 dF(t) & = f'(X(t))dX(t) + \frac{1}{2}f''(X(t))(dX(t))^2 \\
-& = (G(t)f'(X(t)) + \frac{H^2(t)}{2}f''(X(t)))dt + H(t)f'(X(t))dB(t)
+& = (\mu(t)f'(X(t)) + \frac{\sigma^2(t)}{2}f''(X(t)))dt + \sigma(t)f'(X(t))dB(t)
 \end{align*}
 $$
 
@@ -328,10 +345,10 @@ $$
 2. $$f(x) = e^{kx}$$时$$d(e^{kB(t)}) = ke^{kB(t)}dB(t) + \frac{1}{2}k^2 e^{kB(t)}dt$$.
 3. $$f(x) = sin(x)$$时$$d(sin(B(t))) = cos(B(t))dt - \frac{1}{2} sin(B(t))dt$$.
 
-更一般地, 若随机过程$$X(t)$$满足$$dX(t) = G(B(t), t)dt + H(B(t), t)dB(t)$$, 且$$f(x, t) \in C^2$$ is time dependent, 则
+更一般地, 若随机过程$$X(t)$$满足$$dX(t) = \mu(B(t), t)dt + \sigma(B(t), t)dB(t)$$, 且$$f(x, t) \in C^2$$ is time dependent, 则
 
 $$
-dF(t) = (\partial_t f(X(t), t) + G(B(t), t)\partial_x f(X(t), t) + \frac{H(B(t), t)}{2} \partial^2_x f(B(t), t))dt + H(B(t), t) \partial_x f(X(t), t)dB(t)
+dF(t) = (\partial_t f(X(t), t) + \mu(B(t), t)\partial_x f(X(t), t) + \frac{\sigma(B(t), t)}{2} \partial^2_x f(B(t), t))dt + \sigma(B(t), t) \partial_x f(X(t), t)dB(t)
 $$
 
 ## Itô Diffusion
@@ -401,6 +418,8 @@ $$
 
 A strong solution is some function(functional) $$F(t, (B(s), s \le t))$$ of the given Brownian motion.
 
+SDE的解具有Markov property.
+
 ## Stochastic Exponential and Logarithm
 
 令$$X(T)$$有stochastic differential, 且$$U(t)$$满足$$dU(t) = U(t)dX(t)$$且$$U(0) = 1$$, 则$$U(t)$$称为$$X(t)$$的stochastic exponential, 记为$$\mathcal{E}(X)$$. 对于Itô processes, 则有
@@ -469,8 +488,106 @@ $$
 X(t) = U(t)(X(0) + \int_0^t \frac{\alpha(s) - \delta(s)\gamma(s)}{U(s)}ds + \int_0^t \frac{\gamma(s)}{U(s)}dB(s))
 $$
 
+### Langevin-Type SDE
+
+令$$X(t)$$满足
+
+$$
+dX(t) = a(t)X(t)dt + dB(t)
+$$
+
+其中$$a(t)$$是给定的连续adapted process. 当$$a(t) = -\alpha$$时, 该方程为Langevin equation. 应用一般公式可解得
+
+$$
+X(t) = e^{-\int_0^t a(s)ds} (X(0) + \int_0^t e^{-\int_0^u a(s)ds}dB(u))
+$$
+
+### Brownian Bridge
+
+The Brownian Bridge, or pinned Brownian motion, is a solution to the following SDE:
+
+$$
+dX(t) = \frac{b - X(t)}{T - t}dt + dB(t)
+$$
+
+This process is a transformed Brownian motion with fixed values at each end of the interval $$[0, T], X(0) = a$$ and $$X(T) = b$$. 应用一般公式可解得
+
+$$
+X(t) = a(1 - \frac{t}{T}) + b\frac{t}{T} + (T - t)\int_0^t \frac{1}{T - s} dB(s)
+$$
+
 ## Existence and Uniqueness of Strong Solutions
 
-## Markov Property of Solutions
+令$$X(t)$$满足$$dX(t) = \mu(X(t), t)dt + \sigma(X(t), t)dB(t)$$, 若满足以下条件
 
-## 后向与前向方程
+1. Coefficients are locally Lipschitz in $$x$$ uniformly in $$t$$, that is, for every $$T$$ and $$N$$ there is a constant $$K$$ depending only on $$T$$ and $$N$$, such that for all $$\lvert x \rvert, \lvert y \rvert \le N$$ and all $$0 \le t \le T$$, $$\lvert \mu(x,t) - \mu(y, t) \rvert + \lvert \sigma(x, t) - \sigma(y, t) \rvert < K \lvert x - y \rvert$$.
+2. Coefficients satisfy the linear growth condition $$\lvert \mu(x, t) \rvert + \lvert \sigma(x, t) \rvert \le K(1 + \lvert x \rvert).
+3. $$X(0)$$ is independent of $$(B(t), 0 \le t \le T)$$, and $$E(X^2(0)) < \infty$$.
+
+那么该SDE存在一个唯一的strong solution $$X(t)$$. $$X(t)$$有连续的路径, 且$$E(\sup_{0 \le t \le T}X^2(t)) < C(1 + E(X^2(0)))$$. 其中常数$$C$$的取值仅依赖于$$K$$和$$T$$.
+
+若对$$\lvert x \rvert, \lvert y \rvert \le N$$和$$0 \le t \le T$$, $$\partial_x G(x, t)$$和$$\partial_x H(x, t)$$有界, 则所要求的Lipschitz条件成立, which in turn is true if the derivatives are continuous. 
+
+## Weak Solutions to SDEs
+
+Weak solutions的概念允许我们在strong solutions不存在的时候赋予SDE意义. Weak solutions are solutions in distribution, they can be realized on some other probability space, and they exist under less stringent conditions on the coefficients of the SDE.
+
+If there exists a probability space with a filtration, a Brownian motion $$\hat{B}(t)$$, and a process $$\hat{X}(t)$$ adapted to that filtration, such that $$\hat{X}(0)$$ has the given distribution, for all $$t$$ the integrals below are defined, and $$\hat{X}(t)$$ satisfies
+
+$$
+\hat{X}(t) = \hat{X}(0) + \int_0^t \mu(\hat{X}(s), s)ds + \int_0^t \sigma(\hat{X}(s), s)d\hat{B}(s)
+$$
+
+then $$\hat{X}(t)$$ is called a weak solution to the SDE $$dX(t) = \mu(X(t), t)dt + \sigma(X(t), t)dB(t)$$.
+
+A weak solution is called unique if any two solutions(possible on different probability spaces) with the same distributions have the same finite dimensional distributions.
+
+Strong solution与weak solution之间主要的区别在于, 对于strong solution我们被给定了一个Brownian motion和概率空间, 而对于weak solution我们可以自由地选择Brownian motion和概率空间.
+
+## Backward and Forward Equations
+
+In many applications, the importance of diffusions lies in their connection to PDEs, and often diffusions are specified by a PDE called the Fokker-Planck equation. Although PDEs are hard to solve in closed form, they can be easily solved numerically. We can then obtain the transition function that determines the weak solution to SDEs.
+
+Define the differential operator $$L_s, 0 \le s \le T$$ by
+
+$$
+L_sf(x, s) = (L_sf)(x, s) = \frac{1}{2} \sigma^2(x, s)\partial_x^2 f(x, s) + \mu(x, s)\partial_x f(x, s)
+$$
+
+The operator $$L_s$$ acts on twice continuously differentiable in $$x$$ functions $$f(x, s)$$.
+
+A fundamental solution of the PDE
+
+$$
+\partial_s u(x, s) + L_su(x, s) = 0
+$$
+
+is a non-negative function $$p(y, t, x, s)$$ with the following properties
+
+1. It is jointly continuous in $$y, t, x, s$$, twice continuously differentiable in $$x$$ and satisfies the above equation with respect to $$s$$ and $$x$$.
+2. For any bounded continuous function $$g(x)$$ on $$\mathbb{R}$$, and any $$t > 0$$, $$u(x, s) = \int_{\mathbb{R}} g(y)p(y, t, x, s)dy$$ is bounded, satisfies the above equation and $$lim_{s \uparrow t}u(x, s) = g(x)$$.
+
+The above equation is a PDE in the backward variables $$(x, s)$$ of the transition function and is therefore called Kolmogorov's backward equation.
+
+Suppose that $$\sigma(x, t)$$ and $$\mu(x, t)$$ are bounded and continuous functions such that
+
+1. $$\sigma^2(x, t) \ge c > 0$$.
+2. $$\mu(x, t)$$ and $$\sigma^2(x, t)$$ satisfy a Hölder condition with respect to $$x$$ and $$t$$, that is, for all $$x, y \in \mathbb{R}$$ and $$s, t > 0$$, $$\lvert \mu(y, t) - \mu(x, s)\rvert + \lvert \sigma^2(y, t) - \sigma^2(x, s)\rvert \le K(\lvert y - x \rvert^{\alpha} + \lvert t - s \rvert ^ {\alpha})$$.
+
+Then the PDE has a fundamental solution, which is unique and strictly positive.
+
+If in addition $$\mu(x, t)$$ and $$\sigma(x, t)$$ have two partial derivatives with respect to $$x$$, which are bounded and satisfy a Hölder condition with respect to $$x$$, then $$p(y, t, x, s) as a function in $$y$$ and $$t$$ satisfy the PDE
+
+$$
+-\partial_t p + \frac{1}{2} \partial^2_y (\sigma^2(y, t)p(y, t, x, s)) - \partial_y(\mu(y, t)p(y, t, x, s)) = 0 
+$$
+
+This equation is in the forward variables $$(y, t)$$ and is therefore called the Kolmogorov's forward equation, also known as Fokker-Planck equation or diffusion equation.
+
+The function $$P(y, t, x, s) = \int_{-\infty}^y p(u, t, x, s)du$$ uniquely defines a transition probability function. Moreover, this function has the property that for any bounded function $$f(x, t)$$ twice continuously differentiable in $$x$$ and once continuously differentiable in $$t$$
+
+$$
+\int_{\mathbb{R}} f(y, t)P(dt, t, x, s) - f(x, s) = \int_s^t \int_{\mathbb{R}} (\partial_u + L_u)f(y, u)P(dy, u, x, s)du \quad 0 \le s < t, x \in \mathbb{R}
+$$
+
+The transition function $$P(y, t, x, s)$$ defines uniquely a Markov process $$X(t)$$, that is, for all $$x, y$$ and $$0 \le s \le t$$, $$P(y, t, x, s) = P(X(t) \le y \vert X(s) = x)$$. The process $$X(t)$$ is called a diffusion, the differential operator $$L_s$$ is called its generator. The above property implies that $$X(t)$$ satisfies the SDE $$dX(t) = \mu(X(t), t)dt + \sigma(X(t), t)dB(t)$$.
