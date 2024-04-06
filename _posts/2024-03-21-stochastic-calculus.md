@@ -12,7 +12,7 @@ toc:
 # 前言
 宋飏在其著名论文*Score-Based Generative Modeling through Stochastic Differential Equations*中凭借基于SDE的框架统一了score-based generative modeling与diffusion probablistic modeling两大生成式模型范式. 理解此论文需要较好的随机分析基础, 上手难度较大, 而笔者并非数学/金融相关专业, 根本学不会一点 (笑). 笔者将尽力尝试在本笔记中整理随机分析的要点. 由于笔者学习随机分析的目的只是为了更深入地理解diffusion models, 内容将十分简略, 理解或许也会有不少偏差之处. 为写作方便, 行文将中英混杂.
 
-本笔记主要基由以下文献拼凑而成
+本笔记主要基于以下文献拼凑而成
 1. *Introduction to Stochastic Calculus with Applications, Third Edition* by Fima C. Klebaner
 2. *An Introduction to Stochastic Differential Equations* by Lawrence C. Evans
 3. *An Informal Introduction to Stochastic Calculus with Applications* by Ovidiu Calin
@@ -55,8 +55,7 @@ $$
 
 Moreover, polarization identity holds for covariation $$[f,g](t) = \frac{1}{2}([f + g,f + g](t) - [f,f](t) - [g,g](t))$$, so covariation is symmetric and bilinear.
 
-## Lipschitz and '
-' Conditions
+## Lipschitz and Hölder Conditions
 Lipschitz and Hölder Conditions描述了连续函数的子类. 它们作为系数的条件出现在ODE与SDE的解的存在性与唯一性的结果中.
 
 $$f$$ satisfies a Hölder condition (Hölder continuous) of order $$0 < \alpha \le 1$$ on $$[a,b]$$ uniformly if there is a constant $$K > 0$$ so that for all $$x, y \in [a,b]$$
@@ -71,7 +70,7 @@ $$
 \lvert f(x) - f(y) \rvert \le K \lvert x - y \rvert^{\alpha}
 $$
 
-A Lipschitz condition is a Hölder condition with $$\alpha = 1$$. 可以证明, 当Hölder condition中$$\alpha > 1$$时满足条件的函数必为常数.
+A Lipschitz condition is a Hölder condition with $$\alpha = 1$$. 可以证明, 满足$$\alpha > 1$$的Hölder condition的函数必为常数.
 
 If $$f$$ is continuously differentiable on a finite interval $$[a, b]$$, then it is Lipschitz.
 
@@ -154,11 +153,7 @@ $$
 
 则称其为Markov process.
 
-Markov processes are characterized by the transition probability function
-
-$$
-P(y, t, x, s) = P(X(t) \le y \vert X(s) = x)
-$$
+Markov processes are characterized by the transition probability function $$P(y, t, x, s) = P(X(t) \le y \vert X(s) = x)$$.
 
 A process is called Gaussian if all its finite-dimensional distributions are multivariate normal.
 
@@ -167,14 +162,14 @@ A process is called Gaussian if all its finite-dimensional distributions are mul
 A filtration $$\mathbb{F}$$ is the collection of $$\sigma$$-fields
 
 $$
-\mathbb{F} = {\mathcal{F}_0, \mathcal{F}_1, \cdots, \mathcal{F}_t, \cdots, \mathcal{F}_T} \quad \mathcal{F}_t \subset \mathcal{F}_{t+1} \subset \mathcal{F}
+\mathbb{F} = {\mathcal{F}(0), \mathcal{F}(1), \cdots, \mathcal{F}(t), \cdots, \mathcal{F}(T)} \quad \mathcal{F}(t) \subset \mathcal{F}(t+1) \subset \mathcal{F}
 $$
 
 $$\mathbb{F}$$ is used to model a flow of information. $$\sigma$$-field $$\mathcal{F}_t$$包含所有截至时间$$t$$已知的信息, 即已经发生的事件及没有发生的事件. 随着时间的流逝, 观测者知道越来越多的信息, $$\mathcal{F}_t$$对样本空间$$\Omega$$作越来越精细的分割.
 
-$$\mathcal{F}_t = \sigma({X_s, 0 \le s \le t})$$称为随机过程$$X_t$$的natural filtration.
+$$\mathcal{F}(t) = \sigma({X(s), 0 \le s \le t})$$称为随机过程$$X(t)$$的natural filtration.
 
-A stochastic process is called adapted to filtration $$\mathbb{F}$$ if for all $$t$$, $$X(t)$$ is a random variable on $$\mathcal{F}_t$$, that is, if $$X(t)$$ is $$\mathcal{F}_t$$-measurable.
+A stochastic process is called adapted to filtration $$\mathbb{F}$$ if for all $$t$$, $$X(t)$$ is a random variable on $$\mathcal{F}_t$$, that is, if $$X(t)$$ is $$\mathcal{F}(t)$$-measurable.
 
 ## Martingale
 
@@ -195,27 +190,21 @@ Brownian motion (alse known as Wiener process)$$B(t), t \ge 0$$是满足以下�
 2. For all times $$0 < t_1 < t_2 < \cdots < t_n$$, $$B(t_1), B(t_2)-B(t_1), \cdots, B(t_n) - B(t_{n-1})$$ are independent increments.
 3. $$B(t)$$ is continuous in $$t$$.
 
-可简单地将定义推广到高维的情形. 向量的每一维是互相独立的一维Brownian motion.
+可容易地将定义推广到高维的情形. 向量的每一维是互相独立的一维Brownian motion.
 
 直观上, Brownian motion可看作微扰$$dB = N(0, dt)$$的和.
 
 ## 基本性质
 
-1. 由$$t \ge s \ge 0$$时$$E(B(t) - B(s)) = 0, 且Var(B(t) - B(s)) = t$$可知, $$E((B(t) - B(s))^2) = t - s$$.
+1. 由$$t \ge s \ge 0$$时$$E(B(t) - B(s)) = 0$$, 且$$Var(B(t) - B(s)) = t - s$$可知, $$E((B(t) - B(s))^2) = t - s$$.
 2. $$Cov(B(s),B(t)) = E(B(s)B(t)) = \min(s,t)$$.
   - 证明: $$t \ge s \ge 0$$时有$$Cov(B(s),B(t)) = E(B(s) - B(0))E(B(t) - B(s)) + E(B^2(s)) = s$$.
 3. 显然, Brownian motion是一个martingale.
 4. $$B(t)^2 - t$$也是一个martingale.
-  - 证明: 对任意的$$t, s \ge 0$$, 有$$\begin{align*}E(B^2(t + s) - (t + s) \vert \mathcal{F_t}) & = B^2(t) + 2E(B(t)(B(t + s) - B(t)) \vert \mathcal{F_t}) + E((B(t + s) - B(t))^2 \vert \mathcal{F_t}) - (t + s) \\ & = B^2(t) - t \end{align*}$$
+  - 证明: 对任意的$$t, s \ge 0$$, 有$$\begin{align*}E(B^2(t + s) - (t + s) \vert \mathcal{F(t)}) & = B^2(t) + 2E(B(t)(B(t + s) - B(t)) \vert \mathcal{F(t)}) + E((B(t + s) - B(t))^2 \vert \mathcal{F(t)}) - (t + s) \\ & = B^2(t) - t \end{align*}$$
 5. Brownian motion具有Markov property.
 6. 若Brownian motion $$B_1(t)$$ 与 $$B_2(t)$$独立, 则其covariation为$$0$$.
 7. A Brownian motion started at $$0$$ is a Gaussian process with $$0$$ mean function, and covariance function $$\min(t, s)$$. Conversely, a Gaussian process with $$0$$ mean function and covariance function $$\min(t, s)$$ is a Brownian function.
-
-Lévy’s characterization of Brownian motion证明了如果$$X(t)$$是满足$$X(0) = 0$$的martingale, 则以下等价
-
-1. $$X(t)$$ is standard Brownian motion on the underlying filtered probability space.
-2. $$X$$ is continuous and $$X^2(t) - t$$ is a martingale.
-3. $$X$$ has quadratic variation $$[X](t) = t$$.
 
 ## 路径性质
 
@@ -249,7 +238,7 @@ Lévy’s characterization of Brownian motion证明了如果$$X(t)$$是满足$$X
 2. 对于任意$$\omega \in \Omega$$, $$t \mapsto F(t, \omega)$$在$$[a,b]$$上连续.
 3. $$F(t)$$是$$[a,b]$$上的nonanticipating process.
 
-则存在其Itô integral, 定义为$$S_n = \sum_{i=0}^{n-1} F(t_i^n)(B(t_{i+1}^n) - B(t_i^n))$$的均方极限 $$\text{ms-lim}_{\delta_n \rightarrow 0} S_n = \int_a^b F(t)dB(t)$$, 即$$\lim_{\delta_n \rightarrow 0} E((S_n - \int_a^b F(t)dB(t))^2) = 0$$.
+或是一个continuous adapted process, 则存在其Itô integral, 定义为$$S_n = \sum_{i=0}^{n-1} F(t_i^n)(B(t_{i+1}^n) - B(t_i^n))$$的均方极限 $$\text{ms-lim}_{\delta_n \rightarrow 0} S_n = \int_a^b F(t)dB(t)$$, 即$$\lim_{\delta_n \rightarrow 0} E((S_n - \int_a^b F(t)dB(t))^2) = 0$$.
 
 在Riemann integral中, Riemann sum的极限与中间点的选取无关. 然而可以证明, 对于随机积分, Riemann sum的极限与中间点的选取有关. 由于Itô integral考虑的是nonanticipating process, 故一致地选取区间的左端点作为中间点, 以使$$F(t_i)$$与$$B(t_{i+1}) - B(t_i)$$独立. 若选取中点, 则为Stratonovich integral. 
 
@@ -268,8 +257,6 @@ $$
 $$
 \int_a^b B(t)dB(t) = \text{ms-lim}_{\delta_n \rightarrow 0} S_n = \frac{1}{2}(B^2(b) - B^2(a)) - \frac{1}{2}(b - a)
 $$
-
-如果$$X$$是一个continuous adapted process则其Itô integral存在.
 
 ### 性质
 
@@ -302,13 +289,13 @@ $$
 X(t) = X(0) + \int_0^t \mu(s)ds + \int_0^t \sigma(s)dB(s) \quad 0 \le t \le T
 $$
 
-where $$X(0)$$ is $$\mathcal{F}_0$$-measurable and processes $$\mu(t)$$ and $$\sigma(t)$$ are $$\mathcal{F}_t$$-adapted, such that $$\int_0^T \lvert \mu(t) \rvert dt < \infty$$ and $$\int_0^T \sigma^2(t) dt < \infty$$.
+where $$X(0)$$ is $$\mathcal{F}(0)$$-measurable and processes $$\mu(t)$$ and $$\sigma(t)$$ are $$\mathcal{F}(t)$$-adapted, such that $$\int_0^T \lvert \mu(t) \rvert dt < \infty$$ and $$\int_0^T \sigma^2(t) dt < \infty$$.
 
 It is said that the process $$X(t)$$ has the stochastic differential on $$[0, T]$$, $$dX(t) = \mu(t)dt + \sigma(t)dB(t)$$.
 
-Note that $$\mu(t)$$ and $$\sigma(t)$$ may depend on $$X(t)$$ or $$B(T)$$ as well, or even the whole past path of $$B(s), s \le t$$.
+Note that $$\mu(t)$$ and $$\sigma(t)$$ may depend on $$X(t)$$ or $$B(t)$$ as well, or even the whole past path of $$B(s), s \le t$$.
 
-Itô process的quadratic variation为$$[Y](t) = \int_0^t H^2(s)ds$$. 如果$$X(t)$$, $$Y(t)$$均为Itô process而$$X(t)$$ is of finite variation, 则$$[X, Y](t) = 0$$.
+Itô process的quadratic variation为$$[Y](t) = \int_0^t \sigma^2(s)ds$$. 如果$$X(t)$$, $$Y(t)$$均为Itô process而$$X(t)$$ is of finite variation, 则$$[X, Y](t) = 0$$.
 
 ## Itô's Formula
 
@@ -337,7 +324,7 @@ dF(t) & = f'(X(t))dX(t) + \frac{1}{2}f''(X(t))(dX(t))^2 \\
 \end{align*}
 $$
 
-由于$$dB^2(t) = dt$$并非高阶无穷小, 因此得到了与确定的情形不同的结论.
+由于$$(dB(t))^2 = dt$$并非高阶无穷小, 因此得到了与确定的情形不同的结论.
 
 由此可得到推论$$F(t) = f(B(t))$$时, $$dF(t) = \frac{1}{2}f''(B(t))dt + f'(B(t))dB(t)$$. 特别地,
 
