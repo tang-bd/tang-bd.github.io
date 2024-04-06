@@ -381,7 +381,7 @@ $$
 
 则$$h \rightarrow 0$$时, 对$$s \ne t$$, 有$$\phi_h(s) \rightarrow 0$$. 然而$$\phi_h(s) \ge 0$$且$$\int \phi_h(s)ds = 1$$, 故可认为$$\phi_h(s) \rightarrow \delta_0(s - t)$$. 此外, 我们期待$$\phi_h(s) \rightarrow E(\xi(t)\xi(s))$$, 故可以不严谨地认为上述heuristic formula成立.
 
-如果$$X(t)$$是对所有$$t \ge 0$$满足$$E(X^2(t)) < \infty$$的随机过程, 则定义$$r(t, s) = E(X(t)X(s))$$为$$X(t)$$的autocorrelation function, 其中$$t, s \ge 0$$. If $$r(t, s) = f(t-s)$$ for some function $$c: \mathbb{R} \mapsto \mathbb{R}$$ and if $$E(X(t)) = E(X(s))$$ for all $$t, s \ge 0$$, then $$X(t)$$ is called stationary in the wide sense. A white noise process is, at least at the formal level, wide sense stationary. 定义autocorrelation funtion的Fourier transform为$$X(t)$$的spectral density, 则对于white noise, 其spectral density在各个频率上都相等. 就像所有颜色的光平均混合得到白光一样.
+如果$$X(t)$$是对所有$$t \ge 0$$满足$$E(X^2(t)) < \infty$$的随机过程, 则定义$$r(t, s) = E(X(t)X(s))$$为$$X(t)$$的autocorrelation function, 其中$$t, s \ge 0$$. If $$r(t, s) = f(t-s)$$ for some function $$f: \mathbb{R} \mapsto \mathbb{R}$$ and if $$E(X(t)) = E(X(s))$$ for all $$t, s \ge 0$$, then $$X(t)$$ is called stationary in the wide sense. A white noise process is, at least at the formal level, wide sense stationary. 定义autocorrelation funtion的Fourier transform为$$X(t)$$的spectral density, 则对于white noise, 其spectral density在各个频率上都相等. 就像所有颜色的光平均混合得到白光一样.
 
 ## 定义
 
@@ -393,7 +393,7 @@ $$
 
 where functions $$\mu(x, t)$$ and $$\sigma(x, t)$$ are given and $$X(t)$$ is the unknown process, is called a stochastic differential equation driven by Brownian motion. The functions $$\mu(x, t)$$ and $$\sigma(x, t)$$ are called respectively the drift and the diffusion coefficient.
 
-物理上, 可将$$X(t)$$看作时间$$t$$时微粒在一个方向上从初始位置开始的位移, 将$$\mu(x, t)$$看作液体时间$$t$$时在位置$$x$$的速度, 将$$\sigma(x, t)$$看作温度$$t$$时在位置$$x$$的影响.
+物理上, 可将$$X(t)$$看作时间$$t$$时微粒在一个方向上从初始位置开始的位移, 将$$\mu(x, t)$$看作液体时间$$t$$时在位置$$x$$的速度, 将$$\sigma(x, t)$$看作温度时间$$t$$时在位置$$x$$的影响.
 
 这种形式的方程又称为diffusion-type SDEs. 更一般的SDE的形式为$$dX(t) = \mu(t)dt + \sigma(t)dB(t)$$, where $$\mu(t)$$ and $$\sigma(t)$$ can depend on $$t$$ and the whole past of the processes $$X(t)$$ and $$B(t)$$ ($$X(s),B(s),s \le t$$), that is, $$\mu(t) = \mu((X(s), s \le t),t), \sigma(t) = \sigma((X(s), s \le t), t)$$. 对$$\mu(t)$$和$$\sigma(t)$$唯一的限制是它们必须是adapted processes, with respective integrals defined. 我们接下来的讨论主要聚焦于diffusion-type SDEs.
 
@@ -415,7 +415,7 @@ $$
 U(t) = \exp(X(t) - X(0) - \frac{1}{2}[X, X](t))
 $$
 
-令$$U(t)$$有stochastic differential且取值不为0, 则其stochastic logarithm满足$$dX(t) = \frac{dU(t)}{U(t)}$$且$$X(0) = 0$$. 可解得
+令$$U(t)$$有stochastic differential且取值不为$$0$$, 则其stochastic logarithm满足$$dX(t) = \frac{dU(t)}{U(t)}$$且$$X(0) = 0$$. 可解得
 
 $$
 X(t) = \mathcal{L}(U)(t) = \ln(\frac{U(t)}{U(0)}) + \int_0^t \frac{d[U, U](s)}{2U^2(s)}
@@ -563,7 +563,7 @@ Suppose that $$\sigma(x, t)$$ and $$\mu(x, t)$$ are bounded and continuous funct
 
 Then the PDE has a fundamental solution, which is unique and strictly positive.
 
-If in addition $$\mu(x, t)$$ and $$\sigma(x, t)$$ have two partial derivatives with respect to $$x$$, which are bounded and satisfy a Hölder condition with respect to $$x$$, then $$p(y, t, x, s) as a function in $$y$$ and $$t$$ satisfy the PDE
+If in addition $$\mu(x, t)$$ and $$\sigma(x, t)$$ have two partial derivatives with respect to $$x$$, which are bounded and satisfy a Hölder condition with respect to $$x$$, then $$p(y, t, x, s)$$ as a function in $$y$$ and $$t$$ satisfy the PDE
 
 $$
 -\partial_t p(y, t, x, s) + \frac{1}{2} \partial^2_y (\sigma^2(y, t)p(y, t, x, s)) - \partial_y(\mu(y, t)p(y, t, x, s)) = 0 
