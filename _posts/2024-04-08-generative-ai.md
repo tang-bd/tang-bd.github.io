@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 笔记 · Generative AI
-date: 2024-03-21
+date: 2024-04-08
 description: 物换星移几度秋
 tags: 2023
 categories: 笔记
