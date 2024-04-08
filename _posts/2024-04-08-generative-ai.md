@@ -5,8 +5,6 @@ date: 2024-04-08
 description: 物换星移几度秋
 tags: 2023
 categories: 笔记
-toc:
-  beginning: true
 ---
 
 # 论文
