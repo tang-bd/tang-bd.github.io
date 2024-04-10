@@ -29,6 +29,7 @@ categories: 笔记
 - [一文解释 Diffusion Model by 撒旦-cc](https://zhuanlan.zhihu.com/p/565901160)
 - [What are Diffusion Models? by Lilian Weng](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
 - [Why KL? by Alex Alemi](https://blog.alexalemi.com/kl.html)
+- [KL is all you need](https://blog.alexalemi.com/kl-is-all-you-need.html)
 - [The Illustrated Stable Diffusion by Jay Alammar](https://jalammar.github.io/illustrated-stable-diffusion/)
 - Understanding Diffusion Models: A Unified Perspective by Calvin Luo
 - Lecture Notes by Jian Li
