@@ -33,6 +33,7 @@ categories: 笔记
 - [The Illustrated Stable Diffusion by Jay Alammar](https://jalammar.github.io/illustrated-stable-diffusion/)
 - Understanding Diffusion Models: A Unified Perspective by Calvin Luo
 - Lecture Notes by Jian Li
+- [Mathematical Foundation of Diffusion Generative Models](https://scholar.harvard.edu/binxuw/classes/machine-learning-scratch/materials/foundation-diffusion-generative-models)
 
 # 书籍
 - ~~Introduction to Stochastic Differential Equations~~
