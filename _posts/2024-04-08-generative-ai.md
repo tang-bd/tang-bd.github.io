@@ -15,11 +15,22 @@ categories: 笔记
 - ~~Annealed Importance Sampling~~
 - ~~Generative Modeling by Estimating Gradients of the Data Distribution~~
 - ~~High-Resolution Image Synthesis with Latent Diffusion Models~~
-- Score-based Generative Modeling through Stochastic Differential Equations
+- ~~Score-based Generative Modeling through Stochastic Differential Equations~~
 - Variational Diffusion Models
 - Classifier-Free Diffusion Guidance
 - Adding Conditional Control to Text-to-Image Diffusion Models
 - Scalable Diffusion Models with Transformers
+- DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation
+- PhysDreamer: Physics-Based Interaction with 3D Objects via Video Generation
+- From r to Q∗: Your Language Model is Secretly a Q-Function
+- Scalable Image Generation via Next-Scale Prediction
+- MagicLens: Self-Supervised Image Retrieval with Open-Ended Instructions
+- IM-3D: Iterative Multiview Diffusion and Reconstruction for High-Quality 3D Generation
+- Referee Can Play: An Alternative Approach to Conditional Generation via Model Inversion
+- Video as the New Language for Real-World Decision Making
+- Sculpting Meshes With Generative Neural Fields
+- Denoising Autoregressive Representation Learning
+- FeatUp: A Model-Agnostic Framework for Features at Any Resolution
 
 # 笔记
 - ~~[生成扩散模型漫谈 by 苏剑林](https://kexue.fm/archives/9119)~~
@@ -32,7 +43,6 @@ categories: 笔记
 - [KL is all you need](https://blog.alexalemi.com/kl-is-all-you-need.html)
 - [The Illustrated Stable Diffusion by Jay Alammar](https://jalammar.github.io/illustrated-stable-diffusion/)
 - Understanding Diffusion Models: A Unified Perspective by Calvin Luo
-- Lecture Notes by Jian Li
 - [Mathematical Foundation of Diffusion Generative Models](https://scholar.harvard.edu/binxuw/classes/machine-learning-scratch/materials/foundation-diffusion-generative-models)
 
 # 书籍
