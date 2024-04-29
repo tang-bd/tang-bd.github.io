@@ -31,19 +31,22 @@ categories: 笔记
 - Sculpting Meshes With Generative Neural Fields
 - Denoising Autoregressive Representation Learning
 - FeatUp: A Model-Agnostic Framework for Features at Any Resolution
+- SV3D: Novel Multi-view Synthesis and 3D Generation from a Single Image using Latent Video Diffusion
+- Make-it-Real: Unleashing Large Multimodal Model's Ability for Painting 3D Objects with Realistic Materials
 
 # 笔记
 - ~~[生成扩散模型漫谈 by 苏剑林](https://kexue.fm/archives/9119)~~
 - [生成扩散模型 by Hammour Yue](https://www.zhihu.com/column/c_1712921480839639040)
 - [A Path to the Variational Diffusion Loss by Alex Alemi](https://blog.alexalemi.com/diffusion.html)
-- [Stochastic Differential Equations and Diffusion Models by Vanilla Bug](https://www.vanillabug.com/posts/sde/#diffusion-models-as-sdes)
+- ~~[Stochastic Differential Equations and Diffusion Models by Vanilla Bug](https://www.vanillabug.com/posts/sde/#diffusion-models-as-sdes)~~
 - [一文解释 Diffusion Model by 撒旦-cc](https://zhuanlan.zhihu.com/p/565901160)
 - [What are Diffusion Models? by Lilian Weng](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
 - [Why KL? by Alex Alemi](https://blog.alexalemi.com/kl.html)
 - [KL is all you need](https://blog.alexalemi.com/kl-is-all-you-need.html)
 - [The Illustrated Stable Diffusion by Jay Alammar](https://jalammar.github.io/illustrated-stable-diffusion/)
 - Understanding Diffusion Models: A Unified Perspective by Calvin Luo
-- [Mathematical Foundation of Diffusion Generative Models](https://scholar.harvard.edu/binxuw/classes/machine-learning-scratch/materials/foundation-diffusion-generative-models)
+- [Mathematical Foundation of Diffusion Generative Models by Binxu Wang](https://scholar.harvard.edu/binxuw/classes/machine-learning-scratch/materials/foundation-diffusion-generative-models)
+- [Diffusion Models for Video Generation by Lilian Weng](https://lilianweng.github.io/posts/2024-04-12-diffusion-video/#parameterization--sampling-basics)
 
 # 书籍
 - ~~Introduction to Stochastic Differential Equations~~

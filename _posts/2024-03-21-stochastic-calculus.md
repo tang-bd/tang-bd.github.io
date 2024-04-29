@@ -16,6 +16,7 @@ toc:
 1. *Introduction to Stochastic Calculus with Applications, Third Edition* by Fima C. Klebaner
 2. *An Introduction to Stochastic Differential Equations* by Lawrence C. Evans
 3. *An Informal Introduction to Stochastic Calculus with Applications* by Ovidiu Calin
+4. *[Stochastic Differential Equations and Diffusion Models by Vanilla Bug](https://www.vanillabug.com/posts/sde/#diffusion-models-as-sdes)*s
 
 # 微积分拾遗
 ## Variation
@@ -578,3 +579,9 @@ $$
 $$
 
 The transition function $$P(y, t, x, s)$$ defines uniquely a Markov process $$X(t)$$, that is, $$P(y, t, x, s) = P(X(t) \le y \vert X(s) = x)$$, for all $$x, y$$ and $$0 \le s \le t$$. The process $$X(t)$$ is called a diffusion, the differential operator $$L_s$$ is called its generator. The above property implies that $$X(t)$$ satisfies the SDE $$dX(t) = \mu(X(t), t)dt + \sigma(X(t), t)dB(t)$$.
+
+# From SDEs to Diffusion Models
+
+## 逆转时空
+
+## Diffusion Models as SDEs
