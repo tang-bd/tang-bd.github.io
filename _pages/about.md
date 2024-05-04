@@ -17,4 +17,4 @@ social: true # includes social icons at the bottom of the page
 
 Hello there. I am Bingda Tang, an undergraduate student majoring in computer science and technology. 
 
-Currently, my research interests primarily encompass generative models, multimodal models and explainable AI.
+Currently, my research interests primarily encompass generative models for visual synthesis, large multimodal models and explainable deep learning.
