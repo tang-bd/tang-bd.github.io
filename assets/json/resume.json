@@ -12,7 +12,7 @@
       "institution": "Tsinghua University",
       "url": "https://www.tsinghua.edu.cn/",
       "area": "Computer Science and Technology",
-      "studyType": "Bachelor's Degree",
+      "studyType": "Bachelor of Engineering",
       "startDate": "2021",
       "endDate": "2026"
     },
@@ -47,7 +47,7 @@
       "icon": "fa-solid fa-tag",
       "keywords": [
         "Generative Models For Visual Synthesis",
-        "Large Multimodal Models",
+        "Multimodal Deep Learning",
         "Explainable Deep Learning"
       ]
     },
@@ -69,7 +69,8 @@
         "Genshin Impact",
         "Persona 5R",
         "The Witcher 3",
-        "The Elder Scrolls 5"
+        "The Elder Scrolls 5",
+        "Zenless Zone Zero"
       ]
     }
   ]
