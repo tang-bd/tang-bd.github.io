@@ -20,3 +20,5 @@ Hello there. I am Bingda Tang, an undergraduate student majoring in computer sci
 My research interests encompass generative models for visual synthesis, multimodal deep learning and explainable deep learning. 
 
 Currently I am a research intern at [NYU Courant](https://courant.nyu.edu/index.html), advised by [Prof. Saining Xie](https://www.sainingxie.com/). I'm honored to have worked with [Prof. Li Yi](https://ericyi.github.io/) and [Prof. Ting Chen](http://timlab.cn/author/ting-chen/).
+
+Here's my [CV](https://tang-bd.github.io/assets/pdf/CV.pdf).
