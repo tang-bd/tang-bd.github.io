@@ -1,0 +1,8 @@
+---
+layout: post
+date: 2024-5-18
+inline: true
+related_posts: false
+---
+
+I will join [Prof. Serena Yeung-Levy](https://marvl.stanford.edu/)'s group at [Stanford](https://stanford.edu/) as a student intern this summer.
