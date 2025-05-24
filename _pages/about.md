@@ -21,4 +21,6 @@ My research focuses on generative and multi-modal machine learning, with applica
 
 Currently I am a research intern at [NYU](https://nyu.edu/), advised by [Prof. Saining Xie](https://www.sainingxie.com/). I'm honored to have worked with [Prof. Li Yi](https://ericyi.github.io/) and [Prof. Ting Chen](http://timlab.cn/author/ting-chen/).
 
-I am seeking PhD opportunities starting in Fall 2026. Please feel free to reach out! Here's my [CV](https://tang-bd.github.io/assets/pdf/CV.pdf).
+I am seeking PhD opportunities starting in Fall 2026. Please feel free to reach out!
+
+Here's my [CV](https://tang-bd.github.io/assets/pdf/CV.pdf).
