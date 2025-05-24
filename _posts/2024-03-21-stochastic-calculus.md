@@ -582,8 +582,4 @@ The transition function $$P(y, t, x, s)$$ defines uniquely a Markov process $$X(
 
 # From SDEs to Diffusion Models
 
-## 逆转时光
-
-要实现「生成」, 我们希望能描述the reversal of the diffusion process, 即
-
-## Diffusion Models as SDEs
+远古巨坑, 等待填坑.
