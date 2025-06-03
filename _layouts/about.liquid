@@ -64,6 +64,9 @@ layout: default
       {% include selected_papers.liquid %}
     {% endif %}
     
+    <div style="transform: scale(0.4); transform-origin: top center;">
+      <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=jWUnA-UxqIQfGnSh2lpbhfYgjgAuagP0R5lBx7Y894g&cl=ffffff&w=a"></script>
+    </div>
 
     <!-- Social -->
     {% if page.social %}
@@ -73,9 +76,5 @@ layout: default
         <div class="contact-note">{{ site.contact_note }}</div>
       </div>
     {% endif %}
-
-    <div style="transform: scale(0.6); transform-origin: top center;">
-      <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=jWUnA-UxqIQfGnSh2lpbhfYgjgAuagP0R5lBx7Y894g&cl=ffffff&w=a"></script>
-    </div>
   </article>
 </div>
