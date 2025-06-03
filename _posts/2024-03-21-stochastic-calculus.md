@@ -16,7 +16,7 @@ toc:
 1. *Introduction to Stochastic Calculus with Applications, Third Edition* by Fima C. Klebaner
 2. *An Introduction to Stochastic Differential Equations* by Lawrence C. Evans
 3. *An Informal Introduction to Stochastic Calculus with Applications* by Ovidiu Calin
-4. *[Stochastic Differential Equations and Diffusion Models by Vanilla Bug](https://www.vanillabug.com/posts/sde/#diffusion-models-as-sdes)*s
+4. *[Stochastic Differential Equations and Diffusion Models by Vanilla Bug](https://www.vanillabug.com/posts/sde/#diffusion-models-as-sdes)*
 
 # 微积分拾遗
 ## Variation
