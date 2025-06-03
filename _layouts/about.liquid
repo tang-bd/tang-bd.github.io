@@ -63,8 +63,6 @@ layout: default
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}
-    
-    <a href="https://mapmyvisitors.com/web/1bye1" title="Visit tracker"><img src="https://mapmyvisitors.com/map.png?d=jWUnA-UxqIQfGnSh2lpbhfYgjgAuagP0R5lBx7Y894g&cl=ffffff"></a>
 
     <!-- Social -->
     {% if page.social %}
@@ -74,5 +72,11 @@ layout: default
         <div class="contact-note">{{ site.contact_note }}</div>
       </div>
     {% endif %}
+
+    <div style="text-align: center;">
+      <a href="https://mapmyvisitors.com/web/1bye1" title="Visit tracker">
+        <img src="https://mapmyvisitors.com/map.png?d=jWUnA-UxqIQfGnSh2lpbhfYgjgAuagP0R5lBx7Y894g&cl=ffffff" alt="Visitor Map">
+      </a>
+    </div>
   </article>
 </div>
