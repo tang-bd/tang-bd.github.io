@@ -9,6 +9,11 @@
   src: url("../assets/fonts/MapleMono-CN-Regular.ttf") format("truetype"), url("../assets/fonts/MapleMono-CN-Bold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: 'Noto Seri SC';
+  src: url("../assets/fonts/NotoSerifSC-Regular.otf") format("opentype"), url("../assets/fonts/NotoSerifSC-Bold.otf") format("opentype");
+}
+
 p,
 h1,
 h2,
@@ -22,7 +27,7 @@ li,
 span,
 strong {
   color: var(--global-text-color);
-  font-family: Georgia, 'Times New Roman', 'Noto Serif SC', Times, serif
+  font-family: 'MapleMono CN', Georgia, 'Times New Roman', 'Noto Serif SC', Times, serif
 }
 
 hr {
