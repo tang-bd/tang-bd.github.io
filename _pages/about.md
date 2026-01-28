@@ -19,7 +19,7 @@ Hello there. I am Bingda Tang, an undergraduate student majoring in computer sci
 
 My research focuses on multimodal learning and generative modeling, with applications in both the arts and sciences.
 
-Currently I am a research intern at [Stanford](https://stanford.edu/), advised by [Serena Yeung-Levy](https://marvl.stanford.edu/). I am also in collaboration with [Saining Xie](https://www.sainingxie.com/). I'm honored to have worked with [Ting Chen](http://timlab.cn/author/ting-chen/).
+Currently I am a research intern at [Stanford](https://stanford.edu/), advised by [Serena Yeung-Levy](https://marvl.stanford.edu/). I'm honored to have worked with [Saining Xie](https://www.sainingxie.com/) and [Ting Chen](http://timlab.cn/author/ting-chen/).
 
 I am seeking PhD opportunities starting in Fall 2026. Please feel free to reach out!
 
