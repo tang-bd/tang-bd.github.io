@@ -15,11 +15,11 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hello there. I am Bingda Tang, an undergraduate student majoring in computer science and technology. 
+Hello there. I am Bingda Tang, an undergraduate student majoring in computer science and technology at Tsinghua University. 
 
 My research focuses on multimodal learning and generative modeling, with applications in both the arts and sciences.
 
-Currently I am a research intern at [Stanford](https://stanford.edu/), advised by [Serena Yeung-Levy](https://marvl.stanford.edu/). I'm fortunate to have worked with [Saining Xie](https://www.sainingxie.com/) and [Ting Chen](http://timlab.cn/author/ting-chen/).
+I am currently a research intern at [Stanford](https://stanford.edu/), advised by [Serena Yeung-Levy](https://marvl.stanford.edu/). I have also had the privilege of collaborating with [Saining Xie](https://www.sainingxie.com/) and [Ting Chen](http://timlab.cn/author/ting-chen/).
 
 I am seeking PhD opportunities starting in Fall 2026. Please feel free to reach out!
 
