@@ -3,7 +3,7 @@
 :root {
   --bg: #ffffff;
   --bg-soft: #f7f7f6;
-  --bg-hover: #f1f1ef;
+  --bg-hover: #f7f7f6;
 
   --fg: #282828;
   --fg-strong: #111111;
@@ -19,7 +19,7 @@
   --card-soft-border-hover: #d6d4d0;
 
   --shadow: #282828;
-  --shadow-soft: #ececea;
+  --shadow-soft: #f3f3f1;
 
   --link: #282828;
   --accent: #b65332;
