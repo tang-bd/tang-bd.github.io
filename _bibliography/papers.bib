@@ -6,11 +6,14 @@
   title={V-GRPO: Online Reinforcement Learning for Denoising Generative Models Is Easier than You Think},
   author={Tang, Bingda and Zhang, Yuhui and Wang, Xiaohan and Mao, Jiayuan and Schmidt, Ludwig and Yeung-Levy, Serena},
   year={2026},
+  abstract={Aligning denoising generative models with human preferences or verifiable rewards remains a key challenge. While policy-gradient online reinforcement learning (RL) offers a principled post-training framework, its direct application is hindered by the intractable likelihoods of these models. Prior work therefore either optimizes an induced Markov decision process (MDP) over sampling trajectories, which is stable but inefficient, or uses likelihood surrogates based on the diffusion evidence lower bound (ELBO), which have so far underperformed on visual generation. Our key insight is that the ELBO-based approach can, in fact, be made both stable and efficient. By reducing surrogate variance and controlling gradient steps, we show that this approach can beat MDP-based methods. To this end, we introduce Variational GRPO (V-GRPO), a method that integrates ELBO-based surrogates with the Group Relative Policy Optimization (GRPO) algorithm, alongside a set of simple yet essential techniques. Our method is easy to implement, aligns with pretraining objectives, and avoids the limitations of MDP-based methods. V-GRPO achieves state-of-the-art performance in text-to-image synthesis, while delivering a 2x speedup over MixGRPO and a 3x speedup over DiffusionNFT.},
+  arxiv={2604.23380},
+  code={https://github.com/tang-bd/v-grpo},
   selected={true}
 }
 
 @article{scalingrae,
-  abbr={Tech Report},
+  abbr={CVPR 2026 Findings},
   title={Scaling Text-to-Image Diffusion Transformers with Representation Autoencoders},
   author={Tong*, Shengbang and Zheng*, Boyang and Wang*, Ziteng and Tang, Bingda and Ma, Nanye and Brown, Ellis and Yang, Jihan and Fergus, Rob and LeCun, Yann and Xie, Saining},
   year={2026},
@@ -54,7 +57,7 @@
 }
 
 @misc{huang2024obscurepromptjailbreakinglargelanguage,
-  abbr={CIKM 2025},
+  abbr={CIKM 2025 Short Papers},
   title={Jailbreaking Large Language Models Through Alignment Vulnerabilities in Out-of-Distribution Settings}, 
   author={Huang, Yue and Tang, Jingyu and Chen, Dongping and Tang, Bingda and Wan, Yao and Sun, Lichao and Yu, Philip S. and Zhang, Xiangliang},
   year={2024},
@@ -73,7 +76,7 @@
 }
 
 @article{spad,
-  abbr={Tech Report},
+  abbr={Technical Report},
   title={Building Universal Foundation Models for Medical Image Analysis with Spatially Adaptive Networks},
   author={Luo, Lingxiao and Chen, Xuanzhong and Tang, Bingda and Chen, Xinsheng and Han, Rong and Hu, Chengpeng and Li, Yujiang and Chen, Ting},
   year={2023},

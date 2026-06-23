@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I will join [Serena Yeung-Levy](https://marvl.stanford.edu/)'s group at [Stanford](https://stanford.edu/) as a student intern this summer.
+I will join [Serena Yeung-Levy](https://marvl.stanford.edu/)'s group at [Stanford](https://stanford.edu/) as a research intern this summer.
