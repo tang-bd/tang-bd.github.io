@@ -1,32 +1,38 @@
-/* ---------- Anthropic-inspired theme ---------- */
+/* ---------- pi.website-inspired theme ---------- */
 
 :root {
-  --bg: #f5f0e8;
-  --bg-elev: #faf6f0;
-  --ink: #1f1c19;
-  --ink-soft: #4a443d;
-  --ink-muted: #7a7268;
-  --rule: #e3dccf;
-  --rule-strong: #cfc6b5;
-  --accent: #cc785c;
-  --accent-ink: #a85a40;
-  --tag-bg: #ece5d6;
-  --max-w: 1080px;
-  --reading-w: 720px;
+  --bg: #f3efe6;
+  --bg-soft: #eae5d8;
+  --bg-hover: #ebe6d8;
+  --fg: #0a0a0a;
+  --fg-muted: #6b665c;
+  --rule: #d4d3cb;
+  --rule-strong: #0a0a0a;
+  --card: #ffffff;
+  --card-soft: rgba(255, 255, 255, 0.6);
+  --card-soft-border: #d4d3cb;
+  --card-soft-border-hover: #c0bdad;
+  --shadow: #0a0a0a;
+  --shadow-soft: #c0bdad;
+  --link: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1a1816;
-    --bg-elev: #221f1c;
-    --ink: #efe9df;
-    --ink-soft: #c8c0b3;
-    --ink-muted: #8f867a;
-    --rule: #34302b;
-    --rule-strong: #4a443d;
-    --accent: #e08c6f;
-    --accent-ink: #f0a285;
-    --tag-bg: #2c2823;
+    --bg: #1a1815;
+    --bg-soft: #221f1b;
+    --bg-hover: #2a2620;
+    --fg: #e8e4da;
+    --fg-muted: #8a8478;
+    --rule: #3a362f;
+    --rule-strong: #e8e4da;
+    --card: #2a2620;
+    --card-soft: rgba(42, 38, 32, 0.6);
+    --card-soft-border: #3a362f;
+    --card-soft-border-hover: #5a5448;
+    --shadow: #e8e4da;
+    --shadow-soft: #5a5448;
+    --link: #e8e4da;
   }
 }
 
@@ -37,339 +43,287 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--bg);
-  color: var(--ink);
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  font-size: 16px;
+  color: var(--fg);
+  font-family: ui-monospace, "JetBrains Mono", "SF Mono", "Menlo",
+    "Cascadia Mono", "Consolas", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei Mono", monospace;
+  font-size: 14px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  color: var(--ink);
-  text-decoration: none;
-  border-bottom: 1px solid var(--rule-strong);
-  transition: color 120ms ease, border-color 120ms ease;
-}
-a:hover { color: var(--accent-ink); border-bottom-color: var(--accent); }
-
-h1, h2, h3, h4 {
-  font-family: "Tiempos Headline", "Iowan Old Style", "Charter", "Georgia",
+.serif {
+  font-family: "Source Serif 4", "Iowan Old Style", "Charter", "Georgia",
     "Songti SC", "STSong", serif;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  line-height: 1.15;
-  margin: 0 0 0.6em;
 }
 
-h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); letter-spacing: -0.02em; }
-h2 { font-size: clamp(1.6rem, 2.6vw, 2.05rem); }
-h3 { font-size: 1.2rem; font-weight: 600; }
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-thickness 100ms ease;
+}
+a:hover { text-decoration-thickness: 2px; }
 
-p { margin: 0 0 1em; color: var(--ink-soft); }
+p { margin: 0 0 1em; }
 
-/* ---------- layout ---------- */
+/* ---------- shell ---------- */
 
-.page {
-  max-width: var(--max-w);
+.shell {
+  padding: 16px;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .shell { padding: 48px; }
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 0 28px;
 }
 
-main { padding: 56px 0 96px; }
+/* ---------- header ---------- */
 
-/* ---------- nav ---------- */
-
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: color-mix(in oklab, var(--bg) 88%, transparent);
-  backdrop-filter: saturate(140%) blur(8px);
-  -webkit-backdrop-filter: saturate(140%) blur(8px);
-  border-bottom: 1px solid var(--rule);
-}
-
-.nav-inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 16px 28px;
+header.site {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+@media (min-width: 768px) {
+  header.site {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .brand {
-  font-family: "Tiempos Headline", "Iowan Old Style", "Charter", "Georgia",
-    "Songti SC", serif;
-  font-size: 1.15rem;
-  font-weight: 500;
-  border: none;
-  color: var(--ink);
+  font-family: "Source Serif 4", "Iowan Old Style", "Charter", "Georgia", "Songti SC", serif;
+  font-size: 1.85rem;
+  line-height: 1;
+  color: var(--fg);
+  text-decoration: none;
   letter-spacing: -0.01em;
 }
-.brand:hover { color: var(--accent-ink); }
+.brand:hover { text-decoration: none; }
+.brand .leaf { display: inline-block; }
 
-.brand .leaf { color: var(--accent); margin-right: 6px; }
-
-.nav-links {
+.site-nav {
   display: flex;
-  gap: 28px;
-  align-items: center;
-  font-size: 0.95rem;
+  gap: 16px;
+  font-size: 0.875rem;
 }
-.nav-links a {
-  border: none;
-  color: var(--ink-soft);
+.site-nav a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--fg);
+  opacity: 0.5;
 }
-.nav-links a:hover,
-.nav-links a[aria-current="page"] { color: var(--ink); }
-.nav-links a[aria-current="page"] { font-weight: 500; }
-
-/* ---------- hero ---------- */
-
-.hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;
-  gap: 56px;
-  align-items: start;
-  padding: 48px 0 24px;
-}
-@media (max-width: 720px) {
-  .hero { grid-template-columns: 1fr; gap: 28px; }
-  .hero-photo { order: -1; max-width: 180px; }
+.site-nav a:hover { opacity: 1; text-decoration-thickness: 2px; }
+.site-nav a[aria-current="page"] {
+  opacity: 1;
+  text-decoration-thickness: 2px;
 }
 
-.eyebrow {
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent-ink);
-  margin-bottom: 18px;
+/* ---------- intro ---------- */
+
+.intro {
+  margin: 32px 0;
+}
+.intro p { margin-bottom: 1em; }
+.intro p:last-child { margin-bottom: 0; }
+
+/* ---------- timeline ---------- */
+
+.timeline-wrap {
+  padding-left: 8px;
 }
 
-.hero h1 { margin-bottom: 18px; }
-
-.hero-sub {
-  font-size: 1.08rem;
-  color: var(--ink-soft);
-  max-width: 38ch;
-  margin-bottom: 28px;
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-left: 1px solid var(--rule);
+  padding: 16px 0;
+}
+.timeline::before,
+.timeline::after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  width: 1px;
+  height: 24px;
+  background: linear-gradient(to top, transparent, var(--bg));
+}
+.timeline::before { top: 0; }
+.timeline::after {
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, var(--bg));
 }
 
-.hero-photo {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  border-radius: 6px;
-  background: var(--bg-elev);
-  border: 1px solid var(--rule);
+.t-item {
+  position: relative;
+  margin-left: 24px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
 }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.t-item:hover { text-decoration: none; }
 
-.cta-row {
+.t-dot {
+  position: absolute;
+  left: -28px;
+  top: 14px;
+  width: 7px;
+  height: 7px;
+  background: var(--fg);
+  border-radius: 2px;
+  outline: 2px solid var(--bg);
+}
+
+/* dim/secondary card (no real card, just hover bg) */
+.t-item.plain:hover { background: var(--bg-hover); }
+
+/* highlighted card — black border + hard offset shadow */
+.t-item.feature {
+  background: var(--card);
+  border: 1px solid var(--rule-strong);
+  box-shadow: 3px 3px 0 var(--shadow);
+  transition: box-shadow 120ms ease;
+  gap: 8px;
+}
+.t-item.feature:hover { box-shadow: 5px 5px 0 var(--shadow); }
+.t-item.feature .t-dot { top: 16px; }
+
+/* soft card — beige bg, light border */
+.t-item.soft {
+  background: var(--card-soft);
+  border: 1px solid var(--card-soft-border);
+  transition: background 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+  gap: 8px;
+}
+.t-item.soft:hover {
+  background: var(--card);
+  border-color: var(--card-soft-border-hover);
+  box-shadow: 3px 3px 0 var(--shadow-soft);
+}
+
+/* card heads */
+.t-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+.t-title {
+  font-weight: 600;
+  line-height: 1.45;
+  flex: 1;
+  min-width: 0;
+}
+.t-date {
+  font-size: 0.75rem;
+  color: var(--fg-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.t-body {
+  font-size: 0.75rem;
+  color: var(--fg-muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+.t-feature .t-title, .t-item.feature .t-title { font-size: 0.82rem; }
+
+.t-authors {
+  font-size: 0.72rem;
+  color: var(--fg-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+.t-authors .me { color: var(--fg); font-weight: 600; }
+
+.t-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-}
-.btn {
-  display: inline-flex;
-  align-items: center;
   gap: 8px;
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-size: 0.92rem;
-  border: 1px solid var(--rule-strong);
-  background: transparent;
-  color: var(--ink);
-  cursor: pointer;
-  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+  margin-top: 4px;
 }
-.btn:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-.btn.primary {
-  background: var(--ink);
-  color: var(--bg);
-  border-color: var(--ink);
+.t-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border: 1px solid var(--rule);
+  color: var(--fg-muted);
+  text-decoration: none;
+  background: var(--bg);
 }
-.btn.primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
-
-/* ---------- prose ---------- */
-
-.prose {
-  max-width: var(--reading-w);
-  font-size: 1.04rem;
-  color: var(--ink-soft);
+.t-tag:hover {
+  color: var(--fg);
+  border-color: var(--fg);
+  text-decoration: none;
 }
-.prose p { margin-bottom: 1.1em; }
-.prose a { color: var(--ink); border-bottom: 1px solid var(--rule-strong); }
-.prose a:hover { color: var(--accent-ink); border-bottom-color: var(--accent); }
-.prose strong { color: var(--ink); font-weight: 600; }
 
 /* ---------- sections ---------- */
 
-.section {
-  border-top: 1px solid var(--rule);
-  padding: 56px 0;
-}
-
-.section-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 32px;
-}
-.section-head h2 { margin: 0; }
-.section-head .meta {
-  font-size: 0.85rem;
-  color: var(--ink-muted);
-  letter-spacing: 0.04em;
+.section-label {
+  font-size: 0.72rem;
+  color: var(--fg-muted);
   text-transform: uppercase;
-}
-.section-head .meta a { border: none; }
-
-/* ---------- publications ---------- */
-
-.pub-list { display: flex; flex-direction: column; gap: 0; }
-
-.pub {
-  display: grid;
-  grid-template-columns: 140px minmax(0, 1fr);
-  gap: 32px;
-  padding: 26px 0;
-  border-top: 1px solid var(--rule);
-}
-.pub:first-child { border-top: none; padding-top: 0; }
-@media (max-width: 640px) {
-  .pub { grid-template-columns: 1fr; gap: 8px; }
-}
-
-.pub-venue {
-  font-size: 0.78rem;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent-ink);
-  padding-top: 4px;
+  margin: 32px 0 12px;
 }
 
-.pub-title {
-  font-family: "Tiempos Headline", "Iowan Old Style", "Charter", "Georgia",
-    "Songti SC", serif;
-  font-size: 1.18rem;
-  line-height: 1.35;
-  color: var(--ink);
-  margin: 0 0 6px;
-  font-weight: 500;
+.block {
+  margin-top: 36px;
 }
-.pub-authors {
-  font-size: 0.95rem;
-  color: var(--ink-soft);
-  margin: 0 0 10px;
-}
-.pub-authors .me { color: var(--ink); font-weight: 600; }
 
-.pub-links {
+/* ---------- contact list ---------- */
+
+.contacts {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
-}
-.pub-links a {
+  gap: 8px 18px;
   font-size: 0.82rem;
-  letter-spacing: 0.04em;
-  padding: 4px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--rule-strong);
-  color: var(--ink-soft);
 }
-.pub-links a:hover {
-  background: var(--ink);
-  color: var(--bg);
-  border-color: var(--ink);
-}
-
-.pub-abstract {
-  font-size: 0.93rem;
-  color: var(--ink-muted);
-  margin: 10px 0 0;
-  display: none;
-}
-.pub.expanded .pub-abstract { display: block; }
-
-/* ---------- news ---------- */
-
-.news-list {
-  display: flex;
-  flex-direction: column;
-}
-.news-item {
-  display: grid;
-  grid-template-columns: 120px minmax(0, 1fr);
-  gap: 24px;
-  padding: 18px 0;
-  border-top: 1px solid var(--rule);
-  align-items: baseline;
-}
-.news-item:first-child { border-top: none; }
-@media (max-width: 640px) {
-  .news-item { grid-template-columns: 1fr; gap: 2px; }
-  .news-date { font-size: 0.78rem; }
-}
-
-.news-date {
-  font-variant-numeric: tabular-nums;
-  font-size: 0.88rem;
-  letter-spacing: 0.04em;
-  color: var(--ink-muted);
-}
-.news-text { color: var(--ink-soft); }
-.news-text a { color: var(--ink); }
-
-/* ---------- contact ---------- */
-
-.contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 28px;
-  font-size: 0.95rem;
-}
-.contact a { color: var(--ink-soft); border-bottom: 1px solid var(--rule); }
-.contact a:hover { color: var(--accent-ink); border-bottom-color: var(--accent); }
 
 /* ---------- footer ---------- */
 
-footer {
-  border-top: 1px solid var(--rule);
-  padding: 28px 0 40px;
-  font-size: 0.85rem;
-  color: var(--ink-muted);
-}
-.foot-inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 28px;
+footer.site {
+  border-top: 1px solid var(--rule-strong);
+  margin-top: 48px;
+  padding: 24px 0;
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
   flex-wrap: wrap;
+}
+footer.site .mark {
+  font-family: "Source Serif 4", "Iowan Old Style", "Charter", "Georgia", "Songti SC", serif;
+  font-size: 1.05rem;
+}
+footer.site .right {
+  display: flex;
   gap: 12px;
-}
-footer a { border: none; color: var(--ink-muted); }
-footer a:hover { color: var(--ink); }
-
-/* ---------- utilities ---------- */
-
-.kicker {
   font-size: 0.78rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-bottom: 12px;
+  color: var(--fg-muted);
 }
-.subtle { color: var(--ink-muted); }
-.mt-0 { margin-top: 0; }
+footer.site .right a { color: var(--fg-muted); }
+footer.site .right a:hover { color: var(--fg); }
 
 /* selection */
-::selection { background: var(--accent); color: #fff; }
+::selection { background: var(--fg); color: var(--bg); }

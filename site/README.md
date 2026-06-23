@@ -1,6 +1,6 @@
 # tang-bd.github.io
 
-Personal site — a static, Anthropic-inspired redesign.
+Personal site — a static, pi.website-inspired redesign.
 
 ## Local preview
 
@@ -19,7 +19,7 @@ GitHub Pages to serve files as-is.
 
 1. In the repo: **Settings → Pages**
 2. Set **Source** to `Deploy from a branch`
-3. Choose this branch and set the folder to `/site`
+3. Choose the branch and set the folder to `/site`
 4. Save — your site will be live at `https://<user>.github.io/`
 
 If you'd rather have the site at the repo root, move everything in `site/`
@@ -29,8 +29,8 @@ up one directory before pushing.
 
 ```
 site/
-├── index.html         # Home (about, selected papers, news, contact)
-├── publications.html  # Full publications list (click "Abstract" to expand)
+├── index.html         # Home: intro + recent timeline (papers & news)
+├── publications.html  # Full research list, grouped by year
 ├── .nojekyll          # disables Jekyll on GitHub Pages
 └── assets/
     ├── css/style.css
@@ -38,5 +38,12 @@ site/
     └── pdf/CV.pdf
 ```
 
-Edit content directly in the HTML files. To add a publication, copy any
-`<article class="pub">` block and adjust.
+### Adding items
+
+A timeline item is just one `<a>` block inside `.timeline`:
+
+- `.t-item.feature` — featured paper (white card, black border, hard shadow)
+- `.t-item.soft` — secondary paper (soft beige card)
+- `.t-item.plain` — plain news/event row (no card)
+
+Copy any existing block to add new content.

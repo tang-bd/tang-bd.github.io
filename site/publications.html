@@ -3,170 +3,173 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Publications — Bingda Tang</title>
+<title>Research — Bingda Tang</title>
 <meta name="description" content="Publications by Bingda Tang." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E🍁%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css" />
-<style>
-  h1, h2, h3, h4, .brand, .pub-title { font-family: "Fraunces", "Iowan Old Style", "Charter", "Georgia", "Songti SC", serif; }
-</style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a class="brand" href="./"><span class="leaf">🍁</span> Bingda Tang</a>
-    <div class="nav-links">
-      <a href="./">About</a>
-      <a href="publications.html" aria-current="page">Publications</a>
+<div class="shell">
+<div class="container">
+
+  <header class="site">
+    <a class="brand" href="./"><span class="leaf">🍁</span> Bingda Tang (湯秉達)</a>
+    <nav class="site-nav">
+      <a href="./">Home</a>
+      <a href="publications.html" aria-current="page">Research</a>
       <a href="assets/pdf/CV.pdf">CV</a>
-    </div>
-  </div>
-</nav>
-
-<main class="page">
-
-  <header style="padding: 56px 0 24px;">
-    <div class="eyebrow">Publications</div>
-    <h1>Research</h1>
-    <p class="hero-sub">A selection of papers on multimodal learning and generative modeling. (* equal contribution)</p>
+      <a href="mailto:tangbd2003@gmail.com">Contact</a>
+    </nav>
   </header>
 
-  <section class="section">
-    <div class="kicker">2026</div>
-    <div class="pub-list">
-
-      <article class="pub">
-        <div class="pub-venue">CVPR 2026 Findings</div>
-        <div>
-          <h3 class="pub-title">V-GRPO: Online Reinforcement Learning for Denoising Generative Models Is Easier than You Think</h3>
-          <p class="pub-authors"><span class="me">Bingda Tang</span>, Yuhui Zhang, Xiaohan Wang, Jiayuan Mao, Ludwig Schmidt, Serena Yeung-Levy</p>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="pub-venue">Tech Report</div>
-        <div>
-          <h3 class="pub-title">Scaling Text-to-Image Diffusion Transformers with Representation Autoencoders</h3>
-          <p class="pub-authors">Shengbang Tong*, Boyang Zheng*, Ziteng Wang*, <span class="me">Bingda Tang</span>, Nanye Ma, Ellis Brown, Jihan Yang, Rob Fergus, Yann LeCun, Saining Xie</p>
-          <div class="pub-links">
-            <a href="https://arxiv.org/abs/2601.16208" target="_blank" rel="noopener">arXiv</a>
-            <a href="https://rae-dit.github.io/scale-rae/" target="_blank" rel="noopener">Project</a>
-            <a href="#" class="toggle-abstract">Abstract</a>
-          </div>
-          <p class="pub-abstract">Representation Autoencoders (RAEs) have shown distinct advantages in diffusion modeling on ImageNet by training in high-dimensional semantic latent spaces. In this work, we investigate whether this framework can scale to large-scale, freeform text-to-image (T2I) generation. We first scale RAE decoders on the frozen representation encoder (SigLIP-2) beyond ImageNet by training on web, synthetic, and text-rendering data, finding that while scale improves general fidelity, targeted data composition is essential for specific domains like text. We then rigorously stress-test the RAE design choices originally proposed for ImageNet. Our analysis reveals that scaling simplifies the framework: while dimension-dependent noise scheduling remains critical, architectural complexities such as wide diffusion heads and noise-augmented decoding offer negligible benefits at scale. Building on this simplified framework, we conduct a controlled comparison of RAE against the state-of-the-art FLUX VAE across diffusion transformer scales from 0.5B to 9.8B parameters. RAEs consistently outperform VAEs during pretraining across all model scales.</p>
-        </div>
-      </article>
-
-    </div>
+  <section class="intro">
+    <p>
+      My research focuses on multimodal learning and generative modeling, with applications in both the arts and the sciences.
+      Selected papers below; <span class="serif">*</span> denotes equal contribution.
+    </p>
   </section>
 
-  <section class="section">
-    <div class="kicker">2025</div>
-    <div class="pub-list">
+  <div class="section-label">2026</div>
 
-      <article class="pub">
-        <div class="pub-venue">CIKM 2025</div>
-        <div>
-          <h3 class="pub-title">Jailbreaking Large Language Models Through Alignment Vulnerabilities in Out-of-Distribution Settings</h3>
-          <p class="pub-authors">Yue Huang, Jingyu Tang, Dongping Chen, <span class="me">Bingda Tang</span>, Yao Wan, Lichao Sun, Philip S. Yu, Xiangliang Zhang</p>
-          <div class="pub-links">
-            <a href="https://arxiv.org/abs/2406.13662" target="_blank" rel="noopener">arXiv</a>
-          </div>
-        </div>
-      </article>
+  <div class="timeline-wrap">
+  <div class="timeline">
 
-      <article class="pub">
-        <div class="pub-venue">CVPR 2025</div>
-        <div>
-          <h3 class="pub-title">Exploring the Deep Fusion of Large Language Models and Diffusion Transformers for Text-to-Image Synthesis</h3>
-          <p class="pub-authors"><span class="me">Bingda Tang</span>, Boyang Zheng, Xichen Pan, Sayak Paul, Saining Xie</p>
-          <div class="pub-links">
-            <a href="https://arxiv.org/abs/2505.10046" target="_blank" rel="noopener">arXiv</a>
-            <a href="https://github.com/tang-bd/fuse-dit" target="_blank" rel="noopener">Code</a>
-            <a href="#" class="toggle-abstract">Abstract</a>
-          </div>
-          <p class="pub-abstract">This paper does not describe a new method; instead, it provides a thorough exploration of an important yet understudied design space related to recent advances in text-to-image synthesis — specifically, the deep fusion of large language models (LLMs) and diffusion transformers (DiTs) for multi-modal generation. We conduct an empirical study on text-to-image generation, performing controlled comparisons with established baselines, analyzing important design choices, and providing a clear, reproducible recipe for training at scale.</p>
-        </div>
-      </article>
+    <article id="vgrpo" class="t-item feature" style="cursor: default;">
+      <span class="t-dot"></span>
+      <div class="t-head">
+        <div class="t-title">V-GRPO: Online Reinforcement Learning for Denoising Generative Models Is Easier than You Think</div>
+        <div class="t-date">CVPR 2026 Findings</div>
+      </div>
+      <p class="t-authors"><span class="me">Bingda Tang</span>, Yuhui Zhang, Xiaohan Wang, Jiayuan Mao, Ludwig Schmidt, Serena Yeung&#8209;Levy</p>
+    </article>
 
-      <article class="pub">
-        <div class="pub-venue">CVPR 2025</div>
-        <div>
-          <h3 class="pub-title">CORE4D: A 4D Human-Object-Human Interaction Dataset for Collaborative Object Rearrangement</h3>
-          <p class="pub-authors">Yun Liu*, Chengwen Zhang*, Ruofan Xing, <span class="me">Bingda Tang</span>, Bowen Yang, Li Yi</p>
-          <div class="pub-links">
-            <a href="https://arxiv.org/abs/2406.19353" target="_blank" rel="noopener">arXiv</a>
-            <a href="https://github.com/leolyliu/CORE4D-Instructions" target="_blank" rel="noopener">Code</a>
-          </div>
-        </div>
-      </article>
+    <article id="rae" class="t-item feature" style="cursor: default;">
+      <span class="t-dot"></span>
+      <div class="t-head">
+        <div class="t-title">Scaling Text-to-Image Diffusion Transformers with Representation Autoencoders</div>
+        <div class="t-date">Tech Report</div>
+      </div>
+      <p class="t-authors">Shengbang Tong*, Boyang Zheng*, Ziteng Wang*, <span class="me">Bingda Tang</span>, Nanye Ma, Ellis Brown, Jihan Yang, Rob Fergus, Yann LeCun, Saining Xie</p>
+      <div class="t-tags">
+        <a class="t-tag" href="https://arxiv.org/abs/2601.16208" target="_blank" rel="noopener">arXiv</a>
+        <a class="t-tag" href="https://rae-dit.github.io/scale-rae/" target="_blank" rel="noopener">Project</a>
+      </div>
+    </article>
 
-      <article class="pub">
-        <div class="pub-venue">NAACL 2025</div>
-        <div>
-          <h3 class="pub-title">VividMed: Vision Language Model with Versatile Visual Grounding for Medicine</h3>
-          <p class="pub-authors">Lingxiao Luo*, <span class="me">Bingda Tang*</span>, Xuanzhong Chen, Rong Han, Ting Chen</p>
-          <div class="pub-links">
-            <a href="https://arxiv.org/abs/2410.12694" target="_blank" rel="noopener">arXiv</a>
-            <a href="https://github.com/function2-llx/MMMM" target="_blank" rel="noopener">Code</a>
-            <a href="#" class="toggle-abstract">Abstract</a>
-          </div>
-          <p class="pub-abstract">Recent advancements in Vision Language Models (VLMs) have demonstrated remarkable promise in generating visually grounded responses. However, their application in the medical domain is hindered by unique challenges. We present VividMed, a vision language model with versatile visual grounding for medicine, supporting semantic segmentation masks, instance-level bounding boxes, and both 2D and 3D imaging modalities.</p>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="kicker">2024 &amp; earlier</div>
-    <div class="pub-list">
-
-      <article class="pub">
-        <div class="pub-venue">IMWUT 2024</div>
-        <div>
-          <h3 class="pub-title">CalibRead: Unobtrusive Eye Tracking Calibration from Natural Reading Behavior</h3>
-          <p class="pub-authors">Chang Liu, Chun Yu, Xiangyang Wang, Jianxiao Jiang, Tianao Yang, <span class="me">Bingda Tang</span>, Yingtian Shi, Liang Chen, Yuanchun Shi</p>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="pub-venue">Tech Report · 2023</div>
-        <div>
-          <h3 class="pub-title">Building Universal Foundation Models for Medical Image Analysis with Spatially Adaptive Networks</h3>
-          <p class="pub-authors">Lingxiao Luo, Xuanzhong Chen, <span class="me">Bingda Tang</span>, Xinsheng Chen, Rong Han, Chengpeng Hu, Yujiang Li, Ting Chen</p>
-          <div class="pub-links">
-            <a href="https://arxiv.org/abs/2312.07630" target="_blank" rel="noopener">arXiv</a>
-            <a href="https://github.com/function2-llx/PUMIT" target="_blank" rel="noopener">Code</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="foot-inner">
-    <div>© <span id="y"></span> Bingda Tang · 湯秉達</div>
-    <div><a href="https://github.com/tang-bd/tang-bd.github.io" target="_blank" rel="noopener">Source</a></div>
   </div>
-</footer>
+  </div>
 
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-  document.querySelectorAll('.toggle-abstract').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      a.closest('.pub').classList.toggle('expanded');
-      a.textContent = a.closest('.pub').classList.contains('expanded') ? 'Hide' : 'Abstract';
-    });
-  });
-</script>
+  <div class="section-label">2025</div>
+
+  <div class="timeline-wrap">
+  <div class="timeline">
+
+    <article class="t-item soft" style="cursor: default;">
+      <span class="t-dot"></span>
+      <div class="t-head">
+        <div class="t-title">Jailbreaking Large Language Models Through Alignment Vulnerabilities in Out-of-Distribution Settings</div>
+        <div class="t-date">CIKM 2025</div>
+      </div>
+      <p class="t-authors">Yue Huang, Jingyu Tang, Dongping Chen, <span class="me">Bingda Tang</span>, Yao Wan, Lichao Sun, Philip S. Yu, Xiangliang Zhang</p>
+      <div class="t-tags">
+        <a class="t-tag" href="https://arxiv.org/abs/2406.13662" target="_blank" rel="noopener">arXiv</a>
+      </div>
+    </article>
+
+    <article id="fusedit" class="t-item feature" style="cursor: default;">
+      <span class="t-dot"></span>
+      <div class="t-head">
+        <div class="t-title">Exploring the Deep Fusion of Large Language Models and Diffusion Transformers for Text-to-Image Synthesis</div>
+        <div class="t-date">CVPR 2025</div>
+      </div>
+      <p class="t-authors"><span class="me">Bingda Tang</span>, Boyang Zheng, Xichen Pan, Sayak Paul, Saining Xie</p>
+      <div class="t-tags">
+        <a class="t-tag" href="https://arxiv.org/abs/2505.10046" target="_blank" rel="noopener">arXiv</a>
+        <a class="t-tag" href="https://github.com/tang-bd/fuse-dit" target="_blank" rel="noopener">Code</a>
+      </div>
+    </article>
+
+    <article class="t-item soft" style="cursor: default;">
+      <span class="t-dot"></span>
+      <div class="t-head">
+        <div class="t-title">CORE4D: A 4D Human-Object-Human Interaction Dataset for Collaborative Object Rearrangement</div>
+        <div class="t-date">CVPR 2025</div>
+      </div>
+      <p class="t-authors">Yun Liu*, Chengwen Zhang*, Ruofan Xing, <span class="me">Bingda Tang</span>, Bowen Yang, Li Yi</p>
+      <div class="t-tags">
+        <a class="t-tag" href="https://arxiv.org/abs/2406.19353" target="_blank" rel="noopener">arXiv</a>
+        <a class="t-tag" href="https://github.com/leolyliu/CORE4D-Instructions" target="_blank" rel="noopener">Code</a>
+      </div>
+    </article>
+
+    <article id="vividmed" class="t-item feature" style="cursor: default;">
+      <span class="t-dot"></span>
+      <div class="t-head">
+        <div class="t-title">VividMed: Vision Language Model with Versatile Visual Grounding for Medicine</div>
+        <div class="t-date">NAACL 2025</div>
+      </div>
+      <p class="t-authors">Lingxiao Luo*, <span class="me">Bingda Tang*</span>, Xuanzhong Chen, Rong Han, Ting Chen</p>
+      <div class="t-tags">
+        <a class="t-tag" href="https://arxiv.org/abs/2410.12694" target="_blank" rel="noopener">arXiv</a>
+        <a class="t-tag" href="https://github.com/function2-llx/MMMM" target="_blank" rel="noopener">Code</a>
+      </div>
+    </article>
+
+  </div>
+  </div>
+
+  <div class="section-label">2024 &amp; earlier</div>
+
+  <div class="timeline-wrap">
+  <div class="timeline">
+
+    <article class="t-item soft" style="cursor: default;">
+      <span class="t-dot"></span>
+      <div class="t-head">
+        <div class="t-title">CalibRead: Unobtrusive Eye Tracking Calibration from Natural Reading Behavior</div>
+        <div class="t-date">IMWUT 2024</div>
+      </div>
+      <p class="t-authors">Chang Liu, Chun Yu, Xiangyang Wang, Jianxiao Jiang, Tianao Yang, <span class="me">Bingda Tang</span>, Yingtian Shi, Liang Chen, Yuanchun Shi</p>
+    </article>
+
+    <article class="t-item soft" style="cursor: default;">
+      <span class="t-dot"></span>
+      <div class="t-head">
+        <div class="t-title">Building Universal Foundation Models for Medical Image Analysis with Spatially Adaptive Networks</div>
+        <div class="t-date">Tech Report · 2023</div>
+      </div>
+      <p class="t-authors">Lingxiao Luo, Xuanzhong Chen, <span class="me">Bingda Tang</span>, Xinsheng Chen, Rong Han, Chengpeng Hu, Yujiang Li, Ting Chen</p>
+      <div class="t-tags">
+        <a class="t-tag" href="https://arxiv.org/abs/2312.07630" target="_blank" rel="noopener">arXiv</a>
+        <a class="t-tag" href="https://github.com/function2-llx/PUMIT" target="_blank" rel="noopener">Code</a>
+      </div>
+    </article>
+
+  </div>
+  </div>
+
+  <div class="block">
+    <p>
+      Always up for talking about generative models, multimodality, and the intersection with science. Reach out:
+      <a href="mailto:tangbd2003@gmail.com">tangbd2003@gmail.com</a>.
+    </p>
+  </div>
+
+  <footer class="site">
+    <span class="mark">Bingda Tang · 湯秉達</span>
+    <span class="right">
+      <span>© <span id="y"></span></span>
+      <a href="https://github.com/tang-bd/tang-bd.github.io" target="_blank" rel="noopener">Source</a>
+    </span>
+  </footer>
+
+</div>
+</div>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
