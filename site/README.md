@@ -13,13 +13,29 @@ Open <http://localhost:4000>. Edits show up on refresh.
 
 ## Deploy to GitHub Pages
 
-1. Push this branch to GitHub
-2. Repo **Settings → Pages**
-3. **Source**: `Deploy from a branch` → pick the branch + folder `/site`
+1. Push this branch to GitHub (e.g. `redesign`)
+2. Repo **Settings → Pages → Build and deployment**
+3. **Source**: `Deploy from a branch`
+4. **Branch**: `redesign`, **Folder**: `/site`, Save
 
-That's the whole deploy. `.nojekyll` tells Pages to skip Jekyll.
-(If you'd rather have the site at the repo root, move everything in
-`site/` up one level before pushing.)
+Within ~30s the site is live at `https://<user>.github.io/`.
+Every later push to `redesign` republishes automatically.
+
+### Notes
+
+- The site is plain static HTML. `site/.nojekyll` tells GitHub Pages
+  not to run Jekyll on it.
+- All asset paths are root-relative (`/assets/…`). On a user site
+  (`<user>.github.io`) the chosen folder is served at the root, so
+  these paths resolve directly.
+- The old al-folio Jekyll workflow at `.github/workflows/deploy.yml`
+  only triggers on pushes to `master` / `main`, so pushing to
+  `redesign` does not run it and does not touch the old site.
+- The legacy `gh-pages` branch is left untouched. If you ever want
+  to roll back, switch the Pages source back to `gh-pages`.
+- If you'd rather keep the site at the repo root instead of `/site`,
+  move everything in `site/` up one level and set the Pages folder
+  to `/ (root)`.
 
 ---
 
