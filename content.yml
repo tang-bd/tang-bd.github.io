@@ -1,0 +1,176 @@
+# ============================================================
+#  All site content lives here.  Edit this file, refresh — done.
+#
+#  Format: YAML. Prose fields ("paragraphs", "intro") accept
+#  Markdown — links written as [Tsinghua](https://...) render
+#  correctly. Everything else is a plain string.
+#
+#  The author's own name (see `me` below) is auto-highlighted
+#  wherever it appears in an `authors:` line.
+# ============================================================
+
+me: Bingda Tang        # auto-bold in author lists
+
+site:
+  brand: 'Bingda Tang「湯秉達」'
+  brand_href: /
+  nav:
+    - { label: Home,     href: /,                   match: ['', index.html] }
+    - { label: Research, href: /publications.html,  match: publications.html }
+    - { label: CV,       href: /assets/pdf/CV.pdf }
+    - { label: Contact,  href: 'mailto:tangbd2003@gmail.com' }
+
+# ---------------------- ABOUT (home page) ----------------------
+
+about:
+  photo: /assets/img/photo.jpg
+  paragraphs:
+    - >
+      Hello there. I am Bingda Tang, an undergraduate student at
+      [Tsinghua University](https://www.tsinghua.edu.cn/) and an
+      incoming PhD student at [UC Berkeley](https://www.berkeley.edu/).
+    - >
+      My research focuses on multimodal learning and generative modeling,
+      with applications in both the arts and sciences.
+    - >
+      I am fortunate to have worked with
+      [Serena Yeung-Levy](https://marvl.stanford.edu/),
+      [Saining Xie](https://www.sainingxie.com/) and
+      [Ting Chen](http://timlab.cn/author/ting-chen/).
+    - "Here's my [CV](/assets/pdf/CV.pdf)."
+
+# ----------- HIGHLIGHT timeline (home page) ----------------
+# Each item is one of: { type: feature | soft | plain }
+#   feature → bold white card with black border + hard shadow
+#   soft    → near-invisible card, only a faint border
+#   plain   → no card, just a hover background (good for news rows)
+
+highlight:
+  - type: plain
+    title: Accepted PhD offer from UC Berkeley.
+    date: Apr 8, 2026
+    href: https://www.berkeley.edu/
+
+  - type: plain
+    title: Joined Xiaohongshu (rednote) as a research intern.
+    date: Feb 27, 2026
+    href: https://www.xiaohongshu.com/explore
+
+  - type: feature
+    title: 'V-GRPO: Online Reinforcement Learning for Denoising Generative Models Is Easier than You Think'
+    date: CVPR 2026 Findings
+    authors: Bingda Tang, Yuhui Zhang, Xiaohan Wang, Jiayuan Mao, Ludwig Schmidt, Serena Yeung-Levy
+    href: https://arxiv.org/abs/2604.23380
+
+  - type: soft
+    title: Scaling Text-to-Image Diffusion Transformers with Representation Autoencoders
+    date: CVPR 2026 Findings
+    authors: Shengbang Tong*, Boyang Zheng*, Ziteng Wang*, Bingda Tang, Nanye Ma, Ellis Brown, Jihan Yang, Rob Fergus, Yann LeCun, Saining Xie
+    href: https://arxiv.org/abs/2601.16208
+
+  - type: plain
+    title: Joined Serena Yeung-Levy's group at Stanford as a research intern.
+    date: May 18, 2025
+    href: https://marvl.stanford.edu/
+
+  - type: feature
+    title: Exploring the Deep Fusion of Large Language Models and Diffusion Transformers for Text-to-Image Synthesis
+    date: CVPR 2025
+    authors: Bingda Tang, Boyang Zheng, Xichen Pan, Sayak Paul, Saining Xie
+    href: https://arxiv.org/abs/2505.10046
+
+  - type: feature
+    title: 'VividMed: Vision Language Model with Versatile Visual Grounding for Medicine'
+    date: NAACL 2025
+    authors: Lingxiao Luo*, Bingda Tang*, Xuanzhong Chen, Rong Han, Ting Chen
+    href: https://arxiv.org/abs/2410.12694
+
+  - type: plain
+    title: Joined Saining Xie's group at NYU as a research intern.
+    date: Mar 21, 2024
+    href: https://www.sainingxie.com/
+
+# ----------- RESEARCH page intro + grouped publications ----------
+
+publications_intro: >
+  My research focuses on multimodal learning and generative modeling,
+  with applications in both the arts and sciences. \* denotes equal
+  contribution.
+
+publications:
+  - year: '2026'
+    items:
+      - type: feature
+        id: vgrpo
+        title: 'V-GRPO: Online Reinforcement Learning for Denoising Generative Models Is Easier than You Think'
+        date: CVPR 2026 Findings
+        authors: Bingda Tang, Yuhui Zhang, Xiaohan Wang, Jiayuan Mao, Ludwig Schmidt, Serena Yeung-Levy
+        tags:
+          - { label: arXiv, href: https://arxiv.org/abs/2604.23380 }
+          - { label: Code,  href: https://github.com/tang-bd/v-grpo }
+
+      - type: soft
+        id: rae
+        title: Scaling Text-to-Image Diffusion Transformers with Representation Autoencoders
+        date: CVPR 2026 Findings
+        authors: Shengbang Tong*, Boyang Zheng*, Ziteng Wang*, Bingda Tang, Nanye Ma, Ellis Brown, Jihan Yang, Rob Fergus, Yann LeCun, Saining Xie
+        tags:
+          - { label: arXiv,   href: https://arxiv.org/abs/2601.16208 }
+          - { label: Project, href: https://rae-dit.github.io/scale-rae/ }
+
+  - year: '2025'
+    items:
+      - type: feature
+        id: fusedit
+        title: Exploring the Deep Fusion of Large Language Models and Diffusion Transformers for Text-to-Image Synthesis
+        date: CVPR 2025
+        authors: Bingda Tang, Boyang Zheng, Xichen Pan, Sayak Paul, Saining Xie
+        tags:
+          - { label: arXiv, href: https://arxiv.org/abs/2505.10046 }
+          - { label: Code,  href: https://github.com/tang-bd/fuse-dit }
+
+      - type: feature
+        id: vividmed
+        title: 'VividMed: Vision Language Model with Versatile Visual Grounding for Medicine'
+        date: NAACL 2025
+        authors: Lingxiao Luo*, Bingda Tang*, Xuanzhong Chen, Rong Han, Ting Chen
+        tags:
+          - { label: arXiv, href: https://arxiv.org/abs/2410.12694 }
+          - { label: Code,  href: https://github.com/function2-llx/MMMM }
+
+      - type: soft
+        title: 'CORE4D: A 4D Human-Object-Human Interaction Dataset for Collaborative Object Rearrangement'
+        date: CVPR 2025
+        authors: Yun Liu*, Chengwen Zhang*, Ruofan Xing, Bingda Tang, Bowen Yang, Li Yi
+        tags:
+          - { label: arXiv, href: https://arxiv.org/abs/2406.19353 }
+          - { label: Code,  href: https://github.com/leolyliu/CORE4D-Instructions }
+
+      - type: soft
+        title: Jailbreaking Large Language Models Through Alignment Vulnerabilities in Out-of-Distribution Settings
+        date: CIKM 2025 Short Papers
+        authors: Yue Huang, Jingyu Tang, Dongping Chen, Bingda Tang, Yao Wan, Lichao Sun, Philip S. Yu, Xiangliang Zhang
+        tags:
+          - { label: arXiv, href: https://arxiv.org/abs/2406.13662 }
+
+  - year: '2024 & earlier'
+    items:
+      - type: soft
+        title: 'CalibRead: Unobtrusive Eye Tracking Calibration from Natural Reading Behavior'
+        date: IMWUT 2024
+        authors: Chang Liu, Chun Yu, Xiangyang Wang, Jianxiao Jiang, Tianao Yang, Bingda Tang, Yingtian Shi, Liang Chen, Yuanchun Shi
+
+      - type: soft
+        title: Building Universal Foundation Models for Medical Image Analysis with Spatially Adaptive Networks
+        date: 'Technical Report · 2023'
+        authors: Lingxiao Luo, Xuanzhong Chen, Bingda Tang, Xinsheng Chen, Rong Han, Chengpeng Hu, Yujiang Li, Ting Chen
+        tags:
+          - { label: arXiv, href: https://arxiv.org/abs/2312.07630 }
+          - { label: Code,  href: https://github.com/function2-llx/PUMIT }
+
+# ------------------- ELSEWHERE (contact links) -----------------
+
+elsewhere:
+  - { label: tangbd2003@gmail.com, href: 'mailto:tangbd2003@gmail.com' }
+  - { label: Google Scholar,       href: 'https://scholar.google.com/citations?user=tqsnNqAAAAAJ' }
+  - { label: GitHub,               href: 'https://github.com/tang-bd' }
