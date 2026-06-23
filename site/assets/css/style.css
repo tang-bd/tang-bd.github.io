@@ -1,38 +1,54 @@
-/* ---------- pi.website-inspired theme ---------- */
+/* ---------- palette ---------- */
 
 :root {
   --bg: #ffffff;
-  --bg-soft: #f6f6f5;
-  --bg-hover: #f3f3f2;
+  --bg-soft: #f7f7f6;
+  --bg-hover: #f1f1ef;
+
   --fg: #282828;
+  --fg-strong: #111111;
   --fg-muted: #6b6866;
-  --rule: #e2e2e0;
+  --fg-quiet: #9a9794;
+
+  --rule: #e6e6e3;
   --rule-strong: #282828;
+
   --card: #ffffff;
-  --card-soft: #f7f6f4;
-  --card-soft-border: #e2e2e0;
-  --card-soft-border-hover: #c0bdad;
+  --card-soft: #f5f5f3;
+  --card-soft-border: #e1e1de;
+  --card-soft-border-hover: #b8b6b1;
+
   --shadow: #282828;
-  --shadow-soft: #c0bdad;
+  --shadow-soft: #c8c6c1;
+
   --link: #282828;
+  --accent: #b65332;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #000000;
-    --bg-soft: #1a1a1a;
-    --bg-hover: #232323;
-    --fg: #f0f0f0;
-    --fg-muted: #969696;
-    --rule: #2a2a2a;
-    --rule-strong: #f0f0f0;
-    --card: #141414;
-    --card-soft: #1a1a1a;
-    --card-soft-border: #2a2a2a;
-    --card-soft-border-hover: #4a4a4a;
-    --shadow: #f0f0f0;
-    --shadow-soft: #4a4a4a;
-    --link: #f0f0f0;
+    --bg: #0e0e0e;
+    --bg-soft: #181818;
+    --bg-hover: #1f1f1f;
+
+    --fg: #e8e6e2;
+    --fg-strong: #f5f3ef;
+    --fg-muted: #989593;
+    --fg-quiet: #6a6866;
+
+    --rule: #262625;
+    --rule-strong: #e8e6e2;
+
+    --card: #161616;
+    --card-soft: #1c1c1b;
+    --card-soft-border: #2a2a28;
+    --card-soft-border-hover: #4a4a47;
+
+    --shadow: #e8e6e2;
+    --shadow-soft: #404040;
+
+    --link: #e8e6e2;
+    --accent: #d57e5c;
   }
 }
 
@@ -61,11 +77,15 @@ body {
 a {
   color: var(--link);
   text-decoration: underline;
-  text-underline-offset: 6px;
+  text-underline-offset: 5px;
   text-decoration-thickness: 1px;
-  transition: text-decoration-thickness 100ms ease;
+  text-decoration-color: var(--rule-strong);
+  transition: text-decoration-thickness 100ms ease, text-decoration-color 100ms ease;
 }
-a:hover { text-decoration-thickness: 2px; }
+a:hover {
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--fg);
+}
 
 p { margin: 0 0 1em; }
 
@@ -76,12 +96,12 @@ p { margin: 0 0 1em; }
   overflow: hidden;
 }
 @media (min-width: 768px) {
-  .shell { padding: 48px; }
+  .shell { padding: 32px; }
 }
 
 .container {
   width: 100%;
-  max-width: 600px;
+  max-width: 680px;
   margin: 0 auto;
 }
 
@@ -90,11 +110,11 @@ p { margin: 0 0 1em; }
 header.site {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   align-items: flex-start;
   margin-bottom: 28px;
 }
-@media (min-width: 768px) {
+@media (min-width: 720px) {
   header.site {
     flex-direction: row;
     justify-content: space-between;
@@ -103,28 +123,29 @@ header.site {
 }
 
 .brand {
-  font-family: "Source Serif 4", "Iowan Old Style", "Charter", "Georgia", "Songti SC", serif;
+  font-family: "Source Serif 4", "Iowan Old Style", "Charter", "Georgia",
+    "Songti SC", serif;
   font-size: 1.85rem;
   line-height: 1;
-  color: var(--fg);
+  color: var(--fg-strong);
   text-decoration: none;
   letter-spacing: -0.01em;
 }
-.brand:hover { text-decoration: none; }
-.brand .leaf { display: inline-block; }
+.brand:hover { text-decoration: none; color: var(--accent); }
 
 .site-nav {
   display: flex;
-  gap: 16px;
+  gap: 18px;
   font-size: 0.875rem;
+  flex-wrap: wrap;
 }
 .site-nav a {
   color: var(--fg);
   text-decoration: underline;
-  text-underline-offset: 8px;
+  text-underline-offset: 7px;
   text-decoration-thickness: 1px;
-  text-decoration-color: var(--fg);
-  opacity: 0.5;
+  text-decoration-color: var(--rule-strong);
+  opacity: 0.55;
 }
 .site-nav a:hover { opacity: 1; text-decoration-thickness: 2px; }
 .site-nav a[aria-current="page"] {
@@ -136,17 +157,18 @@ header.site {
 
 .intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 108px;
-  gap: 28px;
+  grid-template-columns: minmax(0, 1fr) 132px;
+  gap: 32px;
   align-items: start;
   margin: 32px 0;
 }
+.intro.no-photo { grid-template-columns: 1fr; }
 .intro p { margin-bottom: 1em; }
 .intro p:last-child { margin-bottom: 0; }
 
 .intro-photo {
-  width: 108px;
-  height: 108px;
+  width: 132px;
+  height: 132px;
   overflow: hidden;
   background: var(--bg-soft);
   border: 1px solid var(--rule);
@@ -160,8 +182,8 @@ header.site {
 }
 
 @media (max-width: 560px) {
-  .intro { grid-template-columns: 1fr; gap: 18px; }
-  .intro-photo { width: 96px; height: 96px; }
+  .intro { grid-template-columns: 1fr; gap: 20px; }
+  .intro-photo { width: 112px; height: 112px; }
 }
 
 /* ---------- timeline ---------- */
@@ -174,7 +196,7 @@ header.site {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   border-left: 1px solid var(--rule);
   padding: 16px 0;
 }
@@ -185,13 +207,10 @@ header.site {
   left: -1px;
   width: 1px;
   height: 24px;
-  background: linear-gradient(to top, transparent, var(--bg));
+  pointer-events: none;
 }
-.timeline::before { top: 0; }
-.timeline::after {
-  bottom: 0;
-  background: linear-gradient(to bottom, transparent, var(--bg));
-}
+.timeline::before { top: 0; background: linear-gradient(to top, transparent, var(--bg)); }
+.timeline::after { bottom: 0; background: linear-gradient(to bottom, transparent, var(--bg)); }
 
 .t-item {
   position: relative;
@@ -216,21 +235,21 @@ header.site {
   outline: 2px solid var(--bg);
 }
 
-/* dim/secondary card (no real card, just hover bg) */
+/* plain row — no card */
 .t-item.plain:hover { background: var(--bg-hover); }
 
-/* highlighted card — black border + hard offset shadow */
+/* featured — first/co-first author papers */
 .t-item.feature {
   background: var(--card);
   border: 1px solid var(--rule-strong);
   box-shadow: 3px 3px 0 var(--shadow);
-  transition: box-shadow 120ms ease;
+  transition: box-shadow 120ms ease, transform 120ms ease;
   gap: 8px;
 }
 .t-item.feature:hover { box-shadow: 5px 5px 0 var(--shadow); }
 .t-item.feature .t-dot { top: 16px; }
 
-/* soft card — beige bg, light border */
+/* soft — other co-authored papers */
 .t-item.soft {
   background: var(--card-soft);
   border: 1px solid var(--card-soft-border);
@@ -249,11 +268,12 @@ header.site {
   align-items: baseline;
   justify-content: space-between;
   gap: 8px;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
 }
 .t-title {
   font-weight: 600;
   line-height: 1.45;
+  color: var(--fg-strong);
   flex: 1;
   min-width: 0;
 }
@@ -264,26 +284,24 @@ header.site {
   flex-shrink: 0;
 }
 .t-body {
-  font-size: 0.75rem;
-  color: var(--fg-muted);
-  margin: 0;
-  line-height: 1.55;
-}
-
-.t-feature .t-title, .t-item.feature .t-title { font-size: 0.82rem; }
-
-.t-authors {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   color: var(--fg-muted);
   margin: 0;
   line-height: 1.6;
 }
-.t-authors .me { color: var(--fg); font-weight: 600; }
+
+.t-authors {
+  font-size: 0.74rem;
+  color: var(--fg-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+.t-authors .me { color: var(--fg-strong); font-weight: 600; }
 
 .t-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   margin-top: 4px;
 }
 .t-tag {
@@ -296,7 +314,7 @@ header.site {
   background: var(--bg);
 }
 .t-tag:hover {
-  color: var(--fg);
+  color: var(--fg-strong);
   border-color: var(--fg);
   text-decoration: none;
 }
@@ -305,14 +323,14 @@ header.site {
 
 .section-label {
   font-size: 0.72rem;
-  color: var(--fg-muted);
+  color: var(--fg-quiet);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   margin: 32px 0 12px;
 }
 
 .block {
-  margin-top: 36px;
+  margin-top: 28px;
 }
 
 /* ---------- contact list ---------- */
@@ -329,7 +347,7 @@ header.site {
 footer.site {
   border-top: 1px solid var(--rule-strong);
   margin-top: 48px;
-  padding: 24px 0;
+  padding: 22px 0;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -339,15 +357,14 @@ footer.site {
 footer.site .mark {
   font-family: "Source Serif 4", "Iowan Old Style", "Charter", "Georgia", "Songti SC", serif;
   font-size: 1.05rem;
+  color: var(--fg-strong);
 }
 footer.site .right {
   display: flex;
   gap: 12px;
   font-size: 0.78rem;
-  color: var(--fg-muted);
+  color: var(--fg-quiet);
 }
-footer.site .right a { color: var(--fg-muted); }
-footer.site .right a:hover { color: var(--fg); }
 
 /* selection */
 ::selection { background: var(--fg); color: var(--bg); }

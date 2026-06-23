@@ -1,49 +1,99 @@
 # tang-bd.github.io
 
-Personal site — a static, pi.website-inspired redesign.
+Personal site — pure HTML/CSS, no build step.
 
 ## Local preview
 
-From this `site/` directory:
-
 ```bash
+cd site
 python3 -m http.server 4000
 ```
 
-Then open <http://localhost:4000>.
+Open <http://localhost:4000>. Edits show up on refresh.
 
 ## Deploy to GitHub Pages
 
-This site is plain HTML/CSS — no build step. The `.nojekyll` file tells
-GitHub Pages to serve files as-is.
+1. Push this branch to GitHub
+2. Repo **Settings → Pages**
+3. **Source**: `Deploy from a branch` → pick the branch + folder `/site`
 
-1. In the repo: **Settings → Pages**
-2. Set **Source** to `Deploy from a branch`
-3. Choose the branch and set the folder to `/site`
-4. Save — your site will be live at `https://<user>.github.io/`
+That's the whole deploy. `.nojekyll` tells Pages to skip Jekyll.
+(If you'd rather have the site at the repo root, move everything in
+`site/` up one level before pushing.)
 
-If you'd rather have the site at the repo root, move everything in `site/`
-up one directory before pushing.
+---
 
-## Structure
+## How to edit content
+
+Every page lives in a single HTML file. Open it in any editor and the
+content is right there as plain HTML — no templating.
 
 ```
 site/
-├── index.html         # Home: intro + recent timeline (papers & news)
-├── publications.html  # Full research list, grouped by year
-├── .nojekyll          # disables Jekyll on GitHub Pages
-└── assets/
-    ├── css/style.css
-    ├── img/photo.jpg
-    └── pdf/CV.pdf
+├── index.html          ← Home: intro + Highlight timeline + Elsewhere
+├── publications.html   ← Research: all papers grouped by year
+├── template.html       ← copy me to make a new page
+├── assets/
+│   ├── css/style.css   ← all styling
+│   ├── js/site.js      ← brand, nav links, footer config
+│   ├── img/photo.jpg   ← portrait
+│   └── pdf/CV.pdf
 ```
 
-### Adding items
+### Brand / nav / footer (one place)
 
-A timeline item is just one `<a>` block inside `.timeline`:
+Open **`assets/js/site.js`** and edit the `SITE` object at the top.
+Every page renders its header and footer from this config, so you only
+edit it once:
 
-- `.t-item.feature` — featured paper (white card, black border, hard shadow)
-- `.t-item.soft` — secondary paper (soft beige card)
-- `.t-item.plain` — plain news/event row (no card)
+```js
+const SITE = {
+  brand: 'Bingda Tang「湯秉達」',
+  brandHref: '/',
+  nav: [
+    { label: 'Home',     href: '/',                   match: ['', 'index.html'] },
+    { label: 'Research', href: '/publications.html',  match: 'publications.html' },
+    { label: 'CV',       href: '/assets/pdf/CV.pdf' },
+    { label: 'Contact',  href: 'mailto:tangbd2003@gmail.com' },
+  ],
+};
+```
 
-Copy any existing block to add new content.
+### Adding a new page
+
+1. Duplicate `template.html` → e.g. `talks.html`
+2. Edit the `<title>`, `<meta description>`, and the content block
+   between the `EDIT FROM HERE` / `STOP EDITING HERE` markers
+3. Open `assets/js/site.js` and add one line to the `nav` array:
+
+   ```js
+   { label: 'Talks', href: '/talks.html', match: 'talks.html' },
+   ```
+
+That's it. Header, footer, fonts, and styles are picked up automatically.
+
+### Removing a page
+
+Delete the `.html` file and remove its line from `nav` in
+`assets/js/site.js`.
+
+### Adding items to a timeline
+
+Each list (Highlight, the year groups in Research, any future page)
+is just a `<div class="timeline">…</div>` containing one `<a>` or
+`<article>` per row. Three row styles:
+
+| class | look | use for |
+|---|---|---|
+| `t-item feature` | white card + black border + hard shadow | first / co-first author papers, headline announcements |
+| `t-item soft`    | light grey card | other co-authored papers |
+| `t-item plain`   | no card, hover background | short news / events |
+
+Copy any existing `<a class="t-item …">` block and edit the title /
+date / authors / tags.
+
+### Changing the colour palette
+
+Open `assets/css/style.css`. The top `:root { … }` block has every
+colour as a CSS variable. Edit a variable and the change ripples
+through the whole site. Dark-mode values live in the next block.

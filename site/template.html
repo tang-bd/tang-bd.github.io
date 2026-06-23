@@ -1,0 +1,96 @@
+<!doctype html>
+<!--
+  ╔════════════════════════════════════════════════════════════════╗
+  ║  Page template — copy this file to add a new page.             ║
+  ║                                                                ║
+  ║  Steps to add a page (e.g. "talks"):                           ║
+  ║    1. Copy this file to talks.html                             ║
+  ║    2. Edit <title>, <meta description>, and the content block  ║
+  ║    3. Open /assets/js/site.js and add a line to SITE.nav, e.g. ║
+  ║         { label: 'Talks', href: '/talks.html',                 ║
+  ║           match: 'talks.html' },                               ║
+  ║                                                                ║
+  ║  Nav + footer render themselves — leave the empty <header>     ║
+  ║  and <footer> tags below alone.                                ║
+  ╚════════════════════════════════════════════════════════════════╝
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Page Title — Bingda Tang</title>
+<meta name="description" content="One-sentence description of this page." />
+<link rel="icon" href="/assets/img/photo.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+
+<div class="shell">
+<div class="container">
+
+  <header class="site" data-site-header></header>
+
+  <!-- ====================  EDIT FROM HERE  ==================== -->
+
+  <section class="intro no-photo">
+    <div>
+      <p>Lead paragraph for the page.</p>
+    </div>
+  </section>
+
+  <div class="section-label">Section title</div>
+
+  <div class="timeline-wrap">
+  <div class="timeline">
+
+    <!-- Pick one class per row:
+           .t-item.feature  — bold card  (black border + hard shadow)
+           .t-item.soft     — soft card  (light grey fill)
+           .t-item.plain    — no card    (just a hover background)
+    -->
+
+    <a class="t-item feature" href="https://example.com" target="_blank" rel="noopener">
+      <span class="t-dot"></span>
+      <div class="t-head">
+        <div class="t-title">A featured item</div>
+        <div class="t-date">2026</div>
+      </div>
+      <p class="t-authors">Optional second line — authors, venue, byline.</p>
+      <div class="t-tags">
+        <a class="t-tag" href="https://example.com" target="_blank" rel="noopener">Link</a>
+      </div>
+    </a>
+
+    <a class="t-item soft" href="https://example.com" target="_blank" rel="noopener">
+      <span class="t-dot"></span>
+      <div class="t-head">
+        <div class="t-title">A soft item</div>
+        <div class="t-date">2025</div>
+      </div>
+      <p class="t-body">An optional description line.</p>
+    </a>
+
+    <a class="t-item plain" href="https://example.com" target="_blank" rel="noopener">
+      <span class="t-dot"></span>
+      <div class="t-head">
+        <div class="t-title">A plain row — good for short news / events.</div>
+        <div class="t-date">2024</div>
+      </div>
+    </a>
+
+  </div>
+  </div>
+
+  <!-- ====================  STOP EDITING HERE  ==================== -->
+
+  <footer class="site" data-site-footer></footer>
+
+</div>
+</div>
+
+<script src="/assets/js/site.js"></script>
+</body>
+</html>
