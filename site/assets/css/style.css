@@ -14,12 +14,12 @@
   --rule-strong: #282828;
 
   --card: #ffffff;
-  --card-soft: #fafaf9;
-  --card-soft-border: #ececea;
+  --card-soft: #ffffff;
+  --card-soft-border: #ededeb;
   --card-soft-border-hover: #d6d4d0;
 
   --shadow: #282828;
-  --shadow-soft: #e0ddd6;
+  --shadow-soft: #ececea;
 
   --link: #282828;
   --accent: #b65332;
