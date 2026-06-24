@@ -118,16 +118,6 @@ const renderElsewhere          = c =>
       `<a href="${escapeHtml(l.href)}"${externalAttrs(l.href)}>${escapeHtml(l.label)}</a>`
     ).join('')
   }</div>`;
-const renderVisitorMap         = c => {
-  const m = c.visitor_map;
-  if (!m || !m.src) return '';
-  const inner = `<img src="${escapeHtml(m.src)}" alt="${escapeHtml(m.alt || 'Visitor Map')}" loading="lazy" />`;
-  return `<div class="visitor-map">${
-    m.href
-      ? `<a href="${escapeHtml(m.href)}"${externalAttrs(m.href)} title="Visit tracker">${inner}</a>`
-      : inner
-  }</div>`;
-};
 
 /* --------------------- registry --------------------------------- */
 
@@ -137,7 +127,6 @@ const renderers = {
   elsewhere: renderElsewhere,
   'publications-intro': renderPublicationsIntro,
   publications: renderPublications,
-  'visitor-map': renderVisitorMap,
 };
 
 /* --------------------- bootstrap -------------------------------- */

@@ -160,7 +160,6 @@ and fills each placeholder from `content.yml`.
 | `elsewhere`            | the contact link list                          |
 | `publications-intro`   | the research-page intro paragraph              |
 | `publications`         | all publication year groups, with labels       |
-| `visitor-map`          | mapmyvisitors.com tracker image (centered)     |
 
 You can use a section more than once on a page, or skip any of them.
 
