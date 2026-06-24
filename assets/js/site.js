@@ -4,7 +4,7 @@
  *
  *  Sections available out of the box:
  *    data-section="about"               bio paragraphs + portrait
- *    data-section="highlight"           home-page timeline
+ *    data-section="highlights"          home-page timeline
  *    data-section="elsewhere"           contact / link list
  *    data-section="publications-intro"  intro line for research page
  *    data-section="publications"        year groups + cards
@@ -105,7 +105,7 @@ function renderTimeline(items, me) {
   }</div></div>`;
 }
 
-const renderHighlight          = c => renderTimeline(c.highlight || [], c.me);
+const renderHighlights         = c => renderTimeline(c.highlights || [], c.me);
 const renderPublicationsIntro  = c =>
   `<section class="intro no-photo"><div><p>${inlineMd(c.publications_intro || '')}</p></div></section>`;
 const renderPublications       = c =>
@@ -123,7 +123,7 @@ const renderElsewhere          = c =>
 
 const renderers = {
   about: renderAbout,
-  highlight: renderHighlight,
+  highlights: renderHighlights,
   elsewhere: renderElsewhere,
   'publications-intro': renderPublicationsIntro,
   publications: renderPublications,

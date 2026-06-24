@@ -76,7 +76,7 @@ about:              # home-page bio (markdown allowed in paragraphs)
   photo: /assets/img/photo.jpg
   paragraphs: [...]
 
-highlight: [...]    # home-page timeline (one big mixed list)
+highlights: [...]   # home-page timeline (one big mixed list)
 
 publications_intro: '...'
 publications:       # research page, grouped by year
@@ -140,8 +140,8 @@ to render. Look at `index.html`:
 <header class="site" data-site-header></header>
 
 <div data-section="about"></div>
-<div class="section-label">Highlight</div>
-<div data-section="highlight"></div>
+<div class="section-label">Highlights</div>
+<div data-section="highlights"></div>
 …
 <div data-section="elsewhere"></div>
 
@@ -156,7 +156,7 @@ and fills each placeholder from `content.yml`.
 | `data-section`         | What it renders                                |
 |------------------------|------------------------------------------------|
 | `about`                | bio paragraphs + portrait                      |
-| `highlight`            | the home-page timeline                         |
+| `highlights`           | the home-page timeline                         |
 | `elsewhere`            | the contact link list                          |
 | `publications-intro`   | the research-page intro paragraph              |
 | `publications`         | all publication year groups, with labels       |
@@ -246,7 +246,7 @@ HTML page  →  loads /content.yml  →  passes data to renderers in site.js
                                          │
                             data-section="about"      → renderAbout()
                             data-site-header           → renderHeader()
-                            data-section="highlight"  → renderHighlight()
+                            data-section="highlights" → renderHighlights()
                             ...
 ```
 

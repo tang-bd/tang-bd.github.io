@@ -26,28 +26,25 @@ about:
   photo: /assets/img/photo.jpg
   paragraphs:
     - >
-      Hello there. I am Bingda Tang, an undergraduate student at
-      [Tsinghua University](https://www.tsinghua.edu.cn/) and an
-      incoming PhD student at [UC Berkeley](https://www.berkeley.edu/).
+      Hi there! I am Bingda Tang, an
+      incoming PhD student at the [University of California, Berkeley](https://www.berkeley.edu/).
     - >
-      My research focuses on multimodal learning and generative modeling,
-      with applications in both the arts and sciences.
+      I work on continual learning, multimodal learning, and generative modeling.
     - >
-      I am fortunate to have worked with
+      I did my undergraduate studies at [Tsinghua University](https://www.tsinghua.edu.cn/), and I am fortunate to have worked with
       [Serena Yeung-Levy](https://marvl.stanford.edu/),
-      [Saining Xie](https://www.sainingxie.com/) and
+      [Saining Xie](https://www.sainingxie.com/), and
       [Ting Chen](http://timlab.cn/author/ting-chen/).
-    - "Here's my [CV](/assets/pdf/CV.pdf)."
 
-# ----------- HIGHLIGHT timeline (home page) ----------------
+# ----------- HIGHLIGHTS timeline (home page) ---------------
 # Each item is one of: { type: feature | soft | plain }
 #   feature → bold white card with black border + hard shadow
 #   soft    → near-invisible card, only a faint border
 #   plain   → no card, just a hover background (good for news rows)
 
-highlight:
+highlights:
   - type: plain
-    title: Accepted PhD offer from UC Berkeley.
+    title: Accepted PhD offer from the University of California, Berkeley.
     date: Apr 8, 2026
     href: https://www.berkeley.edu/
 
@@ -59,7 +56,7 @@ highlight:
   - type: feature
     title: 'V-GRPO: Online Reinforcement Learning for Denoising Generative Models Is Easier than You Think'
     date: CVPR 2026 Findings
-    authors: Bingda Tang, Yuhui Zhang, Xiaohan Wang, Jiayuan Mao, Ludwig Schmidt, Serena Yeung-Levy
+    authors: Bingda Tang*, Yuhui Zhang*, Xiaohan Wang, Jiayuan Mao, Ludwig Schmidt, Serena Yeung-Levy
     href: https://arxiv.org/abs/2604.23380
 
   - type: soft
@@ -93,9 +90,7 @@ highlight:
 # ----------- RESEARCH page intro + grouped publications ----------
 
 publications_intro: >
-  My research focuses on multimodal learning and generative modeling,
-  with applications in both the arts and sciences. \* denotes equal
-  contribution.
+  \* denotes equal contribution.
 
 publications:
   - year: '2026'
@@ -104,7 +99,7 @@ publications:
         id: vgrpo
         title: 'V-GRPO: Online Reinforcement Learning for Denoising Generative Models Is Easier than You Think'
         date: CVPR 2026 Findings
-        authors: Bingda Tang, Yuhui Zhang, Xiaohan Wang, Jiayuan Mao, Ludwig Schmidt, Serena Yeung-Levy
+        authors: Bingda Tang*, Yuhui Zhang*, Xiaohan Wang, Jiayuan Mao, Ludwig Schmidt, Serena Yeung-Levy
         tags:
           - { label: arXiv, href: https://arxiv.org/abs/2604.23380 }
           - { label: Code,  href: https://github.com/tang-bd/v-grpo }
@@ -129,6 +124,14 @@ publications:
           - { label: arXiv, href: https://arxiv.org/abs/2505.10046 }
           - { label: Code,  href: https://github.com/tang-bd/fuse-dit }
 
+      - type: soft
+        title: 'CORE4D: A 4D Human-Object-Human Interaction Dataset for Collaborative Object Rearrangement'
+        date: CVPR 2025
+        authors: Yun Liu*, Chengwen Zhang*, Ruofan Xing, Bingda Tang, Bowen Yang, Li Yi
+        tags:
+          - { label: arXiv, href: https://arxiv.org/abs/2406.19353 }
+          - { label: Code,  href: https://github.com/leolyliu/CORE4D-Instructions }
+
       - type: feature
         id: vividmed
         title: 'VividMed: Vision Language Model with Versatile Visual Grounding for Medicine'
@@ -139,27 +142,21 @@ publications:
           - { label: Code,  href: https://github.com/function2-llx/MMMM }
 
       - type: soft
-        title: 'CORE4D: A 4D Human-Object-Human Interaction Dataset for Collaborative Object Rearrangement'
-        date: CVPR 2025
-        authors: Yun Liu*, Chengwen Zhang*, Ruofan Xing, Bingda Tang, Bowen Yang, Li Yi
-        tags:
-          - { label: arXiv, href: https://arxiv.org/abs/2406.19353 }
-          - { label: Code,  href: https://github.com/leolyliu/CORE4D-Instructions }
-
-      - type: soft
         title: Jailbreaking Large Language Models Through Alignment Vulnerabilities in Out-of-Distribution Settings
         date: CIKM 2025 Short Papers
         authors: Yue Huang, Jingyu Tang, Dongping Chen, Bingda Tang, Yao Wan, Lichao Sun, Philip S. Yu, Xiangliang Zhang
         tags:
           - { label: arXiv, href: https://arxiv.org/abs/2406.13662 }
 
-  - year: '2024 & earlier'
+  - year: '2024'
     items:
       - type: soft
         title: 'CalibRead: Unobtrusive Eye Tracking Calibration from Natural Reading Behavior'
         date: IMWUT 2024
         authors: Chang Liu, Chun Yu, Xiangyang Wang, Jianxiao Jiang, Tianao Yang, Bingda Tang, Yingtian Shi, Liang Chen, Yuanchun Shi
 
+  - year: '2023'
+    items:
       - type: soft
         title: Building Universal Foundation Models for Medical Image Analysis with Spatially Adaptive Networks
         date: 'Technical Report · 2023'
