@@ -361,5 +361,20 @@ footer.site .right {
   color: var(--fg-quiet);
 }
 
+/* ---------- visitor map ---------- */
+
+.visitor-map {
+  margin: 40px auto 0;
+  text-align: center;
+}
+.visitor-map a { border: none; text-decoration: none; }
+.visitor-map a:hover { text-decoration: none; }
+.visitor-map img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  opacity: 0.92;
+}
+
 /* selection */
 ::selection { background: var(--fg); color: var(--bg); }

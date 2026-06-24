@@ -174,3 +174,12 @@ elsewhere:
   - { label: tangbd2003@gmail.com, href: 'mailto:tangbd2003@gmail.com' }
   - { label: Google Scholar,       href: 'https://scholar.google.com/citations?user=tqsnNqAAAAAJ' }
   - { label: GitHub,               href: 'https://github.com/tang-bd' }
+
+# ---------- Visitor map (mapmyvisitors.com) ----------------------
+# Hosted at mapmyvisitors.com. Sign up to get your own tracker URL
+# and replace `src` below; delete this block to remove the widget.
+
+visitor_map:
+  href: https://mapmyvisitors.com/web/1bye1
+  src:  https://mapmyvisitors.com/map.png?d=jWUnA-UxqIQfGnSh2lpbhfYgjgAuagP0R5lBx7Y894g&cl=ffffff
+  alt:  Visitor Map
