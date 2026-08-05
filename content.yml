@@ -17,6 +17,7 @@ site:
   nav:
     - { label: Home,     href: /,                   match: ['', index.html] }
     - { label: Research, href: /publications.html,  match: publications.html }
+    - { label: Travel,   href: /travel.html,       match: travel.html }
     - { label: CV,       href: /assets/pdf/CV.pdf }
     - { label: Contact,  href: 'mailto:tangbd2003@gmail.com' }
 
@@ -44,7 +45,7 @@ about:
 
 highlights:
   - type: plain
-    title: Accepted PhD offer from the University of California, Berkeley.
+    title: Accepted PhD offer from UC Berkeley.
     date: Apr 8, 2026
     href: https://www.berkeley.edu/
 

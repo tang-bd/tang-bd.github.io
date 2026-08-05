@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Travel Admin — Bingda Tang</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E🗺%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css" />
+<style>
+  h2 { font-family: "Source Serif 4", serif; font-weight: 500; margin-top: 36px; }
+  .toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 16px 0; }
+  input, button, select {
+    font-family: "JetBrains Mono", monospace; font-size: 14px;
+    padding: 8px 14px; border: 1px solid #ccc; border-radius: 6px;
+    background: #fff; color: #222;
+  }
+  button {
+    cursor: pointer; font-weight: 500;
+    background: #222; color: #fff; border-color: #222;
+    transition: opacity .15s;
+  }
+  button:hover { opacity: .75; }
+  button.ghost { background: #fff; color: #222; border-color: #ccc; }
+  button.danger { background: #d94f4f; border-color: #d94f4f; }
+  input[type="text"] { min-width: 260px; }
+
+  .result-list, .city-list { list-style: none; padding: 0; margin: 12px 0; }
+  .result-list li, .city-list > li {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 14px; border: 1px solid #e5e5e5; border-radius: 6px;
+    margin-bottom: 8px; font-size: 15px;
+  }
+  .result-list li .info, .city-list > li .info { flex: 1; }
+  .result-list li .name { font-weight: 600; }
+  .result-list li .detail { font-size: 13px; color: #666; }
+
+  .status { font-size: 14px; color: #888; margin-left: 8px; }
+  .status.ok { color: #2a7d2a; }
+  .status.err { color: #d94f4f; }
+
+  .divider { border: none; border-top: 1px solid #e5e5e5; margin: 32px 0; }
+
+  /* ---- editable city rows ---- */
+  .city-list > li {
+    background: #fafafa; flex-wrap: wrap; align-items: flex-start;
+  }
+  .city-fields {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    flex: 1; min-width: 0;
+  }
+  .city-fields input {
+    font-family: "JetBrains Mono", monospace; font-size: 13px;
+    padding: 5px 8px; border: 1px solid #ddd; border-radius: 4px;
+    background: #fff; color: #222; min-width: 0;
+    transition: border-color 120ms ease;
+  }
+  .city-fields input:focus { border-color: #222; outline: none; }
+  .city-fields .f-city { width: 130px; flex-shrink: 0; }
+  .city-fields .f-country { width: 100px; flex-shrink: 0; }
+  .city-fields .f-date { width: 90px; flex-shrink: 0; }
+  .city-fields .f-note { flex: 1; min-width: 150px; }
+  .city-fields .f-coords {
+    font-family: "JetBrains Mono", monospace; font-size: 11px;
+    color: #aaa; white-space: nowrap; width: 130px; flex-shrink: 0;
+    border: none !important; background: transparent !important;
+    padding: 5px 0 !important; cursor: default;
+  }
+  .city-fields .f-coords:focus { border-color: #ddd !important; }
+
+  .download-area { margin-top: 24px; }
+  .download-area textarea {
+    width: 100%; height: 260px; font-family: "JetBrains Mono", monospace;
+    font-size: 13px; border: 1px solid #ccc; border-radius: 6px;
+    padding: 14px; resize: vertical; background: #fafafa;
+  }
+
+  @media (max-width: 640px) {
+    .city-fields input { width: 100% !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+<div class="container">
+
+  <header class="site" data-site-header></header>
+
+  <section class="intro no-photo">
+    <div><p><strong>Travel Admin</strong> — search cities and manage your travel map.
+    Edit any field directly. This page is not published.</p></div>
+  </section>
+
+  <!-- ===== SEARCH ===== -->
+  <h2>Search city</h2>
+  <div class="toolbar">
+    <input type="text" id="search-input" placeholder="e.g. Tokyo, Paris, London…" />
+    <button id="search-btn">Search</button>
+    <span class="status" id="search-status"></span>
+  </div>
+  <ul class="result-list" id="search-results"></ul>
+
+  <hr class="divider" />
+
+  <!-- ===== CURRENT CITIES ===== -->
+  <h2>Current cities (<span id="city-count">0</span>)</h2>
+  <ul class="city-list" id="city-list"></ul>
+
+  <div class="toolbar">
+    <button id="export-btn">Export JSON</button>
+    <button id="download-btn" class="ghost">Download file</button>
+  </div>
+
+  <div class="download-area" id="download-area" style="display:none;">
+    <p style="font-size:14px;color:#666;">Copy this into <code>assets/data/travel.json</code> and commit.</p>
+    <textarea id="json-output" readonly></textarea>
+  </div>
+
+  <footer class="site" data-site-footer></footer>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+<script src="/assets/js/site.js"></script>
+<script>
+(function() {
+  const NOMINATIM = 'https://nominatim.openstreetmap.org/search';
+  let cities = [];
+
+  // ----- load -----
+  async function loadCities() {
+    try {
+      const res = await fetch('/assets/data/travel.json', { cache: 'no-cache' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      cities = await res.json();
+    } catch (err) {
+      console.warn('Could not load travel.json, starting empty:', err);
+      cities = [];
+    }
+    renderCityList();
+  }
+
+  // ----- search -----
+  async function searchCity(query) {
+    const status = document.getElementById('search-status');
+    const list = document.getElementById('search-results');
+    status.textContent = 'Searching…'; status.className = 'status';
+    list.innerHTML = '';
+
+    try {
+      const params = new URLSearchParams({
+        q: query, format: 'json', limit: '8', addressdetails: '1'
+      });
+      const res = await fetch(`${NOMINATIM}?${params}`, {
+        headers: { 'User-Agent': 'tang-bd-travel-admin/1.0' }
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const results = await res.json();
+
+      if (!results.length) {
+        status.textContent = 'No results.'; status.className = 'status';
+        return;
+      }
+      status.textContent = `${results.length} result(s).`; status.className = 'status ok';
+
+      results.forEach(r => {
+        const already = cities.some(c =>
+          Math.abs(c.lat - parseFloat(r.lat)) < 0.01 &&
+          Math.abs(c.lng - parseFloat(r.lon)) < 0.01
+        );
+        const li = document.createElement('li');
+        li.innerHTML =
+          `<div class="info">` +
+          `<div class="name">${esc(r.display_name.split(',')[0])}</div>` +
+          `<div class="detail">${esc(r.display_name)} (${r.lat}, ${r.lon})</div>` +
+          `</div>`;
+        const btn = document.createElement('button');
+        btn.textContent = already ? '✓ Added' : '+ Add';
+        btn.className = already ? 'ghost' : '';
+        btn.disabled = already;
+        btn.onclick = () => addCity(r, btn);
+        li.appendChild(btn);
+        list.appendChild(li);
+      });
+    } catch (err) {
+      status.textContent = 'Search failed.'; status.className = 'status err';
+      console.error(err);
+    }
+  }
+
+  // ----- add -----
+  function addCity(result, btn) {
+    const parts = result.display_name.split(',');
+    const cityName = parts[0].trim();
+    const countryName = parts[parts.length - 1].trim();
+    const entry = {
+      city: cityName,
+      country: countryName,
+      lat: parseFloat(result.lat),
+      lng: parseFloat(result.lon),
+      date: '',
+      note: ''
+    };
+    cities.push(entry);
+    renderCityList();
+    updateJsonOutput();
+
+    btn.textContent = '✓ Added';
+    btn.className = 'ghost';
+    btn.disabled = true;
+
+    // flash the new row
+    setTimeout(() => {
+      const rows = document.querySelectorAll('.city-list > li');
+      const last = rows[rows.length - 1];
+      if (last) { last.style.background = '#fffbe6'; setTimeout(() => { last.style.background = ''; }, 800); }
+    }, 50);
+  }
+
+  // ----- remove -----
+  function removeCity(index) {
+    cities.splice(index, 1);
+    renderCityList();
+    updateJsonOutput();
+  }
+
+  // ----- render editable city list -----
+  function renderCityList() {
+    document.getElementById('city-count').textContent = cities.length;
+    const list = document.getElementById('city-list');
+
+    list.innerHTML = cities.map((c, i) =>
+      `<li data-idx="${i}">` +
+      `<div class="city-fields">` +
+      `<input class="f-city" value="${esc(c.city)}" placeholder="City" data-idx="${i}" data-field="city">` +
+      `<input class="f-country" value="${esc(c.country)}" placeholder="Country" data-idx="${i}" data-field="country">` +
+      `<input class="f-date" value="${esc(c.date)}" placeholder="Date" data-idx="${i}" data-field="date">` +
+      `<input class="f-note" value="${esc(c.note)}" placeholder="Note" data-idx="${i}" data-field="note">` +
+      `<input class="f-coords" value="${c.lat.toFixed(4)}, ${c.lng.toFixed(4)}" readonly tabindex="-1">` +
+      `</div>` +
+      `<button class="ghost danger" data-rm="${i}">Remove</button>` +
+      `</li>`
+    ).join('');
+
+    // remove buttons
+    list.querySelectorAll('button[data-rm]').forEach(btn => {
+      btn.onclick = () => removeCity(parseInt(btn.dataset.rm));
+    });
+
+    // live edit: update cities array on input
+    list.querySelectorAll('input[data-field]').forEach(inp => {
+      const idx = parseInt(inp.dataset.idx);
+      const field = inp.dataset.field;
+      inp.addEventListener('input', () => {
+        if (idx < cities.length) {
+          cities[idx][field] = inp.value;
+          updateJsonOutput();
+        }
+      });
+    });
+  }
+
+  function updateJsonOutput() {
+    const ta = document.getElementById('json-output');
+    if (ta) ta.value = JSON.stringify(cities, null, 2);
+  }
+
+  // ----- export -----
+  function exportJson() {
+    const area = document.getElementById('download-area');
+    area.style.display = 'block';
+    updateJsonOutput();
+    area.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function downloadFile() {
+    const blob = new Blob([JSON.stringify(cities, null, 2) + '\n'], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'travel.json';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  function esc(s) {
+    return String(s ?? '').replace(/[&<>"']/g, c =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  // ----- bindings -----
+  document.getElementById('search-btn').onclick = () => {
+    const q = document.getElementById('search-input').value.trim();
+    if (q) searchCity(q);
+  };
+  document.getElementById('search-input').onkeydown = e => {
+    if (e.key === 'Enter') {
+      const q = e.target.value.trim();
+      if (q) searchCity(q);
+    }
+  };
+  document.getElementById('export-btn').onclick = exportJson;
+  document.getElementById('download-btn').onclick = downloadFile;
+
+  // ----- init -----
+  loadCities();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,618 @@
+[
+  {
+    "city": "Guangzhou",
+    "country": "China",
+    "lat": 23.1288429,
+    "lng": 113.2589581,
+    "date": "",
+    "note": "My sweet home"
+  },
+  {
+    "city": "Beijing",
+    "country": "China",
+    "lat": 39.9057136,
+    "lng": 116.3912972,
+    "date": "2021-2026",
+    "note": "Tsinghua"
+  },
+  {
+    "city": "Datong",
+    "country": "China",
+    "lat": 40.0923194,
+    "lng": 113.2952665,
+    "date": "2026.4 & 2023.5",
+    "note": ""
+  },
+  {
+    "city": "Taiyuan",
+    "country": "China",
+    "lat": 37.8600375,
+    "lng": 112.5818317,
+    "date": "2026.4",
+    "note": ""
+  },
+  {
+    "city": "Luoyang",
+    "country": "China",
+    "lat": 34.6196539,
+    "lng": 112.4477046,
+    "date": "2026.4",
+    "note": ""
+  },
+  {
+    "city": "Zhengzhou",
+    "country": "China",
+    "lat": 34.7472531,
+    "lng": 113.619321,
+    "date": "2026.4",
+    "note": ""
+  },
+  {
+    "city": "Berkeley",
+    "country": "USA",
+    "lat": 37.8708393,
+    "lng": -122.272863,
+    "date": "2026.3 & 2025.9",
+    "note": ""
+  },
+  {
+    "city": "Tokyo",
+    "country": "Japan",
+    "lat": 35.6768601,
+    "lng": 139.7638947,
+    "date": "2026.3 & 2025.5",
+    "note": ""
+  },
+  {
+    "city": "Asahikawa",
+    "country": "Japan",
+    "lat": 43.770625,
+    "lng": 142.3649743,
+    "date": "2026.2",
+    "note": ""
+  },
+  {
+    "city": "Hakodate",
+    "country": "Japan",
+    "lat": 41.768793,
+    "lng": 140.729008,
+    "date": "2026.2",
+    "note": ""
+  },
+  {
+    "city": "Abashiri",
+    "country": "Japan",
+    "lat": 44.0206027,
+    "lng": 144.2732035,
+    "date": "2026.2",
+    "note": ""
+  },
+  {
+    "city": "Otaru",
+    "country": "Japan",
+    "lat": 43.1906806,
+    "lng": 140.9946021,
+    "date": "2026.2",
+    "note": ""
+  },
+  {
+    "city": "Sapporo",
+    "country": "Japan",
+    "lat": 43.0686365,
+    "lng": 141.3509218,
+    "date": "2026.2",
+    "note": ""
+  },
+  {
+    "city": "Biei",
+    "country": "Japan",
+    "lat": 43.5882382,
+    "lng": 142.466929,
+    "date": "2026.2",
+    "note": ""
+  },
+  {
+    "city": "Sunagawa",
+    "country": "Japan",
+    "lat": 43.4945077,
+    "lng": 141.9025106,
+    "date": "2026.2",
+    "note": ""
+  },
+  {
+    "city": "Kamifurano",
+    "country": "Japan",
+    "lat": 43.4555574,
+    "lng": 142.4672823,
+    "date": "2026.2",
+    "note": ""
+  },
+  {
+    "city": "Yunfu",
+    "country": "China",
+    "lat": 22.8546663,
+    "lng": 111.8078586,
+    "date": "2025.12",
+    "note": ""
+  },
+  {
+    "city": "Suzhou",
+    "country": "China",
+    "lat": 31.311123,
+    "lng": 120.6212881,
+    "date": "2025.12 & 2018.6",
+    "note": ""
+  },
+  {
+    "city": "Yosemite",
+    "country": "USA",
+    "lat": 37.7327236,
+    "lng": -119.6057042,
+    "date": "2025.9",
+    "note": ""
+  },
+  {
+    "city": "Tianjin",
+    "country": "China",
+    "lat": 39.3032619,
+    "lng": 117.4163641,
+    "date": "2026.4 & 2023.10",
+    "note": ""
+  },
+  {
+    "city": "Stanford",
+    "country": "USA",
+    "lat": 37.4265407,
+    "lng": -122.1703055,
+    "date": "2025",
+    "note": "Stanford"
+  },
+  {
+    "city": "Palo Alto",
+    "country": "USA",
+    "lat": 37.4443293,
+    "lng": -122.1598465,
+    "date": "2025",
+    "note": "Stanford"
+  },
+  {
+    "city": "Mountain View",
+    "country": "USA",
+    "lat": 37.3893889,
+    "lng": -122.0832101,
+    "date": "2025.8",
+    "note": ""
+  },
+  {
+    "city": "San Jose",
+    "country": "USA",
+    "lat": 37.3361663,
+    "lng": -121.890591,
+    "date": "2025.8",
+    "note": ""
+  },
+  {
+    "city": "Santa Cruz",
+    "country": "USA",
+    "lat": 36.9743626,
+    "lng": -122.0294673,
+    "date": "2025.8",
+    "note": ""
+  },
+  {
+    "city": "San Francisco",
+    "country": "USA",
+    "lat": 37.7879363,
+    "lng": -122.4075201,
+    "date": "2025.7",
+    "note": ""
+  },
+  {
+    "city": "Monterey",
+    "country": "USA",
+    "lat": 36.600256,
+    "lng": -121.8946388,
+    "date": "2025.8",
+    "note": ""
+  },
+  {
+    "city": "Nanjing",
+    "country": "China",
+    "lat": 32.0438284,
+    "lng": 118.7788631,
+    "date": "2025.6 & 2023.2",
+    "note": ""
+  },
+  {
+    "city": "Hefei",
+    "country": "China",
+    "lat": 31.8665676,
+    "lng": 117.281428,
+    "date": "2025.6",
+    "note": ""
+  },
+  {
+    "city": "Kyoto",
+    "country": "Japan",
+    "lat": 35.0115754,
+    "lng": 135.7681441,
+    "date": "2025.5",
+    "note": ""
+  },
+  {
+    "city": "Uji",
+    "country": "Japan",
+    "lat": 34.885124,
+    "lng": 135.7995651,
+    "date": "2025.5",
+    "note": ""
+  },
+  {
+    "city": "Otsu",
+    "country": "Japan",
+    "lat": 35.0177852,
+    "lng": 135.8548122,
+    "date": "2025.5",
+    "note": ""
+  },
+  {
+    "city": "Jinan",
+    "country": "China",
+    "lat": 36.6519754,
+    "lng": 117.1138479,
+    "date": "2025.2",
+    "note": ""
+  },
+  {
+    "city": "Fuzhou",
+    "country": "China",
+    "lat": 26.0774954,
+    "lng": 119.2918215,
+    "date": "2025.2",
+    "note": ""
+  },
+  {
+    "city": "Xiamen",
+    "country": "China",
+    "lat": 24.4801069,
+    "lng": 118.0853479,
+    "date": "2025.2",
+    "note": ""
+  },
+  {
+    "city": "Quanzhou",
+    "country": "China",
+    "lat": 24.8755492,
+    "lng": 118.6723605,
+    "date": "2025.2",
+    "note": ""
+  },
+  {
+    "city": "New York",
+    "country": "USA",
+    "lat": 40.7127281,
+    "lng": -74.0060152,
+    "date": "2024",
+    "note": "NYU"
+  },
+  {
+    "city": "Jersey City",
+    "country": "USA",
+    "lat": 40.7215682,
+    "lng": -74.047455,
+    "date": "2024",
+    "note": "NYU"
+  },
+  {
+    "city": "Hong Kong",
+    "country": "China",
+    "lat": 22.3492155,
+    "lng": 114.1857978,
+    "date": "2024.2",
+    "note": ""
+  },
+  {
+    "city": "Nyingchi",
+    "country": "China",
+    "lat": 29.6510453,
+    "lng": 94.3602321,
+    "date": "2023.9",
+    "note": ""
+  },
+  {
+    "city": "Lhasa",
+    "country": "China",
+    "lat": 29.6542054,
+    "lng": 91.1173015,
+    "date": "2023.9",
+    "note": ""
+  },
+  {
+    "city": "Damxung",
+    "country": "China",
+    "lat": 30.3396972,
+    "lng": 90.8981296,
+    "date": "2023.9",
+    "note": ""
+  },
+  {
+    "city": "Nagarzê",
+    "country": "China",
+    "lat": 28.7435828,
+    "lng": 90.6014987,
+    "date": "2023.9",
+    "note": ""
+  },
+  {
+    "city": "Chongqing",
+    "country": "China",
+    "lat": 29.5656729,
+    "lng": 106.5479189,
+    "date": "2023.9",
+    "note": ""
+  },
+  {
+    "city": "Huizhou",
+    "country": "China",
+    "lat": 23.1125153,
+    "lng": 114.4127007,
+    "date": "2023.1",
+    "note": ""
+  },
+  {
+    "city": "Suosong",
+    "country": "China",
+    "lat": 29.5765517,
+    "lng": 94.8916993,
+    "date": "2023.9",
+    "note": ""
+  },
+  {
+    "city": "Guilin",
+    "country": "China",
+    "lat": 25.2779894,
+    "lng": 110.2910622,
+    "date": "2022.8",
+    "note": ""
+  },
+  {
+    "city": "Yangshuo",
+    "country": "China",
+    "lat": 24.8630286,
+    "lng": 110.4871831,
+    "date": "2022.8",
+    "note": ""
+  },
+  {
+    "city": "Longsheng",
+    "country": "China",
+    "lat": 25.8013489,
+    "lng": 110.0071723,
+    "date": "2022.8",
+    "note": ""
+  },
+  {
+    "city": "Zhuhai",
+    "country": "China",
+    "lat": 22.273734,
+    "lng": 113.5721327,
+    "date": "2022.1",
+    "note": ""
+  },
+  {
+    "city": "Guiyang",
+    "country": "China",
+    "lat": 26.5878031,
+    "lng": 106.7086936,
+    "date": "2021.8",
+    "note": ""
+  },
+  {
+    "city": "Changsha",
+    "country": "China",
+    "lat": 28.1450774,
+    "lng": 113.2384362,
+    "date": "2021.7",
+    "note": ""
+  },
+  {
+    "city": "Wuhan",
+    "country": "China",
+    "lat": 30.578891,
+    "lng": 114.2921197,
+    "date": "2021.7",
+    "note": ""
+  },
+  {
+    "city": "Wenchang",
+    "country": "China",
+    "lat": 19.5452604,
+    "lng": 110.7932208,
+    "date": "2020.8",
+    "note": ""
+  },
+  {
+    "city": "Qionghai",
+    "country": "China",
+    "lat": 19.2591246,
+    "lng": 110.4701997,
+    "date": "2020.8",
+    "note": ""
+  },
+  {
+    "city": "Hangzhou",
+    "country": "China",
+    "lat": 30.2489634,
+    "lng": 120.2052342,
+    "date": "2018.6",
+    "note": ""
+  },
+  {
+    "city": "Tongxiang",
+    "country": "China",
+    "lat": 30.6316971,
+    "lng": 120.5610365,
+    "date": "2018.6",
+    "note": ""
+  },
+  {
+    "city": "Luxi",
+    "country": "China",
+    "lat": 27.6314668,
+    "lng": 114.0256286,
+    "date": "",
+    "note": "Ancestral Home"
+  },
+  {
+    "city": "Huidong",
+    "country": "China",
+    "lat": 22.9844209,
+    "lng": 114.7164175,
+    "date": "2022.6",
+    "note": ""
+  },
+  {
+    "city": "Shunde",
+    "country": "China",
+    "lat": 22.8054891,
+    "lng": 113.2894243,
+    "date": "2026.2",
+    "note": ""
+  },
+  {
+    "city": "Conghua",
+    "country": "China",
+    "lat": 23.5508777,
+    "lng": 113.5804636,
+    "date": "2023.1",
+    "note": ""
+  },
+  {
+    "city": "Zhenning",
+    "country": "China",
+    "lat": 26.0601755,
+    "lng": 105.766097,
+    "date": "2021.8",
+    "note": ""
+  },
+  {
+    "city": "Zhijin",
+    "country": "China",
+    "lat": 26.6672549,
+    "lng": 105.766696,
+    "date": "2021.8",
+    "note": ""
+  },
+  {
+    "city": "Shanghai",
+    "country": "China",
+    "lat": 31.2323437,
+    "lng": 121.4691024,
+    "date": "2025.10",
+    "note": ""
+  },
+  {
+    "city": "Zhaoqing",
+    "country": "China",
+    "lat": 23.0501661,
+    "lng": 112.4603629,
+    "date": "2017.10",
+    "note": ""
+  },
+  {
+    "city": "Antalya",
+    "country": "Turkey",
+    "lat": 36.9279654,
+    "lng": 30.7276865,
+    "date": "2015.8",
+    "note": ""
+  },
+  {
+    "city": "Pamukkale",
+    "country": "Turkey",
+    "lat": 37.9165626,
+    "lng": 29.122307,
+    "date": "2015.8",
+    "note": ""
+  },
+  {
+    "city": "Cappadocia",
+    "country": "Turkey",
+    "lat": 38.6386124,
+    "lng": 34.8455184,
+    "date": "2015.8",
+    "note": ""
+  },
+  {
+    "city": "Istanbul",
+    "country": "Turkey",
+    "lat": 41.006381,
+    "lng": 28.9758715,
+    "date": "2015.8",
+    "note": ""
+  },
+  {
+    "city": "Izmir",
+    "country": "Turkey",
+    "lat": 38.4192537,
+    "lng": 27.128469,
+    "date": "2015.8",
+    "note": ""
+  },
+  {
+    "city": "Aydın",
+    "country": "Turkey",
+    "lat": 37.8483767,
+    "lng": 27.8435878,
+    "date": "2015.8",
+    "note": ""
+  },
+  {
+    "city": "Zhaosu",
+    "country": "China",
+    "lat": 43.152726,
+    "lng": 81.1271033,
+    "date": "2026.6",
+    "note": ""
+  },
+  {
+    "city": "Tekes",
+    "country": "China",
+    "lat": 43.216904,
+    "lng": 81.833002,
+    "date": "2026.6",
+    "note": ""
+  },
+  {
+    "city": "Gongliu",
+    "country": "China",
+    "lat": 43.4801666,
+    "lng": 82.2289633,
+    "date": "2026.6",
+    "note": ""
+  },
+  {
+    "city": "Yining",
+    "country": "China",
+    "lat": 43.9052027,
+    "lng": 81.2747797,
+    "date": "2026.6",
+    "note": ""
+  },
+  {
+    "city": "Bole",
+    "country": "China",
+    "lat": 44.8528771,
+    "lng": 82.0504585,
+    "date": "2026.6",
+    "note": ""
+  },
+  {
+    "city": "Chengde",
+    "country": "China",
+    "lat": 40.9507147,
+    "lng": 117.9567031,
+    "date": "2026.6",
+    "note": ""
+  }
+]

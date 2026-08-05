@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Travel — Bingda Tang</title>
+<meta name="description" content="Interactive map of cities Bingda Tang has visited for research, conferences, and life." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E🍁%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<style>
+  /* ---- map chrome ---- */
+  .travel-map-wrap {
+    margin: 32px 0;
+    position: relative;
+  }
+
+  #map {
+    height: 520px;
+    border: 1px solid var(--rule-strong);
+    box-shadow: 4px 4px 0 var(--shadow);
+    background: #f2efe9;   /* parchment fallback before tiles load */
+  }
+  @media (prefers-color-scheme: dark) {
+    #map { background: #1a1a18; }
+  }
+
+  /* ---- Leaflet overrides ---- */
+  .leaflet-control-zoom {
+    border: 1px solid var(--rule-strong) !important;
+    box-shadow: 2px 2px 0 var(--shadow) !important;
+  }
+  .leaflet-control-zoom a {
+    font-family: "JetBrains Mono", monospace !important;
+    font-size: 15px !important;
+    color: var(--fg) !important;
+    background: var(--bg) !important;
+    border-bottom: 1px solid var(--rule) !important;
+  }
+  .leaflet-control-zoom a:hover {
+    background: var(--bg-hover) !important;
+  }
+
+  .leaflet-control-attribution {
+    font-family: "JetBrains Mono", monospace !important;
+    font-size: 10px !important;
+    color: var(--fg-quiet) !important;
+    background: var(--bg) !important;
+    opacity: 0.7;
+  }
+
+  /* ---- popups ---- */
+  .leaflet-popup-content-wrapper {
+    border-radius: 0;
+    border: 1px solid var(--rule-strong);
+    box-shadow: 3px 3px 0 var(--shadow);
+    font-family: "Source Serif 4", serif;
+    padding: 0;
+  }
+  .leaflet-popup-content {
+    margin: 12px 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--fg);
+  }
+  .leaflet-popup-content .pop-city {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--fg-strong);
+  }
+  .leaflet-popup-content .pop-country {
+    color: var(--fg-muted);
+    font-size: 14px;
+  }
+  .leaflet-popup-content .pop-date {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    color: var(--fg-quiet);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .leaflet-popup-content .pop-note {
+    font-size: 14px;
+    color: var(--fg-muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .leaflet-popup-tip {
+    border-top-color: var(--rule-strong) !important;
+  }
+
+  /* ---- custom markers ---- */
+  .travel-marker {
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    outline: 1px solid var(--rule-strong);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 150ms ease, box-shadow 150ms ease;
+  }
+  .travel-marker:hover {
+    transform: scale(1.6);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+
+  /* ---- stat ribbon ---- */
+  .travel-stats {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: var(--fg-muted);
+  }
+  .travel-stats .stat {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+  .travel-stats .stat-num {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--fg-strong);
+  }
+
+  /* ---- city timeline ---- */
+  .city-timeline {
+    position: relative;
+    border-left: 1px solid var(--rule);
+    padding: 8px 0;
+    margin: 0 0 0 8px;
+  }
+  .city-row {
+    position: relative;
+    margin-left: 22px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: background 100ms ease;
+  }
+  .city-row:hover {
+    background: var(--bg-hover);
+    text-decoration: none;
+  }
+  .city-row::before {
+    content: "";
+    position: absolute;
+    left: -26px;
+    top: 16px;
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 1px solid var(--bg);
+  }
+  .city-row .city-name {
+    font-weight: 600;
+    color: var(--fg-strong);
+  }
+  .city-row .city-country {
+    color: var(--fg-muted);
+    font-size: 13px;
+    margin-left: 6px;
+  }
+  .city-row .city-right {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .city-row .city-date {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    color: var(--fg-quiet);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .city-row .city-note {
+    font-size: 12px;
+    color: var(--fg-quiet);
+    font-style: italic;
+  }
+
+  /* ---- responsive ---- */
+  @media (max-width: 560px) {
+    #map { height: 380px; }
+    .city-row { flex-direction: column; gap: 2px; }
+    .city-row .city-right { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+<div class="container">
+
+  <header class="site" data-site-header></header>
+
+  <section class="intro no-photo">
+    <div>
+      <p>Cities I have visited for research, conferences, and life.
+      Click a city to see details; click a row below to fly there.</p>
+    </div>
+  </section>
+
+  <div class="travel-map-wrap">
+    <div id="map"></div>
+    <div class="travel-stats" id="travel-stats"></div>
+  </div>
+
+  <div class="section-label">City log</div>
+  <div class="city-timeline" id="city-timeline"></div>
+
+  <footer class="site" data-site-footer></footer>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/assets/js/site.js"></script>
+<script>
+(function() {
+  const TRAVEL_URL = '/assets/data/travel.json';
+
+  function esc(s) {
+    return String(s ?? '').replace(/[&<>"']/g, c =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  /* tiles — clean cartographic aesthetic, no API key needed */
+  const TILE_URL = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+  const TILE_DARK = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  async function initMap() {
+    const map = L.map('map', {
+      scrollWheelZoom: true,
+      zoomControl: true,
+      attributionControl: true,
+    }).setView([30, 0], 2);
+
+    L.tileLayer(isDark ? TILE_DARK : TILE_URL, {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      maxZoom: 19,
+    }).addTo(map);
+
+    // Listen for theme changes
+    let currentTile = isDark ? TILE_DARK : TILE_URL;
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      const next = e.matches ? TILE_DARK : TILE_URL;
+      if (next === currentTile) return;
+      currentTile = next;
+      map.eachLayer(l => { if (l instanceof L.TileLayer) { l.setUrl(next); } });
+    });
+
+    // Custom icon
+    const markerIcon = L.divIcon({
+      className: 'travel-marker',
+      iconSize: [12, 12],
+      iconAnchor: [6, 6],
+      popupAnchor: [0, -8],
+    });
+
+    try {
+      const res = await fetch(TRAVEL_URL, { cache: 'no-cache' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const cities = await res.json();
+
+      // stats
+      const countries = new Set(cities.map(c => c.country)).size;
+      document.getElementById('travel-stats').innerHTML =
+        `<span class="stat"><span class="stat-num">${cities.length}</span> cit${cities.length === 1 ? 'y' : 'ies'}</span>` +
+        `<span class="stat"><span class="stat-num">${countries}</span> countr${countries === 1 ? 'y' : 'ies'}</span>`;
+
+      // markers + bounds
+      const bounds = [];
+      cities.forEach(c => {
+        const m = L.marker([c.lat, c.lng], { icon: markerIcon }).addTo(map);
+        m.bindPopup(
+          `<div class="pop-city">${esc(c.city)}</div>` +
+          `<div class="pop-country">${esc(c.country)}</div>` +
+          `<div class="pop-date">${esc(c.date)}</div>` +
+          (c.note ? `<div class="pop-note">${esc(c.note)}</div>` : '')
+        );
+        bounds.push([c.lat, c.lng]);
+      });
+
+      if (bounds.length) {
+        map.fitBounds(bounds, { padding: [50, 50], maxZoom: 5 });
+      }
+
+      // city timeline
+      renderTimeline(cities, map);
+
+    } catch (err) {
+      console.error('Failed to load travel data:', err);
+      document.getElementById('map').insertAdjacentHTML('afterend',
+        '<p style="color:var(--accent);margin-top:12px;">Failed to load travel data.</p>');
+    }
+  }
+
+  function renderTimeline(cities, map) {
+    const tl = document.getElementById('city-timeline');
+
+    // Expand &-separated dates into individual visits
+    const visits = [];
+    cities.forEach(c => {
+      const dates = (c.date || '').split('&').map(s => s.trim()).filter(Boolean);
+      if (dates.length === 0) dates.push('');   // city with no date → still show once
+      dates.forEach(d => {
+        visits.push({ city: c.city, country: c.country, lat: c.lat, lng: c.lng, date: d, note: c.note });
+      });
+    });
+
+    // newest first, with proper date parsing (2025/12 > 2025/8)
+    const dateKey = d => {
+      if (!d) return '0000';               // empty → last
+      // extract the first date segment (before &) and pick the latest year
+      const first = d.split('&')[0].trim();
+      // match patterns: YYYY/M, YYYY/MM, YYYY, or YYYY-YYYY
+      const m = first.match(/^(\d{4})(?:[\/.](\d{1,2}))?/);
+      if (!m) return '0000';
+      const y = m[1];
+      const mo = m[2] ? m[2].padStart(2, '0') : '00';
+      return `${y}.${mo}`;
+    };
+    visits.sort((a, b) => dateKey(b.date).localeCompare(dateKey(a.date)));
+
+    tl.innerHTML = visits.map((v, i) =>
+      `<div class="city-row" data-idx="${i}">` +
+      `<div><span class="city-name">${esc(v.city)}</span><span class="city-country">, ${esc(v.country)}</span></div>` +
+      `<div class="city-right">` +
+      `<div class="city-date">${v.date ? esc(v.date) : '&nbsp;'}</div>` +
+      `<div class="city-note">${v.note ? esc(v.note) : '&nbsp;'}</div>` +
+      `</div>` +
+      `</div>`
+    ).join('');
+
+    // click to fly
+    tl.querySelectorAll('.city-row').forEach(row => {
+      row.addEventListener('click', () => {
+        const idx = parseInt(row.dataset.idx);
+        const v = visits[idx];
+        map.flyTo([v.lat, v.lng], 8, { duration: 1.2 });
+        row.style.background = 'var(--bg-hover)';
+        setTimeout(() => { row.style.background = ''; }, 600);
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMap);
+  } else {
+    initMap();
+  }
+})();
+</script>
+</body>
+</html>
