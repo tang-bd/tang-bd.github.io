@@ -328,6 +328,69 @@ header.site {
   margin-top: 28px;
 }
 
+/* ---------- affiliations ---------- */
+
+.affiliations {
+  --affiliation-size: clamp(54px, 12vw, 80px);
+  margin: 0 0 34px;
+}
+
+.affiliation-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(4px, 1.5vw, 14px);
+}
+
+.affiliation-card {
+  min-width: 0;
+  height: var(--affiliation-size);
+  display: grid;
+  place-items: center;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: transform 120ms ease;
+}
+
+.affiliation-card:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.affiliation-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.affiliation-card > img,
+.affiliation-roundel {
+  display: block;
+  width: var(--affiliation-size);
+  height: var(--affiliation-size);
+  flex: 0 0 var(--affiliation-size);
+  object-fit: contain;
+}
+
+.affiliation-roundel {
+  display: grid;
+  place-items: center;
+  background: #ff2442;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.affiliation-card--xiaohongshu img {
+  display: block;
+  width: 72%;
+  height: 72%;
+  filter: brightness(0) invert(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .affiliation-card:hover { transform: none; }
+}
+
 /* ---------- contact list ---------- */
 
 .contacts {
