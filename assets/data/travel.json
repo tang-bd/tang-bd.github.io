@@ -13,7 +13,7 @@
     "lat": 39.9057136,
     "lng": 116.3912972,
     "date": "2021-2026",
-    "note": "Tsinghua"
+    "note": ""
   },
   {
     "city": "Datong",
@@ -60,7 +60,7 @@
     "country": "Japan",
     "lat": 35.6768601,
     "lng": 139.7638947,
-    "date": "2026.3 & 2025.5",
+    "date": "2026.3 & 2025.5 & < 2015",
     "note": ""
   },
   {
@@ -165,7 +165,7 @@
     "lat": 37.4265407,
     "lng": -122.1703055,
     "date": "2025",
-    "note": "Stanford"
+    "note": ""
   },
   {
     "city": "Palo Alto",
@@ -173,7 +173,7 @@
     "lat": 37.4443293,
     "lng": -122.1598465,
     "date": "2025",
-    "note": "Stanford"
+    "note": ""
   },
   {
     "city": "Mountain View",
@@ -236,7 +236,7 @@
     "country": "Japan",
     "lat": 35.0115754,
     "lng": 135.7681441,
-    "date": "2025.5",
+    "date": "2025.5 & < 2015",
     "note": ""
   },
   {
@@ -292,8 +292,8 @@
     "country": "USA",
     "lat": 40.7127281,
     "lng": -74.0060152,
-    "date": "2024",
-    "note": "NYU"
+    "date": "2024 & 2016.7",
+    "note": ""
   },
   {
     "city": "Jersey City",
@@ -301,7 +301,7 @@
     "lat": 40.7215682,
     "lng": -74.047455,
     "date": "2024",
-    "note": "NYU"
+    "note": ""
   },
   {
     "city": "Hong Kong",
@@ -405,14 +405,6 @@
     "lat": 26.5878031,
     "lng": 106.7086936,
     "date": "2021.8",
-    "note": ""
-  },
-  {
-    "city": "Changsha",
-    "country": "China",
-    "lat": 28.1450774,
-    "lng": 113.2384362,
-    "date": "2021.7",
     "note": ""
   },
   {
@@ -613,6 +605,270 @@
     "lat": 40.9507147,
     "lng": 117.9567031,
     "date": "2026.6",
+    "note": ""
+  },
+  {
+    "city": "Kashgar",
+    "country": "China",
+    "lat": 39.4665981,
+    "lng": 75.9900135,
+    "date": "2026.8",
+    "note": ""
+  },
+  {
+    "city": "Tashkurgan",
+    "country": "China",
+    "lat": 37.7720982,
+    "lng": 75.2298859,
+    "date": "2026.8",
+    "note": ""
+  },
+  {
+    "city": "Yarkant",
+    "country": "China",
+    "lat": 38.3446426,
+    "lng": 77.033982,
+    "date": "2026.8",
+    "note": ""
+  },
+  {
+    "city": "Akto",
+    "country": "China",
+    "lat": 39.1452884,
+    "lng": 75.9446247,
+    "date": "2026.8",
+    "note": ""
+  },
+  {
+    "city": "Dalian",
+    "country": "China",
+    "lat": 38.9130495,
+    "lng": 121.6098013,
+    "date": "2024.4",
+    "note": ""
+  },
+  {
+    "city": "Shenzhen",
+    "country": "China",
+    "lat": 22.5445741,
+    "lng": 114.0545429,
+    "date": "2024.1",
+    "note": ""
+  },
+  {
+    "city": "Yokohama",
+    "country": "Japan",
+    "lat": 35.4503381,
+    "lng": 139.6343802,
+    "date": "2026.8",
+    "note": ""
+  },
+  {
+    "city": "Kamakura",
+    "country": "Japan",
+    "lat": 35.3191187,
+    "lng": 139.5504286,
+    "date": "2026.8",
+    "note": ""
+  },
+  {
+    "city": "Boston",
+    "country": "USA",
+    "lat": 42.3588336,
+    "lng": -71.0578303,
+    "date": "2016.7",
+    "note": ""
+  },
+  {
+    "city": "Washington, D.C.",
+    "country": "USA",
+    "lat": 38.8950982,
+    "lng": -77.0363849,
+    "date": "2016.7",
+    "note": ""
+  },
+  {
+    "city": "Philadelphia",
+    "country": "USA",
+    "lat": 39.9527237,
+    "lng": -75.1635262,
+    "date": "2016.7",
+    "note": ""
+  },
+  {
+    "city": "Princeton",
+    "country": "USA",
+    "lat": 40.3496953,
+    "lng": -74.6597376,
+    "date": "2016.7",
+    "note": ""
+  },
+  {
+    "city": "Niagara Falls",
+    "country": "USA",
+    "lat": 43.084841,
+    "lng": -79.0701786,
+    "date": "2016.7",
+    "note": ""
+  },
+  {
+    "city": "Seattle",
+    "country": "USA",
+    "lat": 47.6038321,
+    "lng": -122.330062,
+    "date": "2016.7",
+    "note": ""
+  },
+  {
+    "city": "Los Angeles",
+    "country": "USA",
+    "lat": 34.0536909,
+    "lng": -118.242766,
+    "date": "2016.7",
+    "note": ""
+  },
+  {
+    "city": "San Diego",
+    "country": "USA",
+    "lat": 32.7174202,
+    "lng": -117.162772,
+    "date": "2016.7",
+    "note": ""
+  },
+  {
+    "city": "Chiang Mai",
+    "country": "Thailand",
+    "lat": 18.7882778,
+    "lng": 98.9858802,
+    "date": "2017.1",
+    "note": ""
+  },
+  {
+    "city": "Chiang Rai",
+    "country": "Thailand",
+    "lat": 19.9068867,
+    "lng": 99.8332739,
+    "date": "2017.1",
+    "note": ""
+  },
+  {
+    "city": "Xi'an",
+    "country": "China",
+    "lat": 34.261004,
+    "lng": 108.9423363,
+    "date": "2017.7",
+    "note": ""
+  },
+  {
+    "city": "Huayin",
+    "country": "China",
+    "lat": 34.5675163,
+    "lng": 110.0920915,
+    "date": "2017.7",
+    "note": ""
+  },
+  {
+    "city": "Jiuzhaigou",
+    "country": "China",
+    "lat": 33.3071597,
+    "lng": 103.9325993,
+    "date": "< 2015",
+    "note": ""
+  },
+  {
+    "city": "Taipei",
+    "country": "China",
+    "lat": 25.0375198,
+    "lng": 121.5636796,
+    "date": "< 2015",
+    "note": ""
+  },
+  {
+    "city": "Kaohsiung",
+    "country": "China",
+    "lat": 22.6203348,
+    "lng": 120.3120375,
+    "date": "< 2015",
+    "note": ""
+  },
+  {
+    "city": "Orlando",
+    "country": "USA",
+    "lat": 28.5421218,
+    "lng": -81.379045,
+    "date": "2016.7",
+    "note": ""
+  },
+  {
+    "city": "Macau",
+    "country": "China",
+    "lat": 22.1899448,
+    "lng": 113.5380454,
+    "date": "< 2015",
+    "note": ""
+  },
+  {
+    "city": "Harbin",
+    "country": "China",
+    "lat": 45.7593633,
+    "lng": 126.6276177,
+    "date": "< 2015",
+    "note": ""
+  },
+  {
+    "city": "Changbaishan",
+    "country": "China",
+    "lat": 42.3312953,
+    "lng": 127.2678679,
+    "date": "< 2015",
+    "note": ""
+  },
+  {
+    "city": "Sanya",
+    "country": "China",
+    "lat": 18.2534658,
+    "lng": 109.5034392,
+    "date": "< 2015",
+    "note": ""
+  },
+  {
+    "city": "Bangkok",
+    "country": "Thailand",
+    "lat": 13.7524938,
+    "lng": 100.4935089,
+    "date": "< 2015",
+    "note": ""
+  },
+  {
+    "city": "Phuket",
+    "country": "Thailand",
+    "lat": 7.9366015,
+    "lng": 98.3529292,
+    "date": "< 2015",
+    "note": ""
+  },
+  {
+    "city": "Fujisan",
+    "country": "Japan",
+    "lat": 35.3628384,
+    "lng": 138.7307677,
+    "date": "< 2015",
+    "note": ""
+  },
+  {
+    "city": "Changsha",
+    "country": "China",
+    "lat": 28.2001495,
+    "lng": 112.9717183,
+    "date": "2021.7",
+    "note": ""
+  },
+  {
+    "city": "Nanchang",
+    "country": "China",
+    "lat": 28.687547,
+    "lng": 115.8540042,
+    "date": "2019.8",
     "note": ""
   }
 ]
