@@ -870,5 +870,29 @@
     "lng": 115.8540042,
     "date": "2019.8",
     "note": ""
+  },
+  {
+    "city": "Huangshan",
+    "country": "China",
+    "lat": 30.1383784,
+    "lng": 118.1601569,
+    "date": "2026.7",
+    "note": ""
+  },
+  {
+    "city": "Yi",
+    "country": "China",
+    "lat": 29.9265985,
+    "lng": 117.9345987,
+    "date": "2026.7",
+    "note": ""
+  },
+  {
+    "city": "Tunxi",
+    "country": "China",
+    "lat": 29.6986901,
+    "lng": 118.3098695,
+    "date": "2026.7",
+    "note": ""
   }
 ]
